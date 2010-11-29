@@ -1,0 +1,2 @@
+# load rvm if it's available
+[ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
