@@ -20,13 +20,6 @@ _expand() { return 0; }
 __expand_tilde_by_ref() { return 0; }
 
 
-#
-# DotGit
-#
-
-alias dotgit="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
-# allow completion to work with .git command too, if completion is loaded
-type -t _git > /dev/null && complete -o default -o nospace -F _git dotgit
 
 
 #
@@ -46,10 +39,11 @@ export HISTFILESIZE=5000                    # history file size
 # Aliases
 #
 
-# shell
+dotgit_cmd="dotgit"
+alias "$dotgit_cmd"="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
+
 alias ..='cd ..'
 alias ...='cd ../..'
-
 alias md='mkdir -p'
 alias mdcd='f () { mkdir -p $1 && cd $1; }; f'
 
