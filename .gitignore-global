@@ -1,12 +1,14 @@
 # ignores for every git repository
 
-*.iml
-*.ipr
-*.iws
-.generators
-.rakeTasks
 TAGS
 tags
 *.DS_Store
 __MACOSX/*
-*.local
+
+# swapfiles for various editors
+*.sw[n-p]
+*~
+
+# JetBrains Idea workspace file, never a need to check it in.
+*.iws
+
