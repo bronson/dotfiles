@@ -1,0 +1,18 @@
+# This only applies to OS X
+[ "Darwin" == "$(uname)" ] || return
+
+export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+export CLICOLOR=true
+
+
+export BREW_HOME=/usr/local                          # recommended location
+
+export PATH="$BREW_HOME/sbin/:$PATH"                 # brew
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"   # macports
+export PATH="$PATH:/usr/local/mysql/bin"             # default osx mysql dmg
+
+
+# if newer bash is installed by brew or ports, use its completion
+[ -f /opt/local/etc/bash_completion ] && source /opt/local/etc/bash_completion
+[ -f $BREW_HOME/etc/bash_completion ] && source $BREW_HOME/etc/bash_completion
+

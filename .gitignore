@@ -1,0 +1,20 @@
+# ignores for just this dotfiles repo
+
+# ignore all
+#/*
+
+# or, just ignore non-dot and known unimportant:
+[^.]*
+.account
+.bash_history
+.CFUserTextEncoding
+.lesshst
+.mysql_history
+
+# do not ignore:
+!.bash/
+!bin/
+
+# ignore private bash files (sensitive passwords, etc)
+.bash/private*
+

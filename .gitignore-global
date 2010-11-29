@@ -1,0 +1,12 @@
+# ignores for every git repository
+
+*.iml
+*.ipr
+*.iws
+.generators
+.rakeTasks
+TAGS
+tags
+*.DS_Store
+__MACOSX/*
+*.local

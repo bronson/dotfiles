@@ -1,0 +1,61 @@
+# Default bash settings
+
+#
+# Environment
+#
+
+export GREP_OPTIONS='--color=auto'   # highlight matches using color
+export LESS="--RAW-CONTROL-CHARS"    # interpret any embedded ansi escapes
+export PAGER='less'                  # use less to view manpages, etc
+export PS1="\\u@\h \\w\\$ "          # simple prompt shows user, host and path
+
+stty -ixon     # disable XON/XOFF flow control so terminal will pass ^S and ^Q
+
+[ -f /etc/bash_completion ] && source /etc/bash_completion
+[ -d ~/bin ] && export PATH=~/bin:"$PATH"
+
+# Disable annoying ~ expansion
+# http://www.linuxquestions.org/questions/linux-software-2/how-to-stop-bash-from-replacing-%7E-with-home-username-643162/#post3162026
+_expand() { return 0; }
+__expand_tilde_by_ref() { return 0; }
+
+
+#
+# DotGit
+#
+
+alias dotgit="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
+# allow completion to work with .git command too, if completion is loaded
+type -t _git > /dev/null && complete -o default -o nospace -F _git dotgit
+
+
+#
+# History
+#
+
+shopt -s histappend                         # Append each(!) history entry from all terminals realtime(not after sesion ending)
+shopt -s cmdhist                            # store multiline commands as 1 line
+shopt -s cdspell                            # spelling error correction
+shopt -s checkwinsize                       # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
+export HISTCONTROL="ignoreboth"             # store duplicate lines once, ignore lines beginning with a space
+export HISTIGNORE="&:ls:[bf]g:exit:%[0-9]"  # ignore simple commands
+export HISTFILESIZE=5000                    # history file size
+
+
+#
+# Aliases
+#
+
+# shell
+alias ..='cd ..'
+alias ...='cd ../..'
+
+alias md='mkdir -p'
+alias mdcd='f () { mkdir -p $1 && cd $1; }; f'
+
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -l'
+
+alias tf='tail -f'
+
