@@ -1,25 +1,63 @@
-# ignores for just this dotfiles repo
+# ignored files in the home directory
+# ~/.gitignore-global is now git's systemwide ignore file.
 
-# EITHER ignore all, then don't ignore:
-#/*
-#!.bash/*
-#!bin/*
-
-# OR, just ignore non-dot and known unimportant:
+# ignore any file that doesn't begin with a dot
 /[^.]*
-/.account
-/.bash_history
-/.cups
-/.CFUserTextEncoding
-/.dotfiles.git
-/.gitk
-/.lesshst
-/.macports
-/.mysql_history
-/.p4*
-/.ssh
-/.Trash
 
 # ignore private files (sensitive passwords, etc)
 /.bash/private*
 
+/.dotfiles.git
+/.*_history
+
+
+# files that show too much churn to be checked in:
+/.account
+/.cache
+/.CFUserTextEncoding
+/.compiz
+/.config
+/.cups
+/.dbus
+/.dillo
+/.dmrc
+/.esd_auth
+/.evolution
+/.fltk
+/.fontconfig
+/.gconf
+/.gconfd
+/.gem
+/.gitk
+/.gksu.lock
+/.gnome2
+/.gnubg
+/.gnupg
+/.gstreamer-0.10
+/.gtk-bookmarks
+/.hplip
+/.ICEauthority
+/.irb-history
+/.lesshst
+/.lesshst
+/.local
+/.macports
+/.macromedia
+/.mission-control
+/.mozilla
+/.mplayer
+/.p4tickets
+/.pki
+/.printer-groups.xml
+/.pulse
+/.pulse-cookie
+/.purple
+/.recently-used.xbel
+/.rvm
+/.ssh
+/.sudo_as_admin_successful
+/.thumbnails
+/.Trash
+/.wireshark
+/.xchat2
+/.xsession-errors*
