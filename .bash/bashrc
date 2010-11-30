@@ -39,9 +39,6 @@ export HISTFILESIZE=5000                    # history file size
 # Aliases
 #
 
-dotgit_cmd="dotgit"
-alias "$dotgit_cmd"="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
-
 alias ..='cd ..'
 alias ...='cd ../..'
 alias md='mkdir -p'

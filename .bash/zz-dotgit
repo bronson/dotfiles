@@ -1,0 +1,16 @@
+# Sets up the alias to manipulate the dotfiles.
+# Needs to run late, after setting up completion.
+
+
+# Set dotgit_cmd in an earlier file to use a different command.
+# For instance, dotgit_cmd='.G' will use .G instead of dotgit.
+dotgit_cmd="${dotgit_cmd-dotgit}"
+
+
+alias "$dotgit_cmd"="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
+
+# allow completion to work with .git command too, if completion is loaded
+type -t _git > /dev/null && complete -o default -o nospace -F _git "$dotgit_cmd"
+
+# don't pollute the shell with variables
+unset dotgit_cmd
