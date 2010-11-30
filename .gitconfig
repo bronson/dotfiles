@@ -5,10 +5,11 @@
   email = UNSET TODO
 [push]
   default = tracking
+[help]
+  autocorrect = 1
+
 [color]
-  branch = auto
-  diff = auto
-  status = auto
+  ui = auto
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -66,7 +67,7 @@
   l     = log --date=relative
   lg    = !git ll --graph
   ll    = log --abbrev-commit --date=relative --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d'
-  lol   = log --pretty=oneline --abbrev-commit --graph --decorate
+  lol   = log --oneline --abbrev-commit --graph --decorate
   lp    = log --patch --date=relative
   lpw   = log --patch --word-diff --date=relative
   ls    = log --stat=120,130 --date=relative
@@ -81,7 +82,9 @@
   rc    = rebase --continue
   ri    = rebase --interactive
   rih   = "!f() { git rebase -i HEAD$1; }; f "
+  rm-a  = "!git ls-files -z --deleted | xargs -0 git rm"
   rst   = reset
+  s     = status -sb
   st    = status --short --branch --untracked-files=no
   sta   = status --short --branch --untracked-files=normal
   sv    = svn
