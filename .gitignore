@@ -46,6 +46,7 @@
 /.mission-control
 /.mozilla
 /.mplayer
+/.NERDTreeBookmarks
 /.p4tickets
 /.pki
 /.printer-groups.xml
@@ -58,6 +59,8 @@
 /.sudo_as_admin_successful
 /.thumbnails
 /.Trash
+/.viminfo
+/.vim
 /.wireshark
 /.xchat2
 /.xsession-errors*
