@@ -1,8 +1,8 @@
 [core]
   excludesfile = ~/.gitignore-global
 [user]
-  name  = UNSET TODO
-  email = UNSET TODO
+  name = Scott Bronson
+  email = brons_git@rinspin.com
 [push]
   default = tracking
 [help]
