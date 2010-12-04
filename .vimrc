@@ -68,6 +68,7 @@ set softtabstop=2
 " ruby includes ! and ? in method names (array.empty?)
 autocmd FileType ruby setlocal iskeyword+=!,?
 
+let mapleader=" "
 
 
 " fixes
