@@ -77,7 +77,8 @@ map <F1> <Esc>
 imap <F1> <Esc>
 
 " <C-L> redraws the screen and also turns off highlighting the current search
-nnoremap <C-L> :nohl<CR><C-L>
+" NO, it conflicts with moving to different windows.
+" nnoremap <C-L> :nohlsearch<CR><C-L>
 
 " add a keybinding to toggle paste mode
 nnoremap <leader>p :set paste!<CR>:set paste?<CR>
