@@ -68,7 +68,10 @@ set softtabstop=2
 " ruby includes ! and ? in method names (array.empty?)
 autocmd FileType ruby setlocal iskeyword+=!,?
 
-let mapleader=" "
+" wish I could make mapleader be space but vim waits for a second
+" every time you hit the space key.
+" <Plug>DiscretionaryEnd
+" let mapleader=" "
 
 
 " fixes
@@ -125,8 +128,8 @@ runtime macros/matchit.vim  " enable vim's built-in matchit script (make % bounc
 
 
 " BUNDLE: git://github.com/scrooloose/nerdtree.git
-nmap <leader>d :NERDTreeToggle<cr>
-nmap <leader>D :NERDTreeFind<cr>
+nmap <Space>d :NERDTreeToggle<cr>
+nmap <Space>D :NERDTreeFind<cr>
 
 
 " BUNDLE: git://github.com/scrooloose/nerdcommenter.git
