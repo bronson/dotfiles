@@ -159,9 +159,10 @@ nmap <leader>l :TlistToggle<cr>
 
 " BUNDLE: http://github.com/vim-scripts/bufexplorer.zip.git
 
-" BUNDLE: git://git.wincent.com/command-t.git
+" disable command-t since I can't get it to work on snow leopard with macports and rvm.  :(
+" " BUNDLE: git://git.wincent.com/command-t.git
 " ensure we compile with the system ruby if rvm is installed
-" BUNDLE-COMMAND: if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi
+" " BUNDLE-COMMAND: if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi
 nmap <silent> <C-Space> :CommandT<CR>
 nmap <silent> <C-@> :CommandT<CR>
 " let g:CommandTCancelMap = ['<C-c>', '<Esc>', '<C-Space>', '<C-@>']
