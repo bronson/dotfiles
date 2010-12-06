@@ -199,7 +199,12 @@ let g:loaded_AlignMapsPlugin = "v41"
 " BUNDLE: git://github.com/tpope/vim-fugitive.git
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
-" BUNDLE: http://github.com/ervandew/supertab.git
+
+" Newer supertab has a problem, so lock it to a known working version.
+" https://github.com/ervandew/supertab/commit/cd2c9f070654e596600d12e476617ff92ddfa255#commitcomment-210140
+"     (let let g:SuperTabCrMapping = 0 works too)
+" BUNDLE: http://github.com/ervandew/supertab.git 56f313f27
+
 " BUNDLE: git://github.com/bronson/vim-visual-star-search.git
 " BUNDLE: git://github.com/bronson/vim-trailing-whitespace.git
 " BUNDLE: git://github.com/bronson/vim-toggle-wrap.git
