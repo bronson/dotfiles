@@ -1,6 +1,8 @@
 " vimsy's .vimrc
 "
 " Don't use abbreviations!  Spelling things out makes grepping easy.
+" Plugins are managed with https://github.com/bronson/vim-update-bundles
+
 
 " Let Pathogen bring in all the plugins
 filetype on
