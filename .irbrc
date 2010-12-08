@@ -1,6 +1,7 @@
 require 'pp'
 require 'irb/completion'
 require 'irb/ext/save-history'
+require 'rubygems'
 require 'interactive_editor'
 
 

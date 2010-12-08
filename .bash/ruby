@@ -1,6 +1,10 @@
 # load rvm if it's available
 [ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
 
-# a bashrc alias converts gvim to mvim on the mac
-export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
+# Launch macvim on the mac, otherwise gvim
+if [ "$(uname)" = "Darwin" ]; then
+  export GEM_EDITOR=mvim BUNDLER_EDITOR=mvim
+else
+  export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
+fi
 
