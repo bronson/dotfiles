@@ -145,6 +145,9 @@ let NERDSpaceDelims=1
 " Use Control-/ to toggle comments
 nmap <C-/> :call NERDComment(0, "toggle")<CR>
 vmap <C-/> <ESC>:call NERDComment(1, "toggle")<CR>
+" Command-/ works on the Mac
+nmap <D-/> <ESC>:call NERDComment(1, "toggle")<CR>
+vmap <D-/> <ESC>:call NERDComment(1, "toggle")<CR>
 " but most vim implementations produce Control-_ instead of Control-/:
 nmap <C-_> :call NERDComment(0, "toggle")<CR>
 vmap <C-_> <ESC>:call NERDComment(1, "toggle")<CR>
