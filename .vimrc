@@ -114,6 +114,9 @@ nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-h> :wincmd h<CR>
 nmap <silent> <C-l> :wincmd l<CR>
 
+" quicker to navigate the quickfix window, just control-n, control-p
+nmap <silent> <C-n> :cn<CR>
+nmap <silent> <C-p> :cp<CR>
 
 " color schemes
 
