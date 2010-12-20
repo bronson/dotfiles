@@ -1,8 +1,8 @@
 require 'pp'
 require 'irb/completion'
 require 'irb/ext/save-history'
-require 'rubygems'
-require 'interactive_editor'
+require 'rubygems' rescue nil
+require 'interactive_editor' rescue nil
 
 
 IRB.conf.merge!({
