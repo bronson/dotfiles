@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# Make ichat become available when the Mac wakes up.  Doesn't work very well.
+
+# port install sleepwatcher
+
+osascript -e 'tell application "iChat" to set the status to available'
