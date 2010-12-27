@@ -47,6 +47,10 @@ export HISTFILESIZE=5000                    # history file size
 # export PROMPT_COMMAND="history -n; history -a" # store & reload history every time prompt is displayed, http://briancarper.net/blog/248/
 
 
+# calculator: "? 10*2+3" will print 23
+? () { echo "$*" | bc -l; }
+
+
 #
 # Aliases
 #
