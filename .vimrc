@@ -190,10 +190,17 @@ let g:CommandTMatchWindowAtTop = 1
 " BUNDLE: git://github.com/scrooloose/snipmate-snippets.git
 " BUNDLE: git://github.com/vim-scripts/IndexedSearch.git
 "
+"    text objects    :he text-objects
 " TODO: rewrite ruby-block-conv to use textobj-rubyblock
 " BUNDLE: git://github.com/bronson/vim-ruby-block-conv.git
-" BUNDLE: git://github.com/nelstrom/vim-textobj-rubyblock.git
 " BUNDLE: git://github.com/kana/vim-textobj-user.git
+" Ruby text objects: ar, ir
+" BUNDLE: git://github.com/nelstrom/vim-textobj-rubyblock.git
+" Paramter text objects (between parens and commas): aP, iP
+" BUNDLE: git://github.com/vim-scripts/Parameter-Text-Objects.git
+" indent text objects: ai, ii, (include line below) aI, iI
+"   ai,ii work best for Python, aI,II work best for Ruby/C/Perl
+" BUNDLE: git://github.com/michaeljsmith/vim-indent-object.git
 
 " BUNDLE: git://github.com/janx/vim-rubytest.git
 " taglist currently uses \l. TODO: this will need to be resolved.
