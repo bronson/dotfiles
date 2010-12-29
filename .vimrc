@@ -189,7 +189,11 @@ let g:CommandTMatchWindowAtTop = 1
 " BUNDLE: git://github.com/msanders/snipmate.vim.git
 " BUNDLE: git://github.com/scrooloose/snipmate-snippets.git
 " BUNDLE: git://github.com/vim-scripts/IndexedSearch.git
+"
+" TODO: rewrite ruby-block-conv to use textobj-rubyblock
 " BUNDLE: git://github.com/bronson/vim-ruby-block-conv.git
+" BUNDLE: git://github.com/nelstrom/vim-textobj-rubyblock.git
+" BUNDLE: git://github.com/kana/vim-textobj-user.git
 
 " BUNDLE: git://github.com/janx/vim-rubytest.git
 " taglist currently uses \l. TODO: this will need to be resolved.
