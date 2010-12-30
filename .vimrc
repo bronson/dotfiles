@@ -151,7 +151,7 @@ vmap <D-/> <ESC>:call NERDComment(1, "toggle")<CR>
 " but most vim implementations produce Control-_ instead of Control-/:
 nmap <C-_> :call NERDComment(0, "toggle")<CR>
 vmap <C-_> <ESC>:call NERDComment(1, "toggle")<CR>
-" and vim-gtk and vim-gnome are broken (:help vimsy-control-/)
+" and vim-gtk and vim-gnome are broken
 " you can use <leader>/ to do the same things.
 nmap <leader>/ :call NERDComment(0, "toggle")<CR>
 vmap <leader>/ <ESC>:call NERDComment(1, "toggle")<CR>
@@ -166,9 +166,10 @@ xmap S <Plug>Vsurround
 
 
 " BUNDLE: http://github.com/vim-scripts/taglist.vim.git
-nmap <leader>l :TlistToggle<cr>
+nmap <Space>l :TlistToggle<cr>
 
 " BUNDLE: http://github.com/vim-scripts/bufexplorer.zip.git
+nmap <Space>b :BufExplorer<cr>
 
 " disable command-t since I can't get it to work on snow leopard with macports and rvm.  :(
 " BUNDLE: git://git.wincent.com/command-t.git
