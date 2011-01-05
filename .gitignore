@@ -57,6 +57,7 @@
 /.recently-used.xbel
 /.rvm
 /.ssh
+/.sqldeveloper
 /.sudo_as_admin_successful
 /.thumbnails
 /.Trash
@@ -64,4 +65,5 @@
 /.vim
 /.wireshark
 /.xchat2
+/.Xauthority
 /.xsession-errors*
