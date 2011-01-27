@@ -153,6 +153,13 @@ fi
 
 
 #
+#     nvm
+#
+
+[ -d ~/.nvm ] && . ~/.nvm/nvm.sh
+
+
+#
 #     Vim
 #
 
