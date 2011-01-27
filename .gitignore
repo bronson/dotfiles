@@ -5,7 +5,7 @@
 /[^.]*
 
 # ignore private files (sensitive passwords, etc)
-/.bash/private*
+/.bashrc-private
 
 /.dotfiles.git
 /.*_history
@@ -50,6 +50,7 @@
 /.mozilla
 /.mplayer
 /.NERDTreeBookmarks
+/.nvm
 /.p4tickets
 /.pki
 /.printer-groups.xml
