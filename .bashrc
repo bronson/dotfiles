@@ -3,6 +3,7 @@
 alias dotgit="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
 
 
+
 #
 #     Environment
 #
@@ -23,6 +24,7 @@ __expand_tilde_by_ref() { return 0; }
 source ~/.bash_prompt
 
 
+
 #
 #     Colors
 #
@@ -34,6 +36,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 export GREP_OPTIONS='--color=auto'
+
 
 
 #
@@ -80,7 +83,6 @@ alias gs='git s'
 
 # calculator: "? 10*2+3" will print 23
 ? () { echo "$*" | bc -l; }
-
 
 
 
@@ -136,6 +138,7 @@ if [ "Darwin" == "$(uname)" ]; then
 fi
 
 
+
 #
 #     Ruby
 #
@@ -159,6 +162,7 @@ fi
 [ -d ~/.nvm ] && . ~/.nvm/nvm.sh
 
 
+
 #
 #     Vim
 #
@@ -172,4 +176,9 @@ export MANPAGER='sh -c "col -bx | view - -c \":set ft=man noml\" -c \":nmap q :q
 
 
 
+#
+#     Private Customizations
+#
+
+[ -f ~/.bashrc-private ] && . ~/.bashrc-private
 
