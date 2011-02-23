@@ -70,6 +70,7 @@ export HISTFILESIZE=5000                    # history file size
 alias ..='cd ..'
 alias ...='cd ../..'
 
+alias sl=ls
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -lF'
@@ -87,6 +88,11 @@ alias gl='git log'
 alias glp='git log -p'
 alias gls='git log --stat'
 alias gs='git s'
+
+if [ -f /bin/vi ] && [ -f /usr/bin/vim ]; then
+  # Fedora 14 is friggin weird: can't use /bin/vi and can't remove it either
+  alias vi=/usr/bin/vim
+fi
 
 # calculator: "? 10*2+3" will print 23
 ? () { echo "$*" | bc -l; }
