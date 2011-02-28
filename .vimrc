@@ -44,6 +44,8 @@ set history=1000               "store lots of :cmdline history
 
 set hidden          " allow buffers to go into the background without needing to save
 
+let g:is_posix = 1  " vim's default is archaic bourne shell, bring it up to the 90s.
+
 set visualbell      " don't beep constantly, it's annoying.
 set t_vb=           " and don't flash the screen either (terminal anyway...
 set guioptions-=T   " hide gvim's toolbar by default
