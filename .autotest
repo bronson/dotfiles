@@ -1,10 +1,21 @@
-#  http://rubydoc.info/gems/autotest/4.4.1/frames
+# Holy crap Ubuntu's notifications are horrid.  They appear onscreen for
+# a few seconds apiece, one after the other, and can't be dismissed.
+# So, if you make a few quick changes to your files, you get distracting
+# flashing in the upper-right corner of your screen for 20 seconds.
+# It's absolutely unusable.
+# require "test_notifier/runner/autotest"
 
-require 'autotest/growl'
-require 'autotest/fsevent'
+# Wish this worked but it just appears to hang.
+# require 'autotest/inotify'
+
 require 'autotest/restart'
 
+
+Autotest.options[:quiet] = true
+
 Autotest.add_hook :initialize do |at|
-  %w[.sqlite. doc/ db/ log/ tmp/ .svn/ .hg/ .git/ vendor/ spec/fixtures/].each {|exception| at.add_exception(exception)}
+  %w[.sqlite. doc/ db/ log/ tmp/ .svn/ .hg/ .git/ vendor/ spec/fixtures/].each { |exception|
+    at.add_exception exception
+  }
 end
 
