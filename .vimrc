@@ -210,10 +210,7 @@ let g:CommandTMatchWindowAtTop = 1
 map <unique> <Leader>. <Plug>RubyTestRunLast
 let g:rubytest_in_quickfix = 1
 
-" BUNDLE: git://github.com/tsaleh/vim-align.git
-" The Align plugin declares a TON of maps, few of which are useful
-" and some of which conflict with other mappings (like \w and \m).
-let g:loaded_AlignMapsPlugin = "v41"
+" BUNDLE: https://github.com/godlygeek/tabular.git
 
 " BUNDLE: git://github.com/tpope/vim-endwise.git
 " BUNDLE: git://github.com/tpope/vim-repeat.git
