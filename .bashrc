@@ -1,5 +1,9 @@
 # This file sets up a quality Bash environment both on Linux and OSX.
 
+# TODO: sort out what should be in .profile and what should be in .bashrc
+#       bash manpage, in the INVOCATION section
+# TODO: set a timeout on the prompt git stuff, it can take forever on macosx
+
 alias dotgit="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
 
 
@@ -7,6 +11,10 @@ alias dotgit="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
 #
 #     Environment
 #
+
+# my home dir is behind a symlink, sometimes bash doesn't recognize this.
+# force the prompt to show the home dir when you're home.
+[ "$PWD" != "$HOME" ] && [ "$PWD" -ef "$HOME" ] && cd
 
 export LESS="--RAW-CONTROL-CHARS"    # interpret any embedded ansi escapes
 export PAGER='less'                  # use less to view manpages, etc
