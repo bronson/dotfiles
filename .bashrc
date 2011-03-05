@@ -69,14 +69,13 @@ export HISTFILESIZE=5000                    # history file size
 
 alias ..='cd ..'
 alias ...='cd ../..'
-alias md='mkdir -p'
-alias mdcd='f () { mkdir -p $1 && cd $1; }; f'
 
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -lF'
 alias lla='ls -alF'
 
+alias gre=grep
 alias tf='tail -f'
 
 alias ga='git add'
