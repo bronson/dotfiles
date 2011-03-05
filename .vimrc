@@ -129,6 +129,12 @@ nmap <silent> <C-p> :cp<CR>
 colorscheme evening
 
 
+" highlight rspec keywords properly
+" modified from tpope and technicalpickles: https://gist.github.com/64635
+autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject
+highlight def link rubyRspec Function
+
+
 " Plugins:
 
 runtime macros/matchit.vim  " enable vim's built-in matchit script (make % bounce between tags, begin/end, etc)
