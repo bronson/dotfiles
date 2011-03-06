@@ -146,7 +146,7 @@ nmap <Space>d :NERDTreeToggle<cr>
 nmap <Space>D :NERDTreeFind<cr>
 
 
-" BUNDLE: git://github.com/ddollar/nerdcommenter.git
+" BUNDLE: git://github.com/scrooloose/nerdcommenter.git
 " Use Control-/ to toggle comments
 map <C-/> <plug>NERDCommenterToggle<CR>
 " And Command-/ works on the Mac
@@ -205,7 +205,7 @@ let g:CommandTMatchWindowAtTop = 1
 
 " BUNDLE: git://github.com/tpope/vim-fugitive.git
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
+" TODO: BUNDLE: git://github.com/int3/vim-extradite.git
 
 " Newer supertab has a problem, so lock it to a known working version.
 " https://github.com/ervandew/supertab/commit/cd2c9f070654e596600d12e476617ff92ddfa255#commitcomment-210140
@@ -224,8 +224,10 @@ let g:yaifa_verbosity = 0
 let g:yaifa_max_lines = 2048
 
 " BUNDLE: http://github.com/vim-scripts/AutoTag.git
+" BUNDLE: git://github.com/robgleeson/vim-markdown-preview.git
 
 " Syntax Files:
+" BUNDLE: git://github.com/pangloss/vim-javascript.git
 " BUNDLE: git://github.com/vim-scripts/jQuery.git
 " BUNDLE: git://github.com/tsaleh/vim-shoulda.git
 " BUNDLE: git://github.com/tpope/vim-git.git
@@ -234,8 +236,16 @@ let g:yaifa_max_lines = 2048
 " BUNDLE: git://github.com/tpope/vim-markdown.git
 " BUNDLE: git://github.com/timcharper/textile.vim.git
 " BUNDLE: git://github.com/kchmck/vim-coffee-script.git
+" BUNDLE: git://github.com/ajf/puppet-vim.git
+" BUNDLE: git://github.com/bdd/vim-scala.git
+
+" TODO: git://github.com/hallettj/jslint.vim.git
+" TODO: git://github.com/scrooloose/syntastic.git
+"
 " Color Schemes:
 " BUNDLE: git://github.com/tpope/vim-vividchalk.git
+" BUNDLE: git://github.com/wgibbs/vim-irblack.git
+" No:BUNDLE: git://github.com/vim-scripts/Color-Sampler-Pack.git
 "
 " # vim-ruby-debugger's directory layout doesn't work with pathogen.
 " # http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen#comment_348
