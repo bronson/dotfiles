@@ -1,7 +1,8 @@
 " vimsy's .vimrc
 "
 " Don't use abbreviations!  Spelling things out makes grepping easy.
-" Plugins are managed with https://github.com/bronson/vim-update-bundles
+" After installing this .vimrc, run vim-update-bundles to install the
+" plugins: https://github.com/bronson/vim-update-bundles
 
 
 " Let Pathogen bring in all the plugins
@@ -210,11 +211,6 @@ let g:CommandTMatchWindowAtTop = 1
 " indent text objects: ai, ii, (include line below) aI, iI
 "   ai,ii work best for Python, aI,II work best for Ruby/C/Perl
 " BUNDLE: git://github.com/michaeljsmith/vim-indent-object.git
-
-" BUNDLE: git://github.com/janx/vim-rubytest.git
-" taglist currently uses \l. TODO: this will need to be resolved.
-map <unique> <Leader>. <Plug>RubyTestRunLast
-let g:rubytest_in_quickfix = 1
 
 " BUNDLE: https://github.com/godlygeek/tabular.git
 
