@@ -162,11 +162,11 @@ xmap S <Plug>Vsurround
 
 " BUNDLE: http://github.com/vim-scripts/taglist.vim.git
 nmap <Space>l :TlistToggle<cr>
+let Tlist_Use_Right_Window = 1
 
 " BUNDLE: http://github.com/vim-scripts/bufexplorer.zip.git
 nmap <Space>b :BufExplorer<cr>
 
-" disable command-t since I can't get it to work on snow leopard with macports and rvm.  :(
 " BUNDLE: git://git.wincent.com/command-t.git
 " ensure we compile with the system ruby if rvm is installed
 " BUNDLE-COMMAND: if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi
