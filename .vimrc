@@ -160,11 +160,11 @@ map <C-_> <plug>NERDCommenterToggle<CR>
 xmap S <Plug>Vsurround
 
 
-" BUNDLE: http://github.com/vim-scripts/taglist.vim.git
+" BUNDLE: git://github.com/vim-scripts/taglist.vim.git
 nmap <Space>l :TlistToggle<cr>
 let Tlist_Use_Right_Window = 1
 
-" BUNDLE: http://github.com/vim-scripts/bufexplorer.zip.git
+" BUNDLE: git://github.com/vim-scripts/bufexplorer.zip.git
 nmap <Space>b :BufExplorer<cr>
 
 " BUNDLE: git://git.wincent.com/command-t.git
@@ -185,6 +185,7 @@ let g:CommandTMatchWindowAtTop = 1
 " BUNDLE: git://github.com/msanders/snipmate.vim.git
 " BUNDLE: git://github.com/scrooloose/snipmate-snippets.git
 " BUNDLE: git://github.com/vim-scripts/IndexedSearch.git
+" BUNDLE: git://github.com/bronson/rspec-vimbundle.git
 "
 "    text objects    :he text-objects
 " TODO: rewrite ruby-block-conv to use textobj-rubyblock
@@ -198,19 +199,18 @@ let g:CommandTMatchWindowAtTop = 1
 "   ai,ii work best for Python, aI,II work best for Ruby/C/Perl
 " BUNDLE: git://github.com/michaeljsmith/vim-indent-object.git
 
-" BUNDLE: https://github.com/godlygeek/tabular.git
+" BUNDLE: git://github.com/godlygeek/tabular.git
 
 " BUNDLE: git://github.com/tpope/vim-endwise.git
 " BUNDLE: git://github.com/tpope/vim-repeat.git
 
 " BUNDLE: git://github.com/tpope/vim-fugitive.git
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-" TODO: BUNDLE: git://github.com/int3/vim-extradite.git
 
 " Newer supertab has a problem, so lock it to a known working version.
 " https://github.com/ervandew/supertab/commit/cd2c9f070654e596600d12e476617ff92ddfa255#commitcomment-210140
 "     (let let g:SuperTabCrMapping = 0 works too)
-" BUNDLE: http://github.com/ervandew/supertab.git 56f313f27
+" BUNDLE: git://github.com/ervandew/supertab.git 56f313f27
 
 " BUNDLE: git://github.com/bronson/vim-visual-star-search.git
 " BUNDLE: git://github.com/bronson/vim-trailing-whitespace.git
@@ -223,7 +223,7 @@ let g:yaifa_verbosity = 0
 " can't figure it out in 2048 lines there's no need to churn thru 14000 more.
 let g:yaifa_max_lines = 2048
 
-" BUNDLE: http://github.com/vim-scripts/AutoTag.git
+" BUNDLE: git://github.com/vim-scripts/AutoTag.git
 " BUNDLE: git://github.com/robgleeson/vim-markdown-preview.git
 
 " Syntax Files:
@@ -239,17 +239,16 @@ let g:yaifa_max_lines = 2048
 " BUNDLE: git://github.com/ajf/puppet-vim.git
 " BUNDLE: git://github.com/bdd/vim-scala.git
 
-" TODO: git://github.com/hallettj/jslint.vim.git
-" TODO: git://github.com/scrooloose/syntastic.git
-"
 " Color Schemes:
 " BUNDLE: git://github.com/tpope/vim-vividchalk.git
 " BUNDLE: git://github.com/wgibbs/vim-irblack.git
-" No:BUNDLE: git://github.com/vim-scripts/Color-Sampler-Pack.git
-"
-" # vim-ruby-debugger's directory layout doesn't work with pathogen.
-" # http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen#comment_348
-" # :BUNDLE git://github.com/astashov/vim-ruby-debugger.git
 
-" neat idea but I don't use it
-" # BUNDLE: git://github.com/rson/vim-conque.git
+" TODO: apparently supertab is fixed
+" TODO: BUNDLE: git://github.com/majutsushi/tagbar.git  (instead of taglist)
+" TODO: BUNDLE: git://github.com/hallettj/jslint.vim.git
+" TODO: BUNDLE: git://github.com/ecomba/vim-ruby-refactoring.git
+" TODO: BUNDLE: git://github.com/scrooloose/syntastic.git
+" TODO: BUNDLE: git://github.com/int3/vim-extradite.git
+" TODO: BUNDLE: git://github.com/rson/vim-conque.git
+" TODO: BUNDLE: git://github.com/astashov/vim-ruby-debugger.git
+" TODO: the only decent gdb frontend looks to be pyclewn?
