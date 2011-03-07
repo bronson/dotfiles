@@ -205,12 +205,10 @@ let g:CommandTMatchWindowAtTop = 1
 " BUNDLE: git://github.com/tpope/vim-repeat.git
 
 " BUNDLE: git://github.com/tpope/vim-fugitive.git
+" TODO: this prompt might cause huge delays on MacOS X
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
-" Newer supertab has a problem, so lock it to a known working version.
-" https://github.com/ervandew/supertab/commit/cd2c9f070654e596600d12e476617ff92ddfa255#commitcomment-210140
-"     (let let g:SuperTabCrMapping = 0 works too)
-" BUNDLE: git://github.com/ervandew/supertab.git 56f313f27
+" BUNDLE: git://github.com/ervandew/supertab.git
 
 " BUNDLE: git://github.com/bronson/vim-visual-star-search.git
 " BUNDLE: git://github.com/bronson/vim-trailing-whitespace.git
