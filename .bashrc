@@ -29,7 +29,7 @@ export PS1="\\u@\h \\w\\$ "          # simple prompt shows user, host and path
 _expand() { return 0; }
 __expand_tilde_by_ref() { return 0; }
 
-source ~/.bash_prompt
+[ "$PS1" ] && source ~/.bash_prompt
 
 
 
