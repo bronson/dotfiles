@@ -159,10 +159,8 @@ map <C-_> <plug>NERDCommenterToggle<CR>
 " tell surround not to break the visual s keystroke (:help vs)
 xmap S <Plug>Vsurround
 
-
-" BUNDLE: git://github.com/vim-scripts/taglist.vim.git
-nmap <Space>l :TlistToggle<cr>
-let Tlist_Use_Right_Window = 1
+" BUNDLE: git://github.com/majutsushi/tagbar.git
+nmap <Space>l :TagbarToggle<cr>
 
 " BUNDLE: git://github.com/vim-scripts/bufexplorer.zip.git
 nmap <Space>b :BufExplorer<cr>
@@ -257,8 +255,6 @@ noremap S-<F7>  :call g:RubyDebugger.exit()<CR>
 " BUNDLE: git://github.com/tpope/vim-vividchalk.git
 " BUNDLE: git://github.com/wgibbs/vim-irblack.git
 
-" TODO: apparently supertab is fixed
-" TODO: BUNDLE: git://github.com/majutsushi/tagbar.git  (instead of taglist)
 " TODO: BUNDLE: git://github.com/hallettj/jslint.vim.git
 " TODO: BUNDLE: git://github.com/ecomba/vim-ruby-refactoring.git
 " TODO: BUNDLE: git://github.com/scrooloose/syntastic.git
