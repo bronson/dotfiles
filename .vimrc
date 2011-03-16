@@ -205,7 +205,7 @@ let g:CommandTMatchWindowAtTop = 1
 " BUNDLE: git://github.com/tpope/vim-repeat.git
 
 " BUNDLE: git://github.com/tpope/vim-fugitive.git
-" TODO: this prompt might cause huge delays on MacOS X
+" TODO: this prompt seems to cause huge delays with big repos on MacOS X
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " BUNDLE: git://github.com/ervandew/supertab.git
@@ -220,6 +220,25 @@ let g:yaifa_verbosity = 0
 
 " BUNDLE: git://github.com/vim-scripts/AutoTag.git
 " BUNDLE: git://github.com/robgleeson/vim-markdown-preview.git
+
+
+" The Ruby debugger only works in mvim!  It won't work in a terminal.
+" BUNDLE: git://github.com/astashov/vim-ruby-debugger.git
+" let g:ruby_debugger_debug_mode = 1
+let g:ruby_debugger_progname = 'mvim'   " TODO: how to autodetect this?
+" Use Eclipse-like keystrokes: F5=step, F6=next, F7=return
+" If on a Mac you must hit Fn-F5 or switch "Use all F1..." in Keyboard control panel.
+" Also, the Mac seems to eat most Control-Fkeys so use Shift-Fkey as a synonym.
+noremap <F5>    :call g:RubyDebugger.step()<CR>
+noremap C-<F5>  :call g:RubyDebugger.continue()<CR>
+noremap S-<F5>  :call g:RubyDebugger.continue()<CR>
+noremap <F6>    :call g:RubyDebugger.next()<CR>
+noremap C-<F6>  :call g:RubyDebugger.continue()<CR>
+noremap S-<F6>  :call g:RubyDebugger.continue()<CR>
+noremap <F7>    :call g:RubyDebugger.finish()<CR>
+noremap C-<F7>  :call g:RubyDebugger.exit()<CR>
+noremap S-<F7>  :call g:RubyDebugger.exit()<CR>
+
 
 " Syntax Files:
 " BUNDLE: git://github.com/pangloss/vim-javascript.git
@@ -245,5 +264,4 @@ let g:yaifa_verbosity = 0
 " TODO: BUNDLE: git://github.com/scrooloose/syntastic.git
 " TODO: BUNDLE: git://github.com/int3/vim-extradite.git
 " TODO: BUNDLE: git://github.com/rson/vim-conque.git
-" TODO: BUNDLE: git://github.com/astashov/vim-ruby-debugger.git
 " TODO: the only decent gdb frontend looks to be pyclewn?
