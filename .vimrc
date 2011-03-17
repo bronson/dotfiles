@@ -245,7 +245,8 @@ noremap S-<F7>  :call g:RubyDebugger.exit()<CR>
 " BUNDLE: git://github.com/tpope/vim-git.git
 " BUNDLE: git://github.com/tpope/vim-cucumber.git
 " BUNDLE: git://github.com/tpope/vim-haml.git
-" BUNDLE: git://github.com/tpope/vim-markdown.git
+" should move back to hallison or plasticboy markdown when they pick up new changes
+" BUNDLE: git://github.com/gmarik/vim-markdown.git
 " BUNDLE: git://github.com/timcharper/textile.vim.git
 " BUNDLE: git://github.com/kchmck/vim-coffee-script.git
 " BUNDLE: git://github.com/ajf/puppet-vim.git
