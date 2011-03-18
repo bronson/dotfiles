@@ -1,5 +1,6 @@
 # This file sets up a quality Bash environment both on Linux and OSX.
 
+# TODO: something in here screws up filename completion, i.e. "30 for 30"
 # TODO: sort out what should be in .profile and what should be in .bashrc
 #       bash manpage, in the INVOCATION section
 # TODO: set a timeout on the prompt git stuff, it can take forever on macosx
