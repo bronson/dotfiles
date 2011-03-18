@@ -30,7 +30,7 @@ export PS1="\\u@\h \\w\\$ "          # simple prompt shows user, host and path
 _expand() { return 0; }
 __expand_tilde_by_ref() { return 0; }
 
-source ~/.bash_prompt
+[ "$PS1" ] && source ~/.bash_prompt
 
 
 
@@ -71,6 +71,7 @@ export HISTFILESIZE=5000                    # history file size
 alias ..='cd ..'
 alias ...='cd ../..'
 
+alias sl=ls
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -lF'
@@ -84,10 +85,16 @@ alias gb='git b'
 alias gco='git checkout'
 alias gci='git commit'
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias gl='git log'
 alias glp='git log -p'
 alias gls='git log --stat'
-alias gs='git s'
+alias gs='git s'   # conflict's with ghostscript's gs, no big deal
+
+if [ -f /bin/vi ] && [ -f /usr/bin/vim ]; then
+  # Fedora 14 is friggin weird: can't use /bin/vi and can't remove it either
+  alias vi=/usr/bin/vim
+fi
 
 # calculator: "? 10*2+3" will print 23
 ? () { echo "$*" | bc -l; }

@@ -1,50 +1,63 @@
-        RED="\[\033[0;31m\]"
-     YELLOW="\[\033[0;33m\]"
-      GREEN="\[\033[0;32m\]"
-       BLUE="\[\033[0;34m\]"
-  LIGHT_RED="\[\033[1;31m\]"
-LIGHT_GREEN="\[\033[1;32m\]"
-      WHITE="\[\033[1;37m\]"
- LIGHT_GRAY="\[\033[0;37m\]"
- COLOR_NONE="\[\e[0m\]"
+prompt_function() {
+  local previous_return_value=$?;
 
-function parse_git_branch {
+  local         BLACK="\[\033[0;30m\]"
+  local           RED="\[\033[0;31m\]"
+  local         GREEN="\[\033[0;32m\]"
+  local        YELLOW="\[\033[0;33m\]"
+  local          BLUE="\[\033[0;34m\]"
+  local       MAGENTA="\[\033[0;35m\]"
+  local          CYAN="\[\033[0;36m\]"
+  local    LIGHT_GRAY="\[\033[0;37m\]"
+  local     LIGHT_RED="\[\033[1;31m\]"
+  local   LIGHT_GREEN="\[\033[1;32m\]"
+  local  LIGHT_YELLOW="\[\033[1;33m\]"
+  local    LIGHT_BLUE="\[\033[1;34m\]"
+  local LIGHT_MAGENTA="\[\033[1;35m\]"
+  local    LIGHT_CYAN="\[\033[1;36m\]"
+  local         WHITE="\[\033[1;37m\]"
+  local    COLOR_NONE="\[\e[0m\]"
+
+  local unclean_state="${LIGHT_YELLOW}⚡"
+  local changes_to_push="${LIGHT_YELLOW}↑"
+  local changes_to_pull="${LIGHT_YELLOW}↑"
+  local changes_to_push_and_pull="${LIGHT_YELLOW}↕"
 
   git rev-parse --git-dir &> /dev/null
-  git_status="$(git status 2> /dev/null)"
-  branch_pattern="^# On branch ([^${IFS}]*)"
-  remote_pattern="# Your branch is (.*) of"
-  diverge_pattern="# Your branch and (.*) have diverged"
+  local git_status="$(git status 2> /dev/null)"
+  local branch_pattern="^# On branch ([^${IFS}]*)"
+  local remote_pattern="# Your branch is (.*) of"
+  local diverge_pattern="# Your branch and (.*) have diverged"
+
   if [[ ! ${git_status} =~ "working directory clean" ]]; then
-    state="${RED}⚡"
+    local state="$unclean_state"
   fi
+
   # add an else if or two here if you want to get more specific
   if [[ ${git_status} =~ ${remote_pattern} ]]; then
     if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
-      remote="${YELLOW}↑"
+      local remote="$changes_to_push"
     else
-      remote="${YELLOW}↓"
+      local remote="$changes_to_pull"
     fi
   fi
   if [[ ${git_status} =~ ${diverge_pattern} ]]; then
-    remote="${YELLOW}↕"
+    local remote="$changes_to_push_and_pull"
   fi
   if [[ ${git_status} =~ ${branch_pattern} ]]; then
-    branch=${BASH_REMATCH[1]}
-    echo " (${branch})${remote}${state}"
+    local branch=${BASH_REMATCH[1]}
+    local git_branch=" (${branch})${remote}${state}"
+  fi
+
+  local path="${LIGHT_BLUE}\w"
+  local branch="${LIGHT_MAGENTA}$git_branch"
+
+  local prompt="${TITLEBAR}$path$branch${COLOR_NONE}"
+  if test $previous_return_value -eq 0; then
+    PS1="${prompt}\\\$ "
+  else
+    PS1="${prompt}${RED}\\\$${COLOR_NONE} "
   fi
 }
 
-function prompt_func() {
-    previous_return_value=$?;
-    # prompt="${TITLEBAR}$RED\w$GREEN$(__git_ps1)$YELLOW$(git_dirty_flag)$COLOR_NONE"
-    prompt="${TITLEBAR}${RED}\w${GREEN}$(parse_git_branch)${COLOR_NONE}"
-    if test $previous_return_value -eq 0
-    then
-        PS1="${prompt}\$ "
-    else
-        PS1="${prompt}${RED}\$${COLOR_NONE} "
-    fi
-}
-
-PROMPT_COMMAND=prompt_func
+PROMPT_COMMAND=prompt_function

@@ -159,10 +159,8 @@ map <C-_> <plug>NERDCommenterToggle<CR>
 " tell surround not to break the visual s keystroke (:help vs)
 xmap S <Plug>Vsurround
 
-
-" BUNDLE: git://github.com/vim-scripts/taglist.vim.git
-nmap <Space>l :TlistToggle<cr>
-let Tlist_Use_Right_Window = 1
+" BUNDLE: git://github.com/majutsushi/tagbar.git
+nmap <Space>l :TagbarToggle<cr>
 
 " BUNDLE: git://github.com/vim-scripts/bufexplorer.zip.git
 nmap <Space>b :BufExplorer<cr>
@@ -205,7 +203,7 @@ let g:CommandTMatchWindowAtTop = 1
 " BUNDLE: git://github.com/tpope/vim-repeat.git
 
 " BUNDLE: git://github.com/tpope/vim-fugitive.git
-" TODO: this prompt might cause huge delays on MacOS X
+" TODO: this prompt seems to cause huge delays with big repos on MacOS X
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " BUNDLE: git://github.com/ervandew/supertab.git
@@ -221,6 +219,25 @@ let g:yaifa_verbosity = 0
 " BUNDLE: git://github.com/vim-scripts/AutoTag.git
 " BUNDLE: git://github.com/robgleeson/vim-markdown-preview.git
 
+
+" The Ruby debugger only works in mvim!  It won't work in a terminal.
+" BUNDLE: git://github.com/astashov/vim-ruby-debugger.git
+" let g:ruby_debugger_debug_mode = 1
+let g:ruby_debugger_progname = 'mvim'   " TODO: how to autodetect this?
+" Use Eclipse-like keystrokes: F5=step, F6=next, F7=return
+" If on a Mac you must hit Fn-F5 or switch "Use all F1..." in Keyboard control panel.
+" Also, the Mac seems to eat most Control-Fkeys so use Shift-Fkey as a synonym.
+noremap <F5>    :call g:RubyDebugger.step()<CR>
+noremap C-<F5>  :call g:RubyDebugger.continue()<CR>
+noremap S-<F5>  :call g:RubyDebugger.continue()<CR>
+noremap <F6>    :call g:RubyDebugger.next()<CR>
+noremap C-<F6>  :call g:RubyDebugger.continue()<CR>
+noremap S-<F6>  :call g:RubyDebugger.continue()<CR>
+noremap <F7>    :call g:RubyDebugger.finish()<CR>
+noremap C-<F7>  :call g:RubyDebugger.exit()<CR>
+noremap S-<F7>  :call g:RubyDebugger.exit()<CR>
+
+
 " Syntax Files:
 " BUNDLE: git://github.com/pangloss/vim-javascript.git
 " BUNDLE: git://github.com/vim-scripts/jQuery.git
@@ -228,7 +245,8 @@ let g:yaifa_verbosity = 0
 " BUNDLE: git://github.com/tpope/vim-git.git
 " BUNDLE: git://github.com/tpope/vim-cucumber.git
 " BUNDLE: git://github.com/tpope/vim-haml.git
-" BUNDLE: git://github.com/tpope/vim-markdown.git
+" should move back to hallison or plasticboy markdown when they pick up new changes
+" BUNDLE: git://github.com/gmarik/vim-markdown.git
 " BUNDLE: git://github.com/timcharper/textile.vim.git
 " BUNDLE: git://github.com/kchmck/vim-coffee-script.git
 " BUNDLE: git://github.com/ajf/puppet-vim.git
@@ -238,12 +256,9 @@ let g:yaifa_verbosity = 0
 " BUNDLE: git://github.com/tpope/vim-vividchalk.git
 " BUNDLE: git://github.com/wgibbs/vim-irblack.git
 
-" TODO: apparently supertab is fixed
-" TODO: BUNDLE: git://github.com/majutsushi/tagbar.git  (instead of taglist)
 " TODO: BUNDLE: git://github.com/hallettj/jslint.vim.git
 " TODO: BUNDLE: git://github.com/ecomba/vim-ruby-refactoring.git
 " TODO: BUNDLE: git://github.com/scrooloose/syntastic.git
 " TODO: BUNDLE: git://github.com/int3/vim-extradite.git
 " TODO: BUNDLE: git://github.com/rson/vim-conque.git
-" TODO: BUNDLE: git://github.com/astashov/vim-ruby-debugger.git
 " TODO: the only decent gdb frontend looks to be pyclewn?

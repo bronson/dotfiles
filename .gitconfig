@@ -81,7 +81,6 @@
   ra    = rebase --abort
   rc    = rebase --continue
   ri    = rebase --interactive
-  rih   = "!f() { git rebase -i HEAD$1; }; f "
   rm-a  = "!git ls-files -z --deleted | xargs -0 git rm"
   rst   = reset
   s     = status -sb
