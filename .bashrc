@@ -76,7 +76,7 @@ alias la='ls -A'
 alias ll='ls -lF'
 alias lla='ls -alF'
 
-alias gre=grep
+alias gre=grep    # thanks to vim's :gre command
 alias tf='tail -f'
 
 alias ga='git add'
@@ -95,31 +95,8 @@ if [ -f /bin/vi ] && [ -f /usr/bin/vim ]; then
   alias vi=/usr/bin/vim
 fi
 
-# calculator: "? 10*2+3" will print 23
+# calculator: "? 3+13*3" will print 42
 ? () { echo "$*" | bc -l; }
-
-
-
-#
-#     Completion
-#
-
-# This file sets up bash completion on all platforms.  Linux should work out
-# of the box but you'll need to 'port install bash-completion' on MacOS X.
-
-[ -f /etc/bash_completion ] && source /etc/bash_completion
-
-
-# For some reason macports git doesn't install its completion file.
-[ -f /opt/local/share/doc/git-core/contrib/completion/git-completion.bash ] && \
-  source /opt/local/share/doc/git-core/contrib/completion/git-completion.bash
-
-
-# if newer bash is installed by brew or ports, use its completion
-[ -f /opt/local/etc/bash_completion ] && source /opt/local/etc/bash_completion
-[ -f $BREW_HOME/etc/bash_completion ] && source $BREW_HOME/etc/bash_completion
-
-
 
 
 #
@@ -147,6 +124,26 @@ if [ "Darwin" == "$(uname)" ]; then
     alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
     alias gvim=mvim
 
+fi
+
+
+
+#
+#     Completion
+#
+
+# Install the bash-completion package on MacOS X using port or brew.
+if [ -f /opt/local/etc/bash_completion ]; then
+  source /opt/local/etc/bash_completion
+elif [ -n "$BREW_HOME" ] && [ -f "$BREW_HOME/etc/bash_completion" ]; then
+  source "$BREW_HOME/etc/bash_completion"
+elif [ -f /etc/bash_completion ]; then
+  source /etc/bash_completion
+fi
+
+# For some reason macports git doesn't install its completion file.
+if [ -f /opt/local/share/doc/git-core/contrib/completion/git-completion.bash ]; then
+  source /opt/local/share/doc/git-core/contrib/completion/git-completion.bash
 fi
 
 
