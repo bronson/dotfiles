@@ -160,14 +160,8 @@ fi
 
 # load rvm if it's available
 [ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
-
-# Launch macvim on the mac, otherwise gvim
-if [ "$(uname)" = "Darwin" ]; then
-  export GEM_EDITOR=mvim BUNDLER_EDITOR=mvim
-else
-  export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
-fi
-
+# use gvim instead of terminal vim to edit bundles
+export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
 
 
 #
