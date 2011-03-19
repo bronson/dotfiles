@@ -21,8 +21,6 @@ export LESS="--RAW-CONTROL-CHARS"    # interpret any embedded ansi escapes
 export PAGER='less'                  # use less to view manpages, etc
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)" # let less show non-text files too
 export PS1="\\u@\h \\w\\$ "          # simple prompt shows user, host and path
-
-[ -f /etc/bash_completion ] && source /etc/bash_completion
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
 
 # Disable annoying ~ expansion
