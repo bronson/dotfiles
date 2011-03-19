@@ -6,6 +6,7 @@
 # TODO: set a timeout on the prompt git stuff, it can take forever on macosx
 
 alias dotgit="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
+complete -o default -o nospace -F _git dotgit
 
 
 
@@ -118,8 +119,6 @@ fi
 [ -f /opt/local/etc/bash_completion ] && source /opt/local/etc/bash_completion
 [ -f $BREW_HOME/etc/bash_completion ] && source $BREW_HOME/etc/bash_completion
 
-# allow completion to work with .git command too, if completion is loaded
-type -t _git > /dev/null && complete -o default -o nospace -F _git "$dotgit_cmd"
 
 
 
