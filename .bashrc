@@ -90,6 +90,8 @@ alias glp='git log -p'
 alias gls='git log --stat'
 alias gs='git s'   # conflict's with ghostscript's gs, no big deal
 
+alias jk='jekyll --auto --server'
+
 if [ -f /bin/vi ] && [ -f /usr/bin/vim ]; then
   # Fedora 14 is friggin weird: can't use /bin/vi and can't remove it either
   alias vi=/usr/bin/vim
