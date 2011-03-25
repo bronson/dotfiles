@@ -184,7 +184,7 @@ let g:CommandTMatchWindowAtTop = 1
 " BUNDLE: git://github.com/msanders/snipmate.vim.git
 " BUNDLE: git://github.com/scrooloose/snipmate-snippets.git
 " BUNDLE: git://github.com/vim-scripts/IndexedSearch.git
-" BUNDLE: git://github.com/bronson/rspec-vimbundle.git
+" BUNDLE: git://github.com/bronson/vim-runtest.git
 "
 "    text objects    :he text-objects
 " TODO: rewrite ruby-block-conv to use textobj-rubyblock
