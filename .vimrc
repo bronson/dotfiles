@@ -104,6 +104,8 @@ nmap Y y$
 
 " Make the quickfix window wrap no matter the setting of nowrap
 au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
+" 'q' inside quickfix window closes it (like nerdtree, bufexplorer, etc)
+au BufWinEnter * if &buftype == 'quickfix' | map q :cclose<CR> | endif
 
 
 " Make Alt-Arrows switch between windows (like C-W h, etc)
