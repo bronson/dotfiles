@@ -23,6 +23,7 @@ export PAGER='less'                  # use less to view manpages, etc
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)" # let less show non-text files too
 export PS1="\\u@\h \\w\\$ "          # simple prompt shows user, host and path
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
+[ -d "$HOME/Dropbox/bin" ] && export PATH="$HOME/Dropbox/bin:$PATH"
 
 # Disable annoying ~ expansion
 # http://www.linuxquestions.org/questions/linux-software-2/how-to-stop-bash-from-replacing-%7E-with-home-username-643162/#post3162026
