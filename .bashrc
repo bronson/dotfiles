@@ -172,6 +172,7 @@ if [ -d ~/.nvm ]; then
   # install the npm completion file
   . "$(npm explore npm pwd 2>/dev/null)"/npm-completion.sh
 fi
+export PATH="node_modules/.bin:$PATH"
 
 
 #
