@@ -166,8 +166,7 @@ export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
 
 if [ -d ~/.nvm ]; then
   . ~/.nvm/nvm.sh
-  # install the npm completion file
-  . "$(npm explore npm pwd 2>/dev/null)"/npm-completion.sh
+  . <(npm completion)
 fi
 export PATH="node_modules/.bin:$PATH"
 
