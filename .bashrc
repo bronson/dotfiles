@@ -30,8 +30,9 @@ export PS1="\\u@\h \\w\\$ "          # simple prompt shows user, host and path
 _expand() { return 0; }
 __expand_tilde_by_ref() { return 0; }
 
+# flush commans to ~/.bash_history immediately and use a git-friendly bash prompt
 [ "$PS1" ] && source ~/.bash_prompt
-
+PROMPT_COMMAND="history -a; prompt_function"
 
 
 #
@@ -59,9 +60,6 @@ shopt -s checkwinsize                       # check the window size after each c
 export HISTCONTROL="ignoreboth"             # store duplicate lines once, ignore lines beginning with a space
 export HISTIGNORE="&:ls:[bf]g:exit:%[0-9]"  # ignore simple commands
 export HISTFILESIZE=5000                    # history file size
-
-# this doesn't seem to work, might have to switch to zsh
-# export PROMPT_COMMAND="history -n; history -a" # store & reload history every time prompt is displayed, http://briancarper.net/blog/248/
 
 
 #

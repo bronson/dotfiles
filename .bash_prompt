@@ -59,5 +59,3 @@ prompt_function() {
     PS1="${prompt}${RED}\\\$${COLOR_NONE} "
   fi
 }
-
-PROMPT_COMMAND=prompt_function
