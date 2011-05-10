@@ -166,8 +166,6 @@ export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
 
 if [ -d ~/.nvm ]; then
   . ~/.nvm/nvm.sh
-  # start using the most recent node immediately
-  nvm use "$(nvm ls | tail -1 | cut -d ' ' -f 1)" > /dev/null
   # install the npm completion file
   . "$(npm explore npm pwd 2>/dev/null)"/npm-completion.sh
 fi
