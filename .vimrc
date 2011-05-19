@@ -220,7 +220,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 let g:yaifa_verbosity = 0
 
 " BUNDLE: git://github.com/vim-scripts/AutoTag.git
-" BUNDLE: git://github.com/robgleeson/vim-markdown-preview.git
+" BUNDLE: git://github.com/robgleeson/hammer.vim.git
 
 
 " The Ruby debugger only works in mvim!  It won't work in a terminal.
