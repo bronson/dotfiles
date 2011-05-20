@@ -79,16 +79,26 @@ alias gre=grep    # thanks to vim's :gre command
 alias tf='tail -f'
 
 alias ga='git add'
+complete -o default -o nospace -F _git_add ga
 alias gb='git b'
+complete -o default -o nospace -F _git_branch gb
 alias gco='git checkout'
+complete -o default -o nospace -F _git_checkout gco
 alias gci='git commit -v'
 alias gcia='git commit -a -v'
+complete -o default -o nospace -F _git_commit gci
+complete -o default -o nospace -F _git_commit gcia
 alias gd='git diff'
 alias gdc='git diff --cached'
+complete -o default -o nospace -F _git_diff gd
+complete -o default -o nospace -F _git_diff gdc
 alias gl='git log'
 alias glp='git log -p'
 alias gls='git log --stat'
-alias gs='git s'   # conflict's with ghostscript's gs, no big deal
+complete -o default -o nospace -F _git_log gl
+complete -o default -o nospace -F _git_log glp
+complete -o default -o nospace -F _git_log gls
+alias gs='git s'   # conflicts with ghostscript's gs, no big deal
 
 alias jk='jekyll --auto --server'
 

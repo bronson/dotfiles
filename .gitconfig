@@ -4,7 +4,11 @@
   name = Scott Bronson
   email = brons_git@rinspin.com
 [push]
+  # push should only push current branch, not all branches
   default = tracking
+[branch]
+  # git pull should always rebase
+  autosetuprebase = always
 [help]
   autocorrect = 1
 
