@@ -1,0 +1,71 @@
+This applies some settings changes that my fingers require.
+Switching workspaces is done with Control-Left and Control-Right (to be compatible with OS X)
+  Hit Control-Shift-Left or Right to carry the selected window with you.
+Control-Alt-T opens a terminal.
+Alt-Space is not eaten by the window manager.
+
+Used on Fedora 15's LXDE install.  Apply like this:
+
+  patch -p0 < .openbox-config.patch
+
+
+--- openbox-config.orig.xml	2011-05-11 08:06:59.073250471 -0700
++++ .config/openbox/lxde-rc.xml	2011-05-11 08:07:32.765480970 -0700
+@@ -164,13 +164,13 @@
+   <keyboard>
+     <chainQuitKey>C-g</chainQuitKey>
+     <!-- Keybindings for desktop switching -->
+-    <keybind key="C-A-Left">
++    <keybind key="C-Left">
+       <action name="DesktopLeft">
+         <dialog>no</dialog>
+         <wrap>no</wrap>
+       </action>
+     </keybind>
+-    <keybind key="C-A-Right">
++    <keybind key="C-Right">
+       <action name="DesktopRight">
+         <dialog>no</dialog>
+         <wrap>no</wrap>
+@@ -188,13 +188,13 @@
+         <wrap>no</wrap>
+       </action>
+     </keybind>
+-    <keybind key="S-A-Left">
++    <keybind key="C-S-Left">
+       <action name="SendToDesktopLeft">
+         <dialog>no</dialog>
+         <wrap>no</wrap>
+       </action>
+     </keybind>
+-    <keybind key="S-A-Right">
++    <keybind key="C-S-Right">
+       <action name="SendToDesktopRight">
+         <dialog>no</dialog>
+         <wrap>no</wrap>
+@@ -247,11 +247,13 @@
+       <action name="FocusToBottom"/>
+       <action name="Unfocus"/>
+     </keybind>
++    <!--
+     <keybind key="A-space">
+       <action name="ShowMenu">
+         <menu>client-menu</menu>
+       </action>
+     </keybind>
++    -->
+     <!-- Keybindings for window switching -->
+     <keybind key="A-Tab">
+       <action name="NextWindow"/>
+@@ -300,6 +302,11 @@
+         <command>lxtask</command>
+       </action>
+     </keybind>
++    <keybind key="C-A-t">
++      <action name="Execute">
++        <command>lxterminal</command>
++      </action>
++    </keybind>
+   </keyboard>
+   <mouse>
+     <dragThreshold>8</dragThreshold>
