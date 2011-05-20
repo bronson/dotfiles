@@ -200,11 +200,3 @@ export MANPAGER='sh -c "col -bx | view - -c \":set ft=man noml\" -c \":nmap q :q
 
 [ -f ~/.bashrc-private ] && . ~/.bashrc-private
 
-
-# horrible workaround for LXDE's insane lack of startup config
-#if [ "$XDG_CURRENT_DESKTOP" = LXDE ]; then
-#  xmodmap -e 'remove Lock = Caps_Lock'
-#  xmodmap -e 'keysym Caps_Lock = Control_L'
-#  xmodmap -e 'add Control = Control_L'
-#fi
-
