@@ -71,8 +71,15 @@ set shiftwidth=2
 set softtabstop=2
 
 " autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2
-" ruby includes ! and ? in method names (array.empty?)
+" include ! and ? in Ruby method names so you can hit ^] on a.empty?
 autocmd FileType ruby setlocal iskeyword+=!,?
+
+" TODO? Turn on jquery syntax highlighting in jquery files
+" autocmd BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
+" TODO?  save: marks from '10 files, "100 lines in each register
+"  :20 lines of command history, % the bufer list, and put it all in ~/.viminfo
+" set viminfo='10,\"100,:20,%,n~/.viminfo
 
 " wish I could make mapleader be space but vim waits for a second
 " every time you hit the space key.
