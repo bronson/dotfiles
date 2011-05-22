@@ -4,4 +4,4 @@ Name=CapsLock
 Comment=Remap CapsLock to Control
 Exec=sh -c "xmodmap -e 'remove Lock = Caps_Lock'; xmodmap -e 'keysym Caps_Lock = Control_L'; xmodmap -e 'add Control = Control_L'"
 Terminal=false
-OnlyShowIn=LXDE;
+OnlyShowIn=LXDE;XFCE
