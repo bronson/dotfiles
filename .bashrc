@@ -169,6 +169,8 @@ fi
 # use gvim instead of terminal vim to edit bundles
 export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
 
+alias Rails=rails   # darn you Rails.vim
+
 
 #
 #     node.js
