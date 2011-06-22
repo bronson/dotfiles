@@ -165,7 +165,7 @@ fi
 #
 
 # load rvm if it's available
-[ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
+[ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm"
 # use gvim instead of terminal vim to edit bundles
 export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
 
