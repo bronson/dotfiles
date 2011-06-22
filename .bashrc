@@ -178,7 +178,7 @@ alias Rails=rails   # darn you Rails.vim
 
 if [ -d ~/.nvm ]; then
   . ~/.nvm/nvm.sh
-  . <(npm completion)
+  . <(npm completion | cat)  # https://github.com/isaacs/npm/issues/1066
 fi
 export PATH="node_modules/.bin:$PATH"
 
