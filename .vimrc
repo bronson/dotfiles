@@ -227,7 +227,9 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 let g:yaifa_verbosity = 0
 
 " BUNDLE: git://github.com/vim-scripts/AutoTag.git
-" BUNDLE: git://github.com/robgleeson/hammer.vim.git
+
+" hammer.vim crashes every time.  Maybe related to https://github.com/robgleeson/hammer.vim/issues/8 ?
+" NO, buggy.  BUNDLE: git://github.com/robgleeson/hammer.vim.git
 
 
 " The Ruby debugger only works in mvim!  It won't work in a terminal.
@@ -257,7 +259,10 @@ noremap S-<F7>  :call g:RubyDebugger.exit()<CR>
 " BUNDLE: git://github.com/tpope/vim-haml.git
 " should move back to hallison or plasticboy markdown when they pick up new changes
 " BUNDLE: git://github.com/gmarik/vim-markdown.git
-" BUNDLE: git://github.com/timcharper/textile.vim.git
+
+" disable textile.vim until https://github.com/timcharper/textile.vim/issues/4 is fixed
+" Disable BUNDLE: git://github.com/timcharper/textile.vim.git
+
 " BUNDLE: git://github.com/kchmck/vim-coffee-script.git
 " BUNDLE: git://github.com/ajf/puppet-vim.git
 " BUNDLE: git://github.com/bdd/vim-scala.git
