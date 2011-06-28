@@ -1,72 +1,29 @@
 # ignored files in the home directory
 # ~/.gitignore-global is now git's systemwide ignore file.
 
-# ignore any file that doesn't begin with a dot
+# ignore any file or dir that doesn't begin with a dot
 /[^.]*
+# ignore all directories, they're rarely worth versioning
+/.[^.]*/
 
-# ignore private files (sensitive passwords, etc)
+# put ssh commands alieases etc that you want to keep private here
 /.bashrc-private
 
+# ignore these common files
 /.dotfiles.git
-/.*_history
+/.viminfo
+/.*[._-]history
+/.*[._-]auth
+/.*[._-]lock
+/.*[._-]cookie
+/.xsession-errors*
 
-
-# files that show too much churn to be checked in:
-/.account
-/.cache
-/.CFUserTextEncoding
-/.compiz
-/.config
-/.cups
-/.dbus
-/.dillo
+# finally, these need special-casing
+/.ICEauthority
 /.dmrc
-/.esd_auth
-/.evolution
-/.fltk
-/.fontconfig
-/.gconf
-/.gconfd
-/.gem
 /.gitk
-/.gksu.lock
-/.gnome2
-/.gnubg
-/.gnupg
-/.gstreamer-0.10
 /.gtk-bookmarks
 /.guvcviewrc
-/.hplip
-/.ICEauthority
-/.irb-history
-/.kde
-/.kdiff3rc
 /.lesshst
-/.lesshst
-/.local
-/.macports
-/.macromedia
-/.mission-control
-/.mozilla
-/.mplayer
-/.NERDTreeBookmarks
-/.nvm
-/.p4tickets
-/.pki
-/.printer-groups.xml
-/.pulse
-/.pulse-cookie
-/.purple
-/.recently-used.xbel
-/.rvm
-/.ssh
-/.sqldeveloper
 /.sudo_as_admin_successful
-/.thumbnails
-/.Trash
-/.viminfo
-/.vim
-/.wireshark
-/.xchat2
-/.Xauthority
-/.xsession-errors*
+
