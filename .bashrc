@@ -101,6 +101,7 @@ complete -o default -o nospace -F _git_log gls
 alias gs='git s'   # conflicts with ghostscript's gs, no big deal
 
 alias jk='jekyll --auto --server'
+alias gemset='rvm gemset'
 
 if [ -f /bin/vi ] && [ -f /usr/bin/vim ]; then
   # Fedora 14 is friggin weird: can't use /bin/vi and can't remove it either
