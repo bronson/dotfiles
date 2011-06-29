@@ -75,7 +75,7 @@ alias la='ls -A'
 alias ll='ls -lF'
 alias lla='ls -alF'
 
-alias gre=grep    # thanks to vim's :gre command
+alias gre=grep    # darn you vim's :gre command
 alias tf='tail -f'
 
 alias ga='git add'
@@ -101,7 +101,6 @@ complete -o default -o nospace -F _git_log gls
 alias gs='git s'   # conflicts with ghostscript's gs, no big deal
 
 alias jk='jekyll --auto --server'
-alias gemset='rvm gemset'
 
 if [ -f /bin/vi ] && [ -f /usr/bin/vim ]; then
   # Fedora 14 is friggin weird: can't use /bin/vi and can't remove it either
@@ -166,12 +165,17 @@ fi
 #
 
 # load rvm if it's available
-[ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm"
-# use gvim instead of terminal vim to edit bundles
-export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+
+# gemset completions won't work without https://github.com/wayneeseguin/rvm/pull/315
+alias gemset='rvm gemset'
+complete -o default -o nospace -F _rvm_gemset gemset
 
 alias Rails=rails   # darn you Rails.vim
 
+# use gvim instead of terminal vim to edit bundles
+export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
 
 #
 #     node.js
