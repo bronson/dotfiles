@@ -168,9 +168,8 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
-# gemset completions won't work without https://github.com/wayneeseguin/rvm/pull/315
 alias gemset='rvm gemset'
-complete -o default -o nospace -F _rvm_gemset gemset
+complete -o default -o nospace -F _rvm gemset
 
 alias Rails=rails   # darn you Rails.vim
 
