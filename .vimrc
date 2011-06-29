@@ -227,27 +227,27 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 let g:yaifa_verbosity = 0
 
 " BUNDLE: git://github.com/vim-scripts/AutoTag.git
+" BUNDLE: git://github.com/robgleeson/hammer.vim.git
+let g:HammerQuiet = 1 " otherwise hammer complains about missing github-markup gem
 
-" hammer.vim crashes every time.  Maybe related to https://github.com/robgleeson/hammer.vim/issues/8 ?
-" NO, buggy.  BUNDLE: git://github.com/robgleeson/hammer.vim.git
 
-
-" The Ruby debugger only works in mvim!  It won't work in a terminal.
-" BUNDLE: git://github.com/astashov/vim-ruby-debugger.git
-" let g:ruby_debugger_debug_mode = 1
-let g:ruby_debugger_progname = 'mvim'   " TODO: how to autodetect this?
-" Use Eclipse-like keystrokes: F5=step, F6=next, F7=return
-" If on a Mac you must hit Fn-F5 or switch "Use all F1..." in Keyboard control panel.
-" Also, the Mac seems to eat most Control-Fkeys so use Shift-Fkey as a synonym.
-noremap <F5>    :call g:RubyDebugger.step()<CR>
-noremap C-<F5>  :call g:RubyDebugger.continue()<CR>
-noremap S-<F5>  :call g:RubyDebugger.continue()<CR>
-noremap <F6>    :call g:RubyDebugger.next()<CR>
-noremap C-<F6>  :call g:RubyDebugger.continue()<CR>
-noremap S-<F6>  :call g:RubyDebugger.continue()<CR>
-noremap <F7>    :call g:RubyDebugger.finish()<CR>
-noremap C-<F7>  :call g:RubyDebugger.exit()<CR>
-noremap S-<F7>  :call g:RubyDebugger.exit()<CR>
+" The Ruby debugger is fairly painful, enable only when you need it
+"" The Ruby debugger only works in mvim!  It won't work in a terminal.
+"" No BUNDLE: git://github.com/astashov/vim-ruby-debugger.git
+"" let g:ruby_debugger_debug_mode = 1
+"let g:ruby_debugger_progname = 'mvim'   " TODO: how to autodetect this?
+"" Use Eclipse-like keystrokes: F5=step, F6=next, F7=return
+"" If on a Mac you must hit Fn-F5 or switch "Use all F1..." in Keyboard control panel.
+"" Also, the Mac seems to eat most Control-Fkeys so use Shift-Fkey as a synonym.
+"noremap <F5>    :call g:RubyDebugger.step()<CR>
+"noremap C-<F5>  :call g:RubyDebugger.continue()<CR>
+"noremap S-<F5>  :call g:RubyDebugger.continue()<CR>
+"noremap <F6>    :call g:RubyDebugger.next()<CR>
+"noremap C-<F6>  :call g:RubyDebugger.continue()<CR>
+"noremap S-<F6>  :call g:RubyDebugger.continue()<CR>
+"noremap <F7>    :call g:RubyDebugger.finish()<CR>
+"noremap C-<F7>  :call g:RubyDebugger.exit()<CR>
+"noremap S-<F7>  :call g:RubyDebugger.exit()<CR>
 
 
 " Syntax Files:
@@ -257,12 +257,9 @@ noremap S-<F7>  :call g:RubyDebugger.exit()<CR>
 " BUNDLE: git://github.com/tpope/vim-git.git
 " BUNDLE: git://github.com/tpope/vim-cucumber.git
 " BUNDLE: git://github.com/tpope/vim-haml.git
-" should move back to hallison or plasticboy markdown when they pick up new changes
+" TODO: should move back to hallison or plasticboy markdown when they pick up new changes
 " BUNDLE: git://github.com/gmarik/vim-markdown.git
-
-" disable textile.vim until https://github.com/timcharper/textile.vim/issues/4 is fixed
-" Disable BUNDLE: git://github.com/timcharper/textile.vim.git
-
+" BUNDLE: git://github.com/timcharper/textile.vim.git
 " BUNDLE: git://github.com/kchmck/vim-coffee-script.git
 " BUNDLE: git://github.com/ajf/puppet-vim.git
 " BUNDLE: git://github.com/bdd/vim-scala.git
