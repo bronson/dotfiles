@@ -45,7 +45,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
 fi
 
-export GREP_OPTIONS='--color=auto'
+export GREP_OPTIONS='--color=auto --exclude="tags" --exclude="TAGS" --exclude-dir=.git --exclude-dir=.svn --exclude-dir=log'
 
 
 
