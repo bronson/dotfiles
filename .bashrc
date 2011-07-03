@@ -55,12 +55,10 @@ export GREP_OPTIONS='--color=auto --exclude="tags" --exclude="TAGS" --exclude-di
 
 shopt -s histappend                         # Append to history file instead of overwriting
 shopt -s cmdhist                            # store multiline commands as 1 line
-shopt -s cdspell                            # spelling error correction
 shopt -s checkwinsize                       # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
 export HISTCONTROL="ignoreboth"             # store duplicate lines once, ignore lines beginning with a space
 export HISTIGNORE="&:ls:[bf]g:exit:%[0-9]"  # ignore simple commands
-export HISTFILESIZE=5000                    # history file size
-
+unset HISTFILESIZE                          # keep unlimited history
 
 #
 #     Aliases
