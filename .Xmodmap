@@ -1,0 +1,4 @@
+! make the horrible back and forward buttons on Thinkpad keyboards
+! into PageUp and PageDown.  That makes WAY more sense.
+keycode 166=Prior
+keycode 167=Next
