@@ -45,7 +45,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
 fi
 
-export GREP_OPTIONS='--color=auto'
+export GREP_OPTIONS='--color=auto --exclude="tags" --exclude="TAGS" --exclude-dir=.git --exclude-dir=.svn --exclude-dir=log'
 
 
 
@@ -55,12 +55,10 @@ export GREP_OPTIONS='--color=auto'
 
 shopt -s histappend                         # Append to history file instead of overwriting
 shopt -s cmdhist                            # store multiline commands as 1 line
-shopt -s cdspell                            # spelling error correction
 shopt -s checkwinsize                       # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
 export HISTCONTROL="ignoreboth"             # store duplicate lines once, ignore lines beginning with a space
 export HISTIGNORE="&:ls:[bf]g:exit:%[0-9]"  # ignore simple commands
-export HISTFILESIZE=5000                    # history file size
-
+unset HISTFILESIZE                          # keep unlimited history
 
 #
 #     Aliases
@@ -75,7 +73,7 @@ alias la='ls -A'
 alias ll='ls -lF'
 alias lla='ls -alF'
 
-alias gre=grep    # thanks to vim's :gre command
+alias gre=grep    # darn you vim's :gre command
 alias tf='tail -f'
 
 alias ga='git add'
@@ -165,12 +163,16 @@ fi
 #
 
 # load rvm if it's available
-[ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
-# use gvim instead of terminal vim to edit bundles
-export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+
+alias gemset='rvm gemset'
+complete -o default -o nospace -F _rvm gemset
 
 alias Rails=rails   # darn you Rails.vim
 
+# use gvim instead of terminal vim to edit bundles
+export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
 
 #
 #     node.js
@@ -178,7 +180,7 @@ alias Rails=rails   # darn you Rails.vim
 
 if [ -d ~/.nvm ]; then
   . ~/.nvm/nvm.sh
-  . <(npm completion)
+  . <(npm completion | cat)  # https://github.com/isaacs/npm/issues/1066
 fi
 export PATH="node_modules/.bin:$PATH"
 
