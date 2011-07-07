@@ -8,8 +8,9 @@ set nocompatible
 filetype on   " work around stupid osx bug
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" disabled until the fugitive and snipmate problems can be figured out
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
 
 " I thought Vundle was supposed to do this for me...?
 call pathogen#runtime_append_all_bundles()
