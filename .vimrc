@@ -4,20 +4,22 @@
 " After installing this .vimrc, run vim-update-bundles to install the
 " plugins: https://github.com/bronson/vim-update-bundles
 
-
-" Let Pathogen bring in all the plugins
-filetype on
+set nocompatible
+filetype on   " work around stupid osx bug
 filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" I thought Vundle was supposed to do this for me...?
 call pathogen#runtime_append_all_bundles()
+" ignore BundleCommand until vundle supports it
+com! -nargs=? BundleCommand
 
 filetype indent plugin on
 syntax on
 
 
-
-" basics
-
-set nocompatible      " tends to make things work better
 set showcmd           " show incomplete cmds down the bottom
 set showmode          " show current mode down the bottom
 
@@ -150,13 +152,13 @@ highlight def link rubyRspec Function
 
 runtime macros/matchit.vim  " enable vim's built-in matchit script (make % bounce between tags, begin/end, etc)
 
+Bundle 'https://github.com/gmarik/vundle'
 
-" Bundle: https://github.com/scrooloose/nerdtree
+Bundle 'https://github.com/scrooloose/nerdtree'
 nmap <Space>d :NERDTreeToggle<cr>
 nmap <Space>D :NERDTreeFind<cr>
 
-
-" Bundle: https://github.com/scrooloose/nerdcommenter
+Bundle 'https://github.com/scrooloose/nerdcommenter'
 " Use Control-/ to toggle comments
 map <C-/> <plug>NERDCommenterToggle<CR>
 " And Command-/ works on the Mac
@@ -164,20 +166,19 @@ map <D-/> <plug>NERDCommenterToggle<CR>
 " And C-/ produces C-_ on most terminals
 map <C-_> <plug>NERDCommenterToggle<CR>
 
-
-" Bundle: https://github.com/tpope/vim-surround
+Bundle 'https://github.com/tpope/vim-surround'
 " tell surround not to break the visual s keystroke (:help vs)
 xmap S <Plug>Vsurround
 
-" Bundle: https://github.com/majutsushi/tagbar
+Bundle 'https://github.com/majutsushi/tagbar'
 nmap <Space>l :TagbarToggle<cr>
 
-" Bundle: https://github.com/vim-scripts/bufexplorer.zip
+Bundle 'https://github.com/vim-scripts/bufexplorer.zip'
 nmap <Space>b :BufExplorer<cr>
 
-" Bundle: git://git.wincent.com/command-t.git
+Bundle 'git://git.wincent.com/command-t.git'
 " ensure we compile with the system ruby if rvm is installed
-" BundleCommand: if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi
+BundleCommand 'if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi'
 nmap <silent> <C-Space> :CommandT<CR>
 nmap <silent> <C-@> :CommandT<CR>
 " let g:CommandTCancelMap = ['<C-c>', '<Esc>', '<C-Space>', '<C-@>']
@@ -185,55 +186,55 @@ nmap <silent> <C-@> :CommandT<CR>
 " let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<Down>', '<ESC>OB']
 let g:CommandTMatchWindowAtTop = 1
 
-" Bundle: https://github.com/bronson/vim-closebuffer
-" Bundle: https://github.com/vim-ruby/vim-ruby
-" Bundle: https://github.com/tpope/vim-rails
-" Bundle: https://github.com/tpope/vim-rake
-" Bundle: https://github.com/vim-scripts/a.vim
-" Bundle: https://github.com/msanders/snipmate.vim
-" Bundle: https://github.com/scrooloose/snipmate-snippets
-" Bundle: https://github.com/vim-scripts/IndexedSearch
-" Bundle: https://github.com/bronson/vim-runtest
+Bundle 'https://github.com/bronson/vim-closebuffer'
+Bundle 'https://github.com/vim-ruby/vim-ruby'
+Bundle 'https://github.com/tpope/vim-rails'
+Bundle 'https://github.com/tpope/vim-rake'
+Bundle 'https://github.com/vim-scripts/a.vim'
+Bundle 'https://github.com/msanders/snipmate.vim'
+Bundle 'https://github.com/scrooloose/snipmate-snippets'
+Bundle 'https://github.com/vim-scripts/IndexedSearch'
+Bundle 'https://github.com/bronson/vim-runtest'
 "
 "    text objects    :he text-objects
 " TODO: rewrite ruby-block-conv to use textobj-rubyblock
-" Bundle: https://github.com/bronson/vim-ruby-block-conv
-" Bundle: https://github.com/kana/vim-textobj-user
+Bundle 'https://github.com/bronson/vim-ruby-block-conv'
+Bundle 'https://github.com/kana/vim-textobj-user'
 " Ruby text objects: ar, ir
-" Bundle: https://github.com/nelstrom/vim-textobj-rubyblock
+Bundle 'https://github.com/nelstrom/vim-textobj-rubyblock'
 " Paramter text objects (between parens and commas): aP, iP
-" Bundle: https://github.com/vim-scripts/Parameter-Text-Objects
+Bundle 'https://github.com/vim-scripts/Parameter-Text-Objects'
 " indent text objects: ai, ii, (include line below) aI, iI
 "   ai,ii work best for Python, aI,II work best for Ruby/C/Perl
-" Bundle: https://github.com/michaeljsmith/vim-indent-object
+Bundle 'https://github.com/michaeljsmith/vim-indent-object'
 
-" Bundle: https://github.com/godlygeek/tabular
+Bundle 'https://github.com/godlygeek/tabular'
 
-" Bundle: https://github.com/tpope/vim-endwise
-" Bundle: https://github.com/tpope/vim-repeat
+Bundle 'https://github.com/tpope/vim-endwise'
+Bundle 'https://github.com/tpope/vim-repeat'
 
-" Bundle: https://github.com/tpope/vim-fugitive
+Bundle 'https://github.com/tpope/vim-fugitive'
 " TODO: this prompt seems to cause huge delays with big repos on MacOS X
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
-" Bundle: https://github.com/ervandew/supertab
+Bundle 'https://github.com/ervandew/supertab'
 
-" Bundle: https://github.com/bronson/vim-visual-star-search
-" Bundle: https://github.com/bronson/vim-trailing-whitespace
-" Bundle: https://github.com/bronson/vim-toggle-wrap
+Bundle 'https://github.com/bronson/vim-visual-star-search'
+Bundle 'https://github.com/bronson/vim-trailing-whitespace'
+Bundle 'https://github.com/bronson/vim-toggle-wrap'
 
-" Bundle: https://github.com/Raimondi/YAIFA
+Bundle 'https://github.com/Raimondi/YAIFA'
 " verbosity=1 allows you to check YAIFA's results by running :messages
 let g:yaifa_verbosity = 0
 
-" Bundle: https://github.com/vim-scripts/AutoTag
-" Bundle: https://github.com/bronson/hammer.vim
+Bundle 'https://github.com/vim-scripts/AutoTag'
+Bundle 'https://github.com/bronson/hammer.vim'
 let g:HammerQuiet = 1 " otherwise hammer complains about missing github-markup gem
 
 
 " The Ruby debugger is fairly painful, enable only when you need it
 "" The Ruby debugger only works in mvim!  It won't work in a terminal.
-"" No Bundle: https://github.com/astashov/vim-ruby-debugger
+" Bundle 'https://github.com/astashov/vim-ruby-debugger'
 "" let g:ruby_debugger_debug_mode = 1
 "let g:ruby_debugger_progname = 'mvim'   " TODO: how to autodetect this?
 "" Use Eclipse-like keystrokes: F5=step, F6=next, F7=return
@@ -251,23 +252,23 @@ let g:HammerQuiet = 1 " otherwise hammer complains about missing github-markup g
 
 
 " Syntax Files:
-" Bundle: https://github.com/pangloss/vim-javascript
-" Bundle: https://github.com/vim-scripts/jQuery
-" Bundle: https://github.com/tsaleh/vim-shoulda
-" Bundle: https://github.com/tpope/vim-git
-" Bundle: https://github.com/tpope/vim-cucumber
-" Bundle: https://github.com/tpope/vim-haml
+Bundle 'https://github.com/pangloss/vim-javascript'
+Bundle 'https://github.com/vim-scripts/jQuery'
+Bundle 'https://github.com/tsaleh/vim-shoulda'
+Bundle 'https://github.com/tpope/vim-git'
+Bundle 'https://github.com/tpope/vim-cucumber'
+Bundle 'https://github.com/tpope/vim-haml'
 " TODO: should move back to hallison or plasticboy markdown when they pick up new changes
-" Bundle: https://github.com/gmarik/vim-markdown
-" Bundle: https://github.com/timcharper/textile.vim
-" Bundle: https://github.com/kchmck/vim-coffee-script
-" Bundle: https://github.com/ajf/puppet-vim
-" Bundle: https://github.com/bdd/vim-scala
+Bundle 'https://github.com/gmarik/vim-markdown'
+Bundle 'https://github.com/timcharper/textile.vim'
+Bundle 'https://github.com/kchmck/vim-coffee-script'
+Bundle 'https://github.com/ajf/puppet-vim'
+Bundle 'https://github.com/bdd/vim-scala'
 
 " Color Schemes:
-" Bundle: https://github.com/tpope/vim-vividchalk
-" Bundle: https://github.com/wgibbs/vim-irblack
-" Bundle: https://github.com/altercation/vim-colors-solarized
+Bundle 'https://github.com/tpope/vim-vividchalk'
+Bundle 'https://github.com/wgibbs/vim-irblack'
+Bundle 'https://github.com/altercation/vim-colors-solarized'
 
 " TODO: Bundle: https://github.com/hallettj/jslint.vim
 " TODO: Bundle: https://github.com/ecomba/vim-ruby-refactoring
