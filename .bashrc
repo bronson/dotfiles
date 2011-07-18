@@ -169,7 +169,12 @@ fi
 alias gemset='rvm gemset'
 complete -o default -o nospace -F _rvm gemset
 
+. ~/.bash-rails
 alias Rails=rails   # darn you Rails.vim
+complete -o default -o nospace -F _rails Rails
+alias r=rails
+complete -o default -o nospace -F _rails r
+
 
 # use gvim instead of terminal vim to edit bundles
 export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
