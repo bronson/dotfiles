@@ -217,6 +217,7 @@ Bundle 'https://github.com/tpope/vim-fugitive'
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 Bundle 'https://github.com/ervandew/supertab'
+Bundle 'https://github.com/sjl/gundo.vim'
 
 Bundle 'https://github.com/bronson/vim-visual-star-search'
 Bundle 'https://github.com/bronson/vim-trailing-whitespace'
