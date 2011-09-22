@@ -165,9 +165,8 @@ map <D-/> <plug>NERDCommenterToggle<CR>
 " And C-/ produces C-_ on most terminals
 map <C-_> <plug>NERDCommenterToggle<CR>
 
-Bundle 'https://github.com/tpope/vim-surround'
-" tell surround not to break the visual s keystroke (:help vs)
-xmap S <Plug>Vsurround
+" Lock surround until visual mode s is fixed, comment on https://github.com/tpope/vim-surround/commit/f6c9d3beb2d11959d22b2555636aeb0c37e66aa1
+Bundle 'https://github.com/tpope/vim-surround c9120390d8e51e42faef420f83ef0001a20643f3'
 
 Bundle 'https://github.com/majutsushi/tagbar'
 nmap <Space>l :TagbarToggle<cr>
