@@ -193,7 +193,6 @@ Bundle 'https://github.com/vim-scripts/a.vim'
 Bundle 'https://github.com/msanders/snipmate.vim'
 Bundle 'https://github.com/scrooloose/snipmate-snippets'
 Bundle 'https://github.com/vim-scripts/IndexedSearch'
-Bundle 'https://github.com/bronson/vim-runtest'
 "
 "    text objects    :he text-objects
 " TODO: rewrite ruby-block-conv to use textobj-rubyblock
@@ -254,17 +253,11 @@ let g:HammerQuiet = 1 " otherwise hammer complains about missing github-markup g
 " Syntax Files:
 Bundle 'https://github.com/pangloss/vim-javascript'
 Bundle 'https://github.com/vim-scripts/jQuery'
-Bundle 'https://github.com/tsaleh/vim-shoulda'
 Bundle 'https://github.com/tpope/vim-git'
-Bundle 'https://github.com/tpope/vim-cucumber'
-Bundle 'https://github.com/tpope/vim-haml'
 " TODO: should move back to hallison or plasticboy markdown when they pick up new changes
 Bundle 'https://github.com/gmarik/vim-markdown'
-Bundle 'https://github.com/timcharper/textile.vim'
 Bundle 'https://github.com/kchmck/vim-coffee-script'
 Bundle 'https://github.com/ajf/puppet-vim'
-Bundle 'https://github.com/bdd/vim-scala'
-Bundle 'https://github.com/bbommarito/vim-slim'
 
 " Color Schemes:
 Bundle 'https://github.com/tpope/vim-vividchalk'
@@ -277,3 +270,12 @@ Bundle 'https://github.com/altercation/vim-colors-solarized'
 " TODO: Bundle: https://github.com/int3/vim-extradite
 " TODO: Bundle: https://github.com/rson/vim-conque
 " TODO: the only decent gdb frontend looks to be pyclewn?
+
+" exiled, never used:
+" Bundle 'https://github.com/tsaleh/vim-shoulda'
+" Bundle 'https://github.com/tpope/vim-cucumber'
+" Bundle 'https://github.com/tpope/vim-haml'
+" Bundle 'https://github.com/timcharper/textile.vim'
+" Bundle 'https://github.com/bdd/vim-scala'
+" Bundle 'https://github.com/bbommarito/vim-slim'
+" Bundle 'https://github.com/bronson/vim-runtest'
