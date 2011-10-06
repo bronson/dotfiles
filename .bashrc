@@ -88,8 +88,10 @@ complete -o default -o nospace -F _git_commit gci
 complete -o default -o nospace -F _git_commit gcia
 alias gd='git diff'
 alias gdc='git diff --cached'
+alias gds='git diff --stat'
 complete -o default -o nospace -F _git_diff gd
 complete -o default -o nospace -F _git_diff gdc
+complete -o default -o nospace -F _git_diff gds
 alias gl='git log'
 alias glp='git log -p'
 alias gls='git log --stat'
