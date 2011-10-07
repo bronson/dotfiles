@@ -5,6 +5,7 @@
 /[^.]*
 # ignore all directories, they're rarely worth versioning
 /.[^.]*/
+!/bin/
 
 # put ssh commands alieases etc that you want to keep private here
 /.bashrc-private
