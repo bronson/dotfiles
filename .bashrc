@@ -164,13 +164,6 @@ fi
 #     Ruby
 #
 
-# load rvm if it's available
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
-
-alias gemset='rvm gemset'
-complete -o default -o nospace -F _rvm gemset
-
 . ~/.bash-rails
 alias Rails=rails   # darn you Rails.vim
 complete -o default -o nospace -F _rails Rails
