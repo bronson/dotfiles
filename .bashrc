@@ -159,21 +159,6 @@ if [ -f /opt/local/share/doc/git-core/contrib/completion/git-completion.bash ]; 
 fi
 
 
-
-#
-#     Ruby
-#
-
-. ~/.bash-rails
-alias Rails=rails   # darn you Rails.vim
-complete -o default -o nospace -F _rails Rails
-alias r=rails
-complete -o default -o nospace -F _rails r
-
-
-# use gvim instead of terminal vim to edit bundles
-export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
-
 #
 #     node.js
 #
@@ -193,9 +178,9 @@ export EDITOR='vim'
 
 # use vim as the manpage reader too: nicer colors and navigation.
 export MANPAGER='sh -c "col -bx | view - -c \":set ft=man noml\" -c \":nmap q :q<CR>\""'
-# Sets up the alias to manipulate the dotfiles.
-# Needs to run late, after setting up completion.
 
+# use gvim instead of terminal vim to edit bundles
+export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
 
 
 #
