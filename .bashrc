@@ -175,10 +175,6 @@ export PATH="node_modules/.bin:$PATH"
 #
 
 export EDITOR='vim'
-
-# use vim as the manpage reader too: nicer colors and navigation.
-export MANPAGER='sh -c "col -bx | view - -c \":set ft=man noml\" -c \":nmap q :q<CR>\""'
-
 # use gvim instead of terminal vim to edit bundles
 export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
 
