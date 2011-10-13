@@ -8,10 +8,20 @@ set nocompatible
 filetype on   " work around stupid osx bug
 filetype off
 
-" set up Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" Use Vundle to manage runtime paths
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
 " Tell Vim to ignore BundleCommand until vundle supports it
+"com! -nargs=? BundleCommand
+"Bundle 'https://github.com/gmarik/vundle'
+
+
+" or use Pathogen to manage runtime paths
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+" Bundle: tpope/vim-pathogen
+call pathogen#infect()
+" stub out Vundle directives because we're using Pathogen
+com! -nargs=? Bundle
 com! -nargs=? BundleCommand
 
 
@@ -150,8 +160,6 @@ highlight def link rubyRspec Function
 " Plugins:
 
 runtime macros/matchit.vim  " enable vim's built-in matchit script (make % bounce between tags, begin/end, etc)
-
-Bundle 'https://github.com/gmarik/vundle'
 
 Bundle 'https://github.com/scrooloose/nerdtree'
 nmap <Space>d :NERDTreeToggle<cr>
