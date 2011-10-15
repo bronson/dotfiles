@@ -60,6 +60,7 @@ export HISTCONTROL="ignoreboth"             # store duplicate lines once, ignore
 export HISTIGNORE="&:ls:[bf]g:exit:%[0-9]"  # ignore simple commands
 unset HISTFILESIZE                          # keep unlimited history
 
+
 #
 #     Aliases
 #
@@ -163,10 +164,8 @@ fi
 #     node.js
 #
 
-if [ -d ~/.nvm ]; then
-  . ~/.nvm/nvm.sh
-  . <(npm completion | cat)  # https://github.com/isaacs/npm/issues/1066
-fi
+[ -d ~/.nvm ] && . ~/.nvm/nvm.sh
+which npm >/dev/null 2>&1 && . <(npm completion | cat)  # https://github.com/isaacs/npm/issues/1066
 export PATH="node_modules/.bin:$PATH"
 
 
