@@ -177,7 +177,7 @@ nmap <Space>b :BufExplorer<cr>
 
 Bundle 'git://git.wincent.com/command-t.git'
 " ensure we compile with the system ruby if rvm is installed
-BundleCommand 'if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi'
+BundleCommand 'cd command-t && if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi'
 nmap <silent> <C-Space> :CommandT<CR>
 nmap <silent> <C-@> :CommandT<CR>
 " let g:CommandTCancelMap = ['<C-c>', '<Esc>', '<C-Space>', '<C-@>']
