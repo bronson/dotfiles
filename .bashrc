@@ -80,7 +80,9 @@ alias tf='tail -f'
 alias ga='git add'
 complete -o default -o nospace -F _git_add ga
 alias gb='git b'
+alias gba='git b --all'
 complete -o default -o nospace -F _git_branch gb
+complete -o default -o nospace -F _git_branch gba
 alias gco='git checkout'
 complete -o default -o nospace -F _git_checkout gco
 alias gci='git commit -v'
@@ -167,6 +169,16 @@ fi
 [ -d ~/.nvm ] && . ~/.nvm/nvm.sh
 which npm >/dev/null 2>&1 && . <(npm completion | cat)  # https://github.com/isaacs/npm/issues/1066
 export PATH="node_modules/.bin:$PATH"
+
+
+#
+#     ruby
+#
+
+if [ -d "$HOME/.rbenv" ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 
 
 #
