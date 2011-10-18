@@ -170,15 +170,17 @@ fi
 which npm >/dev/null 2>&1 && . <(npm completion | cat)  # https://github.com/isaacs/npm/issues/1066
 export PATH="node_modules/.bin:$PATH"
 
-
 #
-#     ruby
+#     Ruby
 #
 
-if [ -d "$HOME/.rbenv" ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-fi
+# load rvm if it's available
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+
+alias gemset='rvm gemset'
+complete -o default -o nospace -F _rvm gemset
+
 
 
 #
