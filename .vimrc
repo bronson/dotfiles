@@ -16,13 +16,13 @@ filetype off
 "Bundle 'https://github.com/gmarik/vundle'
 
 
-" or use Pathogen to manage runtime paths
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-" Bundle: tpope/vim-pathogen
-call pathogen#infect()
 " stub out Vundle directives because we're using Pathogen
 com! -nargs=? Bundle
 com! -nargs=? BundleCommand
+" or use Pathogen to manage runtime paths
+Bundle: tpope/vim-pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
 
 
 filetype indent plugin on
