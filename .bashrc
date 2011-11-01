@@ -181,6 +181,9 @@ export PATH="node_modules/.bin:$PATH"
 alias gemset='rvm gemset'
 complete -o default -o nospace -F _rvm gemset
 
+# Bundler can be a right pain at times
+alias be='bundle exec'
+
 
 
 #
