@@ -29,8 +29,10 @@ filetype indent plugin on
 syntax on
 
 
+set encoding=utf-8 fileencodings= " use utf8 by default
 set showcmd           " show incomplete cmds down the bottom
 set showmode          " show current mode down the bottom
+set report=0          " always report # of lines changed
 
 set incsearch         " find the next match as we type the search
 set hlsearch          " hilight searches by default
@@ -80,6 +82,7 @@ set smarttab          " use shiftwidth when hitting tab instead of sts (?)
 set autoindent        " try to put the right amount of space at the beginning of a new line
 set shiftwidth=2
 set softtabstop=2
+set splitbelow        " when splitting, cursor should stay in bottom window
 
 " autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2
 " include ! and ? in Ruby method names so you can hit ^] on a.empty?
@@ -119,6 +122,15 @@ nnoremap ` '
 " make Y yank to the end of the line (like C and D).  Use yy to yank the entire line.
 " Upside: feels more natural.  Downside: not stock vi/vim.
 nmap Y y$
+
+" don't complain on some obvious fat-fingers
+nmap :W :w
+nmap :W! :w!
+nmap :Q :q
+nmap :Q! :q!
+nmap :Qa :qa
+nmap :Wq! :wq!
+nmap :WQ! :wq!
 
 " Make the quickfix window wrap no matter the setting of nowrap
 au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
@@ -221,7 +233,8 @@ Bundle 'https://github.com/tpope/vim-repeat'
 
 Bundle 'https://github.com/tpope/vim-fugitive'
 " TODO: this prompt seems to cause huge delays with big repos on MacOS X
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+"set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline=%F%h%m%w%r\ %Y\ (%{&ff})%=\ %c%V,\ %l/%L\ (%P)
 
 Bundle 'https://github.com/ervandew/supertab'
 Bundle 'https://github.com/sjl/gundo.vim'
