@@ -80,7 +80,7 @@ alias tf='tail -f'
 alias ga='git add'
 complete -o default -o nospace -F _git_add ga
 alias gb='git b'
-alias gba='git b --all'
+alias gba='git b -a'
 complete -o default -o nospace -F _git_branch gb
 complete -o default -o nospace -F _git_branch gba
 alias gco='git checkout'
