@@ -20,7 +20,7 @@ filetype off
 com! -nargs=? Bundle
 com! -nargs=? BundleCommand
 " or use Pathogen to manage runtime paths
-Bundle: tpope/vim-pathogen
+Bundle 'tpope/vim-pathogen'
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
