@@ -80,7 +80,7 @@ alias tf='tail -f'
 
 __define_git_completion () {
 eval "
-    _$1 () {
+    _git_$2_shortcut () {
         COMP_LINE=\"git $2\${COMP_LINE#$1}\"
         let COMP_POINT+=$((4+${#2}-${#1}))
         COMP_WORDS=(git $2 \"\${COMP_WORDS[@]:1}\")
@@ -94,9 +94,9 @@ eval "
 }
 
 __git_shortcut () {
-    type _$1 &>/dev/null || __define_git_completion $1 $2
+    type _git_$2_shortcut &>/dev/null || __define_git_completion $1 $2
     alias $1="git $2 $3"
-    complete -o default -o nospace -F _$1 $1
+    complete -o default -o nospace -F _git_$2_shortcut $1
 }
 
 __git_shortcut  ga    add
