@@ -78,55 +78,43 @@ alias gre=grep    # darn you vim's :gre command
 alias tf='tail -f'
 
 
-_ga () {
-  COMP_LINE="git add${COMP_LINE#ga}"
-  let COMP_POINT+=5
-  COMP_WORDS=(git add "${COMP_WORDS[@]:1}")
-  let COMP_CWORD+=1
+__define_git_completion () {
+eval "
+    _$1 () {
+        COMP_LINE=\"git $2\${COMP_LINE#$1}\"
+        let COMP_POINT+=$((4+${#2}-${#1}))
+        COMP_WORDS=(git $2 \"\${COMP_WORDS[@]:1}\")
+        let COMP_CWORD+=1
 
-  local cur words cword prev
-  _get_comp_words_by_ref -n =: cur words cword prev
-  _git_add
+        local cur words cword prev
+        _get_comp_words_by_ref -n =: cur words cword prev
+        _git_$2
+    }
+"
 }
 
-_gf () {
-  COMP_LINE="git fetch${COMP_LINE#gf}"
-  let COMP_POINT+=7  # strlen('git fetch') - strlen('gf')
-  COMP_WORDS=(git fetch "${COMP_WORDS[@]:1}")
-  let COMP_CWORD+=1
-
-  local cur words cword prev
-  _get_comp_words_by_ref -n =: cur words cword prev
-  _git_fetch
+__git_shortcut () {
+    type _$1 &>/dev/null || __define_git_completion $1 $2
+    alias $1="git $2 $3"
+    complete -o default -o nospace -F _$1 $1
 }
 
-alias ga='git add'
-complete -o default -o nospace -F _ga ga
-alias gb='git b'
-alias gba='git b -a'
-complete -o default -o nospace -F _git_branch gb
-complete -o default -o nospace -F _git_branch gba
-alias gco='git checkout'
-complete -o default -o nospace -F _git_checkout gco
-alias gci='git commit -v'
-alias gcia='git commit -a -v'
-complete -o default -o nospace -F _git_commit gci
-complete -o default -o nospace -F _git_commit gcia
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gds='git diff --stat'
-complete -o default -o nospace -F _git_diff gd
-complete -o default -o nospace -F _git_diff gdc
-complete -o default -o nospace -F _git_diff gds
-alias gf='git fetch'
-complete -o default -o nospace -F _gf gf
-alias gl='git log'
-alias glp='git log -p'
-alias gls='git log --stat'
-complete -o default -o nospace -F _git_log gl
-complete -o default -o nospace -F _git_log glp
-complete -o default -o nospace -F _git_log gls
-alias gs='git s'   # conflicts with ghostscript's gs, no big deal
+__git_shortcut  ga    add
+__git_shortcut  gb    branch
+__git_shortcut  gba   branch -a
+__git_shortcut  gco   checkout
+__git_shortcut  gci   commit -v
+__git_shortcut  gcia  commit '-a -v'
+__git_shortcut  gd    diff
+__git_shortcut  gdc   diff --cached
+__git_shortcut  gds   diff --stat
+__git_shortcut  gf    fetch
+__git_shortcut  gl    log
+__git_shortcut  glp   log -p
+__git_shortcut  gls   log --stat
+alias gs='git s'     # no completion for git status
+
+
 
 alias jk='jekyll --auto --server'
 
