@@ -77,8 +77,31 @@ alias lla='ls -alF'
 alias gre=grep    # darn you vim's :gre command
 alias tf='tail -f'
 
+
+_ga () {
+  COMP_LINE="git add${COMP_LINE#ga}"
+  let COMP_POINT+=5
+  COMP_WORDS=(git add "${COMP_WORDS[@]:1}")
+  let COMP_CWORD+=1
+
+  local cur words cword prev
+  _get_comp_words_by_ref -n =: cur words cword prev
+  _git_add
+}
+
+_gf () {
+  COMP_LINE="git fetch${COMP_LINE#gf}"
+  let COMP_POINT+=7  # strlen('git fetch') - strlen('gf')
+  COMP_WORDS=(git fetch "${COMP_WORDS[@]:1}")
+  let COMP_CWORD+=1
+
+  local cur words cword prev
+  _get_comp_words_by_ref -n =: cur words cword prev
+  _git_fetch
+}
+
 alias ga='git add'
-complete -o default -o nospace -F _git_add ga
+complete -o default -o nospace -F _ga ga
 alias gb='git b'
 alias gba='git b -a'
 complete -o default -o nospace -F _git_branch gb
@@ -95,6 +118,8 @@ alias gds='git diff --stat'
 complete -o default -o nospace -F _git_diff gd
 complete -o default -o nospace -F _git_diff gdc
 complete -o default -o nospace -F _git_diff gds
+alias gf='git fetch'
+complete -o default -o nospace -F _gf gf
 alias gl='git log'
 alias glp='git log -p'
 alias gls='git log --stat'
