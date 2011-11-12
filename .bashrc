@@ -112,7 +112,7 @@ __git_shortcut  gf    fetch
 __git_shortcut  gl    log
 __git_shortcut  glp   log -p
 __git_shortcut  gls   log --stat
-alias gs='git s'     # no completion for git status
+alias gs='git status -sb' # no completion for git status
 
 
 
