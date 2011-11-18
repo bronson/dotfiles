@@ -133,9 +133,9 @@ nmap :Wq! :wq!
 nmap :WQ! :wq!
 
 " Make the quickfix window wrap no matter the setting of nowrap
-au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
+autocmd BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
 " 'q' inside quickfix window closes it (like nerdtree, bufexplorer, etc)
-au BufWinEnter * if &buftype == 'quickfix' | map q :cclose<CR> | endif
+autocmd BufWinEnter * if &buftype == 'quickfix' | map q :cclose<CR> | endif
 
 
 " Make Alt-Arrows switch between windows (like C-W h, etc)
@@ -272,6 +272,7 @@ let g:HammerQuiet = 1 " otherwise hammer complains about missing github-markup g
 
 
 " Syntax Files:
+Bundle 'https://github.com/bronson/Arduino-syntax-file'
 Bundle 'https://github.com/pangloss/vim-javascript'
 Bundle 'https://github.com/vim-scripts/jQuery'
 Bundle 'https://github.com/tpope/vim-git'
