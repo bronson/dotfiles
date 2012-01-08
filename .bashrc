@@ -175,6 +175,18 @@ if [ -f /opt/local/share/doc/git-core/contrib/completion/git-completion.bash ]; 
 fi
 
 
+
+#
+#     Rails
+#
+
+. ~/.bash-rails
+alias Rails=rails   # darn you Rails.vim
+complete -o default -o nospace -F _rails Rails
+alias r=rails
+complete -o default -o nospace -F _rails r
+
+
 #
 #     node.js
 #
