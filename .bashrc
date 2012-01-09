@@ -208,7 +208,12 @@ complete -o default -o nospace -F _rvm gemset
 
 # Bundler can be a right pain at times
 alias be='bundle exec'
+alias bepre='bundle exec rake assets:precompile'
 
+# i.e. prod rake db:migrate
+prod() {
+  RAILS_ENV=production "$@"
+}
 
 
 #
