@@ -49,10 +49,12 @@ prompt_function() {
     local git_branch=" (${branch})${remote}${state}"
   fi
 
+  [[ $(who am i) =~ \([0-9\.]+\)$ ]] && local host=" \\u@\h "
+
   local path="${LIGHT_BLUE}\w"
   local branch="${LIGHT_MAGENTA}$git_branch"
 
-  local prompt="${TITLEBAR}$path$branch${COLOR_NONE}"
+  local prompt="$path$branch$host${COLOR_NONE}"
   if test $previous_return_value -eq 0; then
     PS1="${prompt}\\\$ "
   else
