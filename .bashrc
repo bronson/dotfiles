@@ -21,7 +21,7 @@ complete -o default -o nospace -F _git dotgit
 export LESS="--RAW-CONTROL-CHARS"    # interpret any embedded ansi escapes
 export PAGER='less'                  # use less to view manpages, etc
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)" # let less show non-text files too
-export PS1="\\u@\h \\w\\$ "          # simple prompt shows user, host and path
+export PS1="\\u@\\h \\w\\$ "          # simple prompt shows user, host and path
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
 [ -d "$HOME/Dropbox/bin" ] && export PATH="$HOME/Dropbox/bin:$PATH"
 
