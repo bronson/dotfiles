@@ -76,6 +76,7 @@ alias lla='ls -alF'
 
 alias gre=grep    # darn you vim's :gre command
 alias mak=make    # and :mak
+alias MP='make program' # for avr parts
 alias tf='tail -f'
 
 

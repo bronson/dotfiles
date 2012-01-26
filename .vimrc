@@ -301,3 +301,5 @@ Bundle 'https://github.com/altercation/vim-colors-solarized'
 " Bundle 'https://github.com/bdd/vim-scala'
 " Bundle 'https://github.com/bbommarito/vim-slim'
 " Bundle 'https://github.com/bronson/vim-runtest'
+
+com MP make program
