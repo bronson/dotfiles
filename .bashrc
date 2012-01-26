@@ -75,6 +75,7 @@ alias ll='ls -lF'
 alias lla='ls -alF'
 
 alias gre=grep    # darn you vim's :gre command
+alias mak=make    # and :mak
 alias tf='tail -f'
 
 
