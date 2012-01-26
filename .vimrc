@@ -302,4 +302,4 @@ Bundle 'https://github.com/altercation/vim-colors-solarized'
 " Bundle 'https://github.com/bbommarito/vim-slim'
 " Bundle 'https://github.com/bronson/vim-runtest'
 
-com MP make program
+com MP silent execute "make program" | redraw!
