@@ -117,6 +117,9 @@ __git_shortcut  gls   log --stat
 alias gs='git status -sb' # no completion for git status
 
 
+alias hgs='hg status'
+alias hgd='hg diff'
+alias hgl='hg log'
 
 alias jk='jekyll --auto --server'
 
