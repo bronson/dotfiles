@@ -298,3 +298,6 @@ Bundle 'https://github.com/altercation/vim-colors-solarized'
 " Bundle 'https://github.com/bronson/vim-runtest'
 
 com MP make program
+com MPA make program DEBUGGING=always
+com MPP make program ENVIRONMENT=production
+
