@@ -45,7 +45,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
 fi
 
-export GREP_OPTIONS='--color=auto --exclude=tags --exclude=TAGS --exclude-dir=.git --exclude-dir=.svn --exclude-dir=log --exclude=*.min.js'
+# --exclude-dir isn't supported on OSX Lion and Brew doesn't make it easy to fix.
+#     --exclude-dir=.git --exclude-dir=.svn --exclude-dir=log
+export GREP_OPTIONS='--color=auto --exclude=tags --exclude=TAGS --exclude=*.min.js'
 
 
 
