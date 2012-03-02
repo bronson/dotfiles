@@ -231,11 +231,6 @@ Bundle 'https://github.com/godlygeek/tabular'
 Bundle 'https://github.com/tpope/vim-endwise'
 Bundle 'https://github.com/tpope/vim-repeat'
 
-Bundle 'https://github.com/tpope/vim-fugitive'
-" TODO: this prompt seems to cause huge delays with big repos on MacOS X
-"set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-set statusline=%F%h%m%w%r\ %Y\ (%{&ff})%=\ %c%V,\ %l/%L\ (%P)
-
 Bundle 'https://github.com/ervandew/supertab'
 Bundle 'https://github.com/sjl/gundo.vim'
 
