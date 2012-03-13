@@ -148,8 +148,7 @@ if [ "Darwin" == "$(uname)" ]; then
 
     export BREW_HOME=/usr/local                          # recommended location
 
-    export PATH="$BREW_HOME/sbin/:$PATH"                 # brew
-    export PATH="/opt/local/bin:/opt/local/sbin:$PATH"   # macports
+    export PATH="$BREW_HOME/bin/:$PATH"                  # brew
     export PATH="$PATH:/usr/local/mysql/bin"             # default osx mysql dmg
 
 
