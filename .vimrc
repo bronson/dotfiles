@@ -275,6 +275,7 @@ Bundle 'https://github.com/tpope/vim-git'
 Bundle 'https://github.com/gmarik/vim-markdown'
 Bundle 'https://github.com/kchmck/vim-coffee-script'
 Bundle 'https://github.com/ajf/puppet-vim'
+Bundle 'https://github.com/groenewege/vim-less.git'
 
 " Color Schemes:
 Bundle 'https://github.com/tpope/vim-vividchalk'
