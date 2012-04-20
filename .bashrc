@@ -169,12 +169,11 @@ fi
 #
 
 # Install the bash-completion package on MacOS X using port or brew.
-if [ -f /opt/local/etc/bash_completion ]; then
-  source /opt/local/etc/bash_completion
-elif [ -n "$BREW_HOME" ] && [ -f "$BREW_HOME/etc/bash_completion" ]; then
-  source "$BREW_HOME/etc/bash_completion"
-elif [ -f /etc/bash_completion ]; then
-  source /etc/bash_completion
+#if [ -f /etc/bash_completion ]; then
+  #source /etc/bash_completion
+#fi
+if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+  source /usr/local/etc/bash_completion.d/git-completion.bash
 fi
 
 # For some reason macports git doesn't install its completion file.
