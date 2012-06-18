@@ -186,8 +186,6 @@ map <D-/> <plug>NERDCommenterToggle<CR>
 map <C-_> <plug>NERDCommenterToggle<CR>
 
 Bundle 'https://github.com/tpope/vim-surround'
-" https://github.com/tpope/vim-surround/commit/f6c9d3beb2d11959d22b2555636aeb0c37e66aa1
-autocmd VimEnter * xunmap s
 
 Bundle 'https://github.com/majutsushi/tagbar'
 nmap <Space>l :TagbarToggle<cr>
@@ -298,6 +296,7 @@ Bundle 'https://github.com/altercation/vim-colors-solarized'
 " Bundle 'https://github.com/bbommarito/vim-slim'
 " Bundle 'https://github.com/bronson/vim-runtest'
 
+" hitting :MP will make and program the firmware
 com MP make program
 com MPA make program DEBUGGING=always
 com MPP make program ENVIRONMENT=production
