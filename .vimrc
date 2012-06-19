@@ -64,8 +64,7 @@ let g:is_posix = 1  " vim's default is archaic bourne shell, bring it up to the 
 set visualbell      " don't beep constantly, it's annoying.
 set t_vb=           " and don't flash the screen either (terminal anyway...
 set guioptions-=T   " hide gvim's toolbar by default
-" set guifont=Inconsolata\ Medium\ 10
-" set guifont=* to bring up a font selector, set guifont? to see result
+" see .gvimrc for font settings
 
 " search for a tags file recursively from cwd to /
 set tags=.tags,tags;/
@@ -279,6 +278,7 @@ Bundle 'https://github.com/groenewege/vim-less.git'
 Bundle 'https://github.com/tpope/vim-vividchalk'
 Bundle 'https://github.com/wgibbs/vim-irblack'
 Bundle 'https://github.com/altercation/vim-colors-solarized'
+Bundle 'https://github.com/cespare/zenburn.git'
 
 " TODO: Bundle: https://github.com/hallettj/jslint.vim
 " TODO: Bundle: https://github.com/ecomba/vim-ruby-refactoring

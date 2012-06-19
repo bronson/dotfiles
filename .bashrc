@@ -133,7 +133,7 @@ if [ -f /bin/vi ] && [ -f /usr/bin/vim ]; then
 fi
 
 # calculator: "? 3+13*3" will print 42
-? () { echo "$*" | bc -l; }
+? () { echo "$@" | bc -l; }
 
 
 #
@@ -142,7 +142,7 @@ fi
 
 if [ "Darwin" == "$(uname)" ]; then
 
-    export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+    export LSCOLORS="GxGxBxDxCxEgEdxbxgxcxd"
     export CLICOLOR=true
 
 
