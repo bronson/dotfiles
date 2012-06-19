@@ -19,10 +19,13 @@
   local = yellow
   remote = green
 [color "diff"]
-  meta = black bold
-  frag = magenta bold
-  old = red bold
-  new = yellow bold
+  commit = green bold
+  meta = green bold
+  frag = green bold
+  func = green
+  plain = yellow
+  old = red
+  new = cyan
 [color "status"]
   added = yellow
   changed = green
