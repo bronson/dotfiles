@@ -159,7 +159,7 @@ nmap <silent> <C-p> :cp<CR>
 " slate is great except comments are horrible
 " adaryn is very close to the solaris/emacs I used at OpenTV
 " nice: breeze, evening, navajo-night
-colorscheme zenburn
+"colorscheme zenburn    (fails on my osx terminal)
 
 
 " highlight rspec keywords properly
