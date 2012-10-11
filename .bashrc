@@ -132,13 +132,6 @@ __git_shortcut  gls   log --stat
 alias gs='git status -sb' # no completion for git status
 
 
-
-if [ -f /bin/vi ] && [ -f /usr/bin/vim ]; then
-  # Fedora 14 is friggin weird: can't use /bin/vi and can't remove it either
-  alias vi=/usr/bin/vim
-fi
-
-
 #
 #     OSX Hacks
 #
