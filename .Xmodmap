@@ -2,3 +2,9 @@
 ! into PageUp and PageDown.  That makes WAY more sense.
 keycode 166=Prior
 keycode 167=Next
+
+! make capslock an additional control
+remove Lock = Caps_Lock
+keycode 0x42 = Control_L
+add Control = Control_L
+
