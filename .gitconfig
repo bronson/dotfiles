@@ -58,11 +58,9 @@
   cia   = commit -v -a --untracked-files=no
   ciab  = !B=$(git symbolic-ref HEAD 2>/dev/null) && git commit -v -a --edit -m "${B##refs/heads/}:" --untracked-files=no
   cii   = commit --interactive
-  cid   = commit --amend
   cim   = commit -m
   cip   = commit -am '[...in progress...]'
   cir   = reset HEAD^
-  chp   = cherry-pick
   d     = diff
   dc    = diff --cached
   do    = diff ORIG_HEAD..
@@ -89,12 +87,30 @@
   rc    = rebase --continue
   ri    = rebase --interactive
   rm-a  = "!git ls-files -z --deleted | xargs -0 git rm"
-  rst   = reset
   s     = status -sb
   st    = status --short --branch --untracked-files=no
   sta   = status --short --branch --untracked-files=normal
-  sv    = svn
-  svci  = svn dcommit --no-rebase
-  svr   = svn rebase
-  sy     = !git pull && git push
+  sync  = !git pull && git push
   ta    = tag -a
+
+
+# http://bit.ly/g9c9Y2    (allows: git clone gh:rails/rails)
+[url "http://github.com/"]
+  insteadOf = "gh:"
+[url "git@github.com:"]
+  pushInsteadOf = "https://github.com/"
+  pushInsteadOf = "http://github.com/"
+  pushInsteadOf = "gh:"
+
+[url "git@github.com:bronson/"]
+  pushInsteadOf = "my:"
+[url "http://github.com/bronson/"]
+  insteadOf = "my:"
+
+[url "https://gist.github.com/"]
+  insteadOf = "gist:"
+[url "git@gist.github.com:"]
+  pushInsteadOf = "https://gist.github.com/"
+  pushInsteadOf = "http://gist.github.com/"
+  pushInsteadOf = "gist:"
+
