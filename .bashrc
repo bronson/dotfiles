@@ -228,6 +228,13 @@ export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
 
 
 #
+#     Etc
+#
+
+export PGDATA='/usr/local/var/postgres'
+
+
+#
 #     Private Customizations
 #
 
