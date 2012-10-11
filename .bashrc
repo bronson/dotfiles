@@ -77,7 +77,7 @@ alias ll='ls -lF'
 alias lla='ls -alF'
 
 alias tf='tail -f'
-alias gu='bundle execute guard -n false'
+alias gu='bundle exec guard -n false'
 alias jk='jekyll --auto --server'
 
 alias gre=grep    # darn you vim's :gre command
