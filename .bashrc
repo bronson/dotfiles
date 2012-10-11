@@ -76,13 +76,24 @@ alias la='ls -A'
 alias ll='ls -lF'
 alias lla='ls -alF'
 
+alias tf='tail -f'
+alias gu='bundle execute guard -n false'
+alias jk='jekyll --auto --server'
+
 alias gre=grep    # darn you vim's :gre command
 alias mak=make    # and :mak
+
 alias MP='make program' # for avr parts
 alias MPA='make program DEBUGGING=always'
 alias MPP='make program ENVIRONMENT=production'
-alias tf='tail -f'
 
+# calculator: "? 3+13*3" will print 42
+? () { echo "$*" | bc -l; }
+
+
+#
+#      Git Aliases
+#
 
 __define_git_completion () {
 eval "
@@ -121,19 +132,11 @@ __git_shortcut  gls   log --stat
 alias gs='git status -sb' # no completion for git status
 
 
-alias hgs='hg status'
-alias hgd='hg diff'
-alias hgl='hg log'
-
-alias jk='jekyll --auto --server'
 
 if [ -f /bin/vi ] && [ -f /usr/bin/vim ]; then
   # Fedora 14 is friggin weird: can't use /bin/vi and can't remove it either
   alias vi=/usr/bin/vim
 fi
-
-# calculator: "? 3+13*3" will print 42
-? () { echo "$@" | bc -l; }
 
 
 #
