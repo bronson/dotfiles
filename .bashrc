@@ -237,3 +237,4 @@ export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
 
 [ -f ~/.bashrc-private ] && . ~/.bashrc-private
 
+export LD_LIBRARY_PATH=/usr/local/lib
