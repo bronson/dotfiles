@@ -239,5 +239,3 @@ export PGDATA='/usr/local/var/postgres'
 #
 
 [ -f ~/.bashrc-private ] && . ~/.bashrc-private
-
-export LD_LIBRARY_PATH=/usr/local/lib
