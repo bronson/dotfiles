@@ -208,6 +208,10 @@ export PATH="node_modules/.bin:$PATH"
 alias gemset='rvm gemset'
 complete -o default -o nospace -F _rvm gemset
 
+# try switching to rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # Bundler can be a right pain at times
 alias be='bundle exec'
 alias bepre='bundle exec rake assets:precompile'
