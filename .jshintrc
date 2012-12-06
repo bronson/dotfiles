@@ -1,7 +1,10 @@
 {
+  "asi"     : true,
   "browser" : true,
+  "jquery"  : true,
   "node"    : true,
   "undef"   : true,
   "eqeqeq"  : true,
-  "noarg"   : true
+  "noarg"   : true,
+  "strict"  : false
 }

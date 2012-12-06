@@ -195,7 +195,7 @@ complete -o default -o nospace -F _rails r
 
 [ -d ~/.nvm ] && . ~/.nvm/nvm.sh
 which npm >/dev/null 2>&1 && . <(npm completion | cat)  # https://github.com/isaacs/npm/issues/1066
-export PATH="node_modules/.bin:$PATH"
+export PATH="node_modules/.bin:$HOME/node_modules/.bin:$PATH"
 
 #
 #     Ruby
@@ -243,5 +243,3 @@ export PGDATA='/usr/local/var/postgres'
 #
 
 [ -f ~/.bashrc-private ] && . ~/.bashrc-private
-
-export LD_LIBRARY_PATH=/usr/local/lib
