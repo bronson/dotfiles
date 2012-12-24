@@ -192,16 +192,6 @@ nmap <Space>l :TagbarToggle<cr>
 Bundle 'https://github.com/vim-scripts/bufexplorer.zip'
 nmap <Space>b :BufExplorer<cr>
 
-Bundle 'git://git.wincent.com/command-t.git'
-" ensure we compile with the system ruby if rvm is installed
-BundleCommand 'cd command-t && if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi'
-nmap <silent> <C-Space> :CommandT<CR>
-nmap <silent> <C-@> :CommandT<CR>
-" let g:CommandTCancelMap = ['<C-c>', '<Esc>', '<C-Space>', '<C-@>']
-" let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<Up>', '<ESC>OA']
-" let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<Down>', '<ESC>OB']
-let g:CommandTMatchWindowAtTop = 1
-
 Bundle 'https://github.com/bronson/vim-closebuffer'
 Bundle 'https://github.com/vim-ruby/vim-ruby'
 Bundle 'https://github.com/tpope/vim-rails'
@@ -227,8 +217,6 @@ Bundle 'https://github.com/godlygeek/tabular'
 
 Bundle 'https://github.com/tpope/vim-endwise'
 Bundle 'https://github.com/tpope/vim-repeat'
-
-Bundle 'https://github.com/ervandew/supertab'
 Bundle 'https://github.com/sjl/gundo.vim'
 
 Bundle 'https://github.com/bronson/vim-visual-star-search'
@@ -238,10 +226,6 @@ Bundle 'https://github.com/bronson/vim-toggle-wrap'
 Bundle 'https://github.com/Raimondi/YAIFA'
 " verbosity=1 allows you to check YAIFA's results by running :messages
 let g:yaifa_verbosity = 0
-
-Bundle 'https://github.com/vim-scripts/AutoTag'
-Bundle 'https://github.com/bronson/hammer.vim'
-let g:HammerQuiet = 1 " otherwise hammer complains about missing github-markup gem
 
 
 " The Ruby debugger is fairly painful, enable only when you need it
@@ -275,10 +259,10 @@ Bundle 'https://github.com/ajf/puppet-vim'
 Bundle 'https://github.com/groenewege/vim-less.git'
 
 " Color Schemes:
-Bundle 'https://github.com/tpope/vim-vividchalk'
-Bundle 'https://github.com/wgibbs/vim-irblack'
-Bundle 'https://github.com/altercation/vim-colors-solarized'
-Bundle 'https://github.com/cespare/zenburn.git'
+" NO: Bundle 'https://github.com/tpope/vim-vividchalk'
+" NO: Bundle 'https://github.com/wgibbs/vim-irblack'
+" NO: Bundle 'https://github.com/altercation/vim-colors-solarized'
+" NO: Bundle 'https://github.com/cespare/zenburn.git'
 
 " TODO: Bundle: https://github.com/hallettj/jslint.vim
 " TODO: Bundle: https://github.com/ecomba/vim-ruby-refactoring
