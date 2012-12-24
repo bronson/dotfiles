@@ -187,6 +187,7 @@ alias Rails=rails   # darn you Rails.vim
 complete -o default -o nospace -F _rails Rails
 alias r=rails
 complete -o default -o nospace -F _rails r
+alias rs='rails server --debugger'
 
 
 #
