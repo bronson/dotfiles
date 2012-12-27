@@ -94,6 +94,7 @@ alias MPP='make program ENVIRONMENT=production'
 #
 #      Git Aliases
 #
+# How this works: https://github.com/bronson/dotfiles/issues/1
 
 __define_git_completion () {
 eval "
