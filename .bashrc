@@ -204,7 +204,7 @@ export PATH="node_modules/.bin:$HOME/node_modules/.bin:$PATH"
 #
 
 # load rbenv if it's available
-if [[ -s "$HOME/.rbenv/scripts/rbenv" ]]; then
+if [[ -s "$HOME/.rbenv/bin/rbenv" ]]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 fi
