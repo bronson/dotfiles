@@ -220,6 +220,7 @@ fi
 # Bundler can be a right pain at times
 alias be='bundle exec'
 alias bepre='bundle exec rake assets:precompile'
+alias rr='rspec --debugger'
 
 # i.e. prod rake db:migrate
 prod() {
