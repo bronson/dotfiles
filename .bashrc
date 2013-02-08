@@ -113,7 +113,8 @@ eval "
 
 __git_shortcut () {
     type _git_$2_shortcut &>/dev/null || __define_git_completion $1 $2
-    alias $1="git $2 $3"
+    local args=${@: 3}
+    alias $1="git $2 $args"
     complete -o default -o nospace -F _git_$2_shortcut $1
 }
 
