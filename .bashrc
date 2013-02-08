@@ -179,19 +179,6 @@ if [ -f /opt/local/share/doc/git-core/contrib/completion/git-completion.bash ]; 
   source /opt/local/share/doc/git-core/contrib/completion/git-completion.bash
 fi
 
-
-
-#
-#     Rails
-#
-
-alias Rails=rails   # darn you Rails.vim
-complete -o default -o nospace -F _rails Rails
-alias r=rails
-complete -o default -o nospace -F _rails r
-alias rs='rails server --debugger'
-
-
 #
 #     node.js
 #
@@ -221,7 +208,9 @@ fi
 # Bundler can be a right pain at times
 alias be='bundle exec'
 alias bepre='bundle exec rake assets:precompile'
+alias r=rails
 alias rr='rspec --debugger'
+alias rs='rails server --debugger'
 
 # i.e. prod rake db:migrate
 prod() {
