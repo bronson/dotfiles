@@ -211,6 +211,7 @@ alias bepre='bundle exec rake assets:precompile'
 alias r=rails
 alias rr='rspec --debugger'
 alias rs='rails server --debugger'
+alias rc='rails console --debugger'
 
 # i.e. prod rake db:migrate
 prod() {
