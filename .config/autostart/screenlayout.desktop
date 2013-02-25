@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Screen Layout
-Comment=Executes a screen layout if it exists
-Exec=sh -c "[ -f $HOME/.screenlayout/xfce.sh ] && . $HOME/.screenlayout/xfce.sh"
-Terminal=false
-OnlyShowIn=LXDE;XFCE
