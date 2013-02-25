@@ -184,6 +184,7 @@ map <D-/> <plug>NERDCommenterToggle<CR>
 " And C-/ produces C-_ on most terminals
 map <C-_> <plug>NERDCommenterToggle<CR>
 
+Bundle 'https://github.com/kien/ctrlp.vim'
 Bundle 'https://github.com/tpope/vim-surround'
 
 Bundle 'https://github.com/majutsushi/tagbar'
