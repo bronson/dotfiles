@@ -203,9 +203,7 @@ alias rs='rails server --debugger'
 alias rc='rails console --debugger'
 
 # i.e. prod rake db:migrate
-prod() {
-  RAILS_ENV=production "$@"
-}
+production() { RAILS_ENV=production "$@"; }
 
 
 #
