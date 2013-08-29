@@ -191,17 +191,8 @@ export PATH="node_modules/.bin:$HOME/node_modules/.bin:$PATH"
 #     Ruby
 #
 
-# load rbenv if it's available
-if [ -f "$HOME/.rbenv/bin/rbenv" ]; then export PATH="$PATH:$HOME/.rbenv/bin"; fi
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# load rvm if it's available
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-    . "$HOME/.rvm/scripts/rvm"
-    [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
-    alias gemset='rvm gemset'
-    complete -o default -o nospace -F _rvm gemset
-fi
+[ -f "$HOME/.rbenv/bin/rbenv" ] && export PATH="$PATH:$HOME/.rbenv/bin"
+which rbenv > /dev/null && eval "$(rbenv init -)"
 
 # Bundler can be a right pain at times
 alias be='bundle exec'
