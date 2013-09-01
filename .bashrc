@@ -146,7 +146,7 @@ if [ "Darwin" == "$(uname)" ]; then
 
     export BREW_HOME=/usr/local                          # recommended location
 
-    export PATH="$BREW_HOME/bin:$PATH"                  # brew
+    export PATH="$BREW_HOME/bin:/usr/local/sbin:$PATH"                  # brew
     export PATH="$PATH:/usr/local/mysql/bin"             # default osx mysql dmg
 
 
@@ -192,10 +192,7 @@ export PATH="node_modules/.bin:$HOME/node_modules/.bin:$PATH"
 #
 
 # load rbenv if it's available
-if [[ -s "$HOME/.rbenv/bin/rbenv" ]]; then
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
-fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # load rvm if it's available
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
@@ -240,3 +237,6 @@ export PGDATA='/usr/local/var/postgres'
 #
 
 [ -f ~/.bashrc-private ] && . ~/.bashrc-private
+
+### Added by the Heroku Toolbelt
+export PATH="$PATH:/usr/local/heroku/bin"
