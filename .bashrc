@@ -192,6 +192,7 @@ export PATH="node_modules/.bin:$HOME/node_modules/.bin:$PATH"
 #
 
 # load rbenv if it's available
+if [ -f "$HOME/.rbenv/bin/rbenv" ]; then export PATH="$PATH:$HOME/.rbenv/bin"; fi
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # load rvm if it's available
