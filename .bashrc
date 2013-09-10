@@ -129,7 +129,6 @@ __git_shortcut  gcia  commit '-a -v'
 __git_shortcut  gd    diff
 __git_shortcut  gdc   diff --cached
 __git_shortcut  gds   diff --stat
-__git_shortcut  gf    fetch
 __git_shortcut  gl    log
 __git_shortcut  glp   log -p
 __git_shortcut  gls   log --stat
