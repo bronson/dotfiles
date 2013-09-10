@@ -5,8 +5,9 @@
 #       bash manpage, in the INVOCATION section
 # TODO: set a timeout on the prompt git stuff, it can take forever on macosx
 
-alias dotgit="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
-complete -o default -o nospace -F _git dotgit
+# df stands for dotfiles.  df diff, df log, df pull, etc.
+alias df="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
+complete -o default -o nospace -F _git df
 
 
 
@@ -24,6 +25,7 @@ export PAGER='less'                  # use less to view manpages, etc
 export PS1="\\u@\\h \\w\\$ "          # simple prompt shows user, host and path
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
 [ -d "$HOME/Dropbox/bin" ] && export PATH="$HOME/Dropbox/bin:$PATH"
+[ -d "/usr/local/heroku/bin" ] && export PATH="$PATH:/usr/local/heroku/bin"
 
 # Disable annoying ~ expansion
 # http://www.linuxquestions.org/questions/linux-software-2/how-to-stop-bash-from-replacing-%7E-with-home-username-643162/#post3162026
@@ -238,6 +240,3 @@ export PGDATA='/usr/local/var/postgres'
 #
 
 [ -f ~/.bashrc-private ] && . ~/.bashrc-private
-
-### Added by the Heroku Toolbelt
-export PATH="$PATH:/usr/local/heroku/bin"
