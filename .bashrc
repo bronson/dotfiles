@@ -158,8 +158,6 @@ if [ "Darwin" == "$(uname)" ]; then
 
     alias vi=/Applications/MacVim.app/Contents/MacOS/Vim
     alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
-    alias gvim=mvim
-
 fi
 
 
