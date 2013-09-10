@@ -5,9 +5,9 @@
 #       bash manpage, in the INVOCATION section
 # TODO: set a timeout on the prompt git stuff, it can take forever on macosx
 
-# df stands for dotfiles.  df diff, df log, df pull, etc.
-alias df="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
-complete -o default -o nospace -F _git df
+# .f stands for dotfiles.  .f diff, .f log, .f pull, etc.
+alias .f="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
+complete -o default -o nospace -F _git .f
 
 
 
