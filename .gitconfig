@@ -5,7 +5,7 @@
   email = brons_git@rinspin.com
 [push]
   # push should only push current branch, not all branches
-  default = tracking
+  default = current
 [branch]
   # git pull should always rebase
   autosetuprebase = always
