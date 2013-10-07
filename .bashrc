@@ -197,6 +197,7 @@ which rbenv > /dev/null && eval "$(rbenv init -)"
 alias be='bundle exec'
 alias bepre='bundle exec rake assets:precompile'
 alias r=rails
+alias rg='rails generate'
 alias rr='rspec --debugger'
 alias rs='rails server --debugger'
 alias rc='rails console --debugger'
