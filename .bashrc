@@ -202,7 +202,7 @@ alias rr='rspec --debugger'
 alias rs='rails server --debugger'
 alias rc='rails console --debugger'
 
-# i.e. prod rake db:migrate
+# i.e. production rake db:migrate
 production() { RAILS_ENV=production "$@"; }
 
 
