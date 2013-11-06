@@ -198,9 +198,9 @@ alias be='bundle exec'
 alias bepre='bundle exec rake assets:precompile'
 alias r=rails
 alias rg='rails generate'
-alias rr='rspec --debugger'
-alias rs='rails server --debugger'
-alias rc='rails console --debugger'
+alias rr='rspec'
+alias rs='rails server'
+alias rc='rails console'
 
 # i.e. production rake db:migrate
 production() { RAILS_ENV=production "$@"; }
