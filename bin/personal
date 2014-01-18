@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# for now run it like ". personal" to have the cd work
+# can always add an alias or convert to a bash function to remove this need
+
+if [ ! "$(ls -A ~/Personal/* 2>/dev/null)" ]; then
+  encfs --idle=30 ~/Dropbox/.Personal.raw ~/Personal
+fi
+
+cd ~/Personal
