@@ -135,11 +135,12 @@ __git_shortcut  gls   log --stat
 alias gs='git status -sb' # no completion for git status
 
 
+
+if [ "Darwin" == "$(uname)" ]; then
+
 #
 #     OSX Hacks
 #
-
-if [ "Darwin" == "$(uname)" ]; then
 
     export LSCOLORS="GxGxBxDxCxEgEdxbxgxcxd"
     export CLICOLOR=true
@@ -157,6 +158,15 @@ if [ "Darwin" == "$(uname)" ]; then
 
     alias vi=/Applications/MacVim.app/Contents/MacOS/Vim
     alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+    alias gvim=mvim
+
+else
+
+#
+#   emulate some things that osx gets right
+
+    alias open=xdg-open
+
 fi
 
 
