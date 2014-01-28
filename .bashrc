@@ -160,6 +160,9 @@ if [ "Darwin" == "$(uname)" ]; then
     alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
     alias gvim=mvim
 
+    # I alias gs to git status, no idea why homebrew doesn't allow full name
+    alias ghostscript=/usr/local/bin/gs
+
 else
 
 #
