@@ -172,10 +172,6 @@ highlight def link rubyRspec Function
 
 runtime macros/matchit.vim  " enable vim's built-in matchit script (make % bounce between tags, begin/end, etc)
 
-Bundle 'https://github.com/scrooloose/nerdtree'
-nmap <Space>d :NERDTreeToggle<cr>
-nmap <Space>D :NERDTreeFind<cr>
-
 Bundle 'https://github.com/scrooloose/nerdcommenter'
 " Use Control-/ to toggle comments
 map <C-/> <plug>NERDCommenterToggle<CR>
