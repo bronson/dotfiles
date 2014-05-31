@@ -3,6 +3,9 @@
 " Don't use abbreviations!  Spelling things out makes grepping easy.
 " After installing this .vimrc, run vim-update-bundles to install the
 " plugins: https://github.com/bronson/vim-update-bundles
+"
+" TODO: git gutter?
+" http://stevelosh.com/blog/2012/10/a-modern-space-cadet/#controlescape
 
 set nocompatible
 filetype on   " work around stupid osx bug
