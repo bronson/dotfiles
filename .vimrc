@@ -266,6 +266,7 @@ Bundle 'https://github.com/tpope/vim-git'
 " TODO: should move back to hallison or plasticboy markdown when they pick up new changes
 Bundle 'https://github.com/gmarik/vim-markdown'
 Bundle 'https://github.com/kchmck/vim-coffee-script'
+Bundle 'https://github.com/AndrewRadev/vim-eco'
 Bundle 'https://github.com/ajf/puppet-vim'
 Bundle 'https://github.com/groenewege/vim-less.git'
 
