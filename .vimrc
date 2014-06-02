@@ -4,8 +4,8 @@
 " After installing this .vimrc, run vim-update-bundles to install the
 " plugins: https://github.com/bronson/vim-update-bundles
 "
-" TODO: git gutter?
 " http://stevelosh.com/blog/2012/10/a-modern-space-cadet/#controlescape
+" TODO: https://github.com/scrooloose/syntastic ?
 
 set nocompatible
 filetype on   " work around stupid osx bug
@@ -76,6 +76,7 @@ set tags=.tags,tags;/
 " Store swapfiles in a single directory.
 set directory=~/.vim/swap,~/tmp,/var/tmp/,tmp
 
+set number
 
 
 " indenting, languages
@@ -207,8 +208,6 @@ nmap <C-_> <Plug>CommentaryLine
 Bundle 'https://github.com/tpope/vim-surround'
 Bundle 'https://github.com/tpope/vim-endwise'
 Bundle 'https://github.com/sjl/gundo.vim'
-Bundle 'https://github.com/msanders/snipmate.vim'
-Bundle 'https://github.com/scrooloose/snipmate-snippets'
 
 Bundle 'https://github.com/bronson/vim-trailing-whitespace'
 Bundle 'https://github.com/bronson/vim-toggle-wrap'
@@ -219,7 +218,19 @@ Bundle 'https://github.com/kien/ctrlp.vim'
 " except caching continually gets completions wrong, even when I hit F5
 let g:ctrlp_use_caching = 0
 
-Bundle 'git://github.com/tpope/vim-vinegar.git'
+Bundle 'https://github.com/Valloric/YouCompleteMe'
+Bundle 'https://github.com/SirVer/ultisnips'
+Bundle 'https://github.com/honza/vim-snippets'
+" this kinda sucks (YCM should just allow return) but oh well
+let g:UltiSnipsExpandTrigger = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+
+
+Bundle 'https://github.com/tpope/vim-fugitive'
+Bundle 'https://github.com/airblade/vim-gitgutter'
+
+Bundle 'https://github.com/tpope/vim-vinegar'
 
 Bundle 'https://github.com/majutsushi/tagbar'
 nmap <Space>l :TagbarToggle<cr>
@@ -243,16 +254,24 @@ Bundle 'https://github.com/bronson/vim-visual-star-search'
 " New Text Objects:
 " TODO: rewrite ruby-block-conv to use textobj-rubyblock
 Bundle 'https://github.com/bronson/vim-ruby-block-conv'
+Bundle 'https://github.com/glts/vim-textobj-comment'
 Bundle 'https://github.com/kana/vim-textobj-user'
 " Ruby text objects: ar, ir
 Bundle 'https://github.com/nelstrom/vim-textobj-rubyblock'
-" Paramter text objects (between parens and commas): aP, iP
-Bundle 'https://github.com/vim-scripts/Parameter-Text-Objects'
+" Paramter text objects (between parens and commas): a, / i,
+Bundle 'https://github.com/sgur/vim-textobj-parameter'
 " indent text objects: ai, ii, (include line below) aI, iI
 "   ai,ii work best for Python, aI,II work best for Ruby/C/Perl
 Bundle 'https://github.com/michaeljsmith/vim-indent-object'
+" ay,iy for the currently syntax highlighted item
+Bundle 'https://github.com/kana/vim-textobj-syntax'
+" av,iv for the variable segment (between _ or camelCase)
+Bundle 'https://github.com/Julian/vim-textobj-variable-segment'
+" au,iu for a url   # TODO: make 'go' work on visual mode, and also on the mac, maybe use xolox/vim-misc
+Bundle 'https://github.com/jceb/vim-textobj-uri'
 
 
+" TODO: would I rather use https://github.com/tpope/vim-sleuth ?
 Bundle 'https://github.com/Raimondi/YAIFA'
 " verbosity=1 allows you to check YAIFA's results by running :messages
 let g:yaifa_verbosity = 0
@@ -263,18 +282,17 @@ Bundle 'https://github.com/bronson/Arduino-syntax-file'
 Bundle 'https://github.com/pangloss/vim-javascript'
 Bundle 'https://github.com/vim-scripts/jQuery'
 Bundle 'https://github.com/tpope/vim-git'
-" TODO: should move back to hallison or plasticboy markdown when they pick up new changes
-Bundle 'https://github.com/gmarik/vim-markdown'
+Bundle 'https://github.com/plasticboy/vim-markdown'
 Bundle 'https://github.com/kchmck/vim-coffee-script'
 Bundle 'https://github.com/AndrewRadev/vim-eco'
 Bundle 'https://github.com/ajf/puppet-vim'
-Bundle 'https://github.com/groenewege/vim-less.git'
+Bundle 'https://github.com/groenewege/vim-less'
 
 " Color Schemes:
 " NO: Bundle 'https://github.com/tpope/vim-vividchalk'
 " NO: Bundle 'https://github.com/wgibbs/vim-irblack'
 " NO: Bundle 'https://github.com/altercation/vim-colors-solarized'
-" NO: Bundle 'https://github.com/cespare/zenburn.git'
+" NO: Bundle 'https://github.com/cespare/zenburn'
 
 " TODO: Bundle: https://github.com/hallettj/jslint.vim
 " TODO: Bundle: https://github.com/ecomba/vim-ruby-refactoring
@@ -285,7 +303,7 @@ Bundle 'https://github.com/groenewege/vim-less.git'
 
 " exiled, never used:
 " Bundle 'https://github.com/tsaleh/vim-shoulda'
-" Bundle 'https://github.com/tpope/vim-haml'
+" Bundle 'https://github.com/tpope/vim-haml
 " Bundle 'https://github.com/timcharper/textile.vim'
 " Bundle 'https://github.com/bbommarito/vim-slim'
 " Bundle 'https://github.com/bronson/vim-runtest'
