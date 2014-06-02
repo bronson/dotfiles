@@ -147,6 +147,10 @@ nmap :WQ! :wq!
 autocmd BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
 " 'q' inside quickfix window closes it (like nerdtree, bufexplorer, etc)
 autocmd BufWinEnter * if &buftype == 'quickfix' | map q :cclose<CR> | endif
+" quicker to navigate the quickfix window, just control-n, control-p
+nmap <silent> <D-n> :cn<CR>
+nmap <silent> <D-p> :cp<CR>
+
 
 
 " Make Alt-Arrows switch between windows (like C-W h, etc)
@@ -160,10 +164,6 @@ nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-h> :wincmd h<CR>
 nmap <silent> <C-l> :wincmd l<CR>
-
-" quicker to navigate the quickfix window, just control-n, control-p
-nmap <silent> <C-n> :cn<CR>
-nmap <silent> <C-p> :cp<CR>
 
 " color schemes
 
