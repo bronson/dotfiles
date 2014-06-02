@@ -5,6 +5,8 @@
 
 if [ ! "$(ls -A ~/Personal/* 2>/dev/null)" ]; then
   encfs --idle=30 ~/Dropbox/.Personal.raw ~/Personal
+else
+  echo already mounted?
 fi
 
 cd ~/Personal
