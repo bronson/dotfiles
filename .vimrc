@@ -3,9 +3,7 @@
 " Don't use abbreviations!  Spelling things out makes grepping easy.
 " After installing this .vimrc, run vim-update-bundles to install the
 " plugins: https://github.com/bronson/vim-update-bundles
-"
-" http://stevelosh.com/blog/2012/10/a-modern-space-cadet/#controlescape
-" TODO: https://github.com/scrooloose/syntastic ?
+
 
 set nocompatible
 filetype on   " work around stupid osx bug
@@ -228,7 +226,10 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
 
 Bundle 'https://github.com/tpope/vim-fugitive'
-Bundle 'https://github.com/airblade/vim-gitgutter'
+" NO Bundle 'https://github.com/airblade/vim-gitgutter'
+" highlight link GitGutterAdd DiffAdd
+" highlight link GitGutterChange DiffChange
+" highlight link GitGutterDelete DiffDelete
 
 Bundle 'https://github.com/tpope/vim-vinegar'
 
@@ -287,12 +288,14 @@ Bundle 'https://github.com/kchmck/vim-coffee-script'
 Bundle 'https://github.com/AndrewRadev/vim-eco'
 Bundle 'https://github.com/ajf/puppet-vim'
 Bundle 'https://github.com/groenewege/vim-less'
+Bundle 'https://github.com/slim-template/vim-slim'
+
 
 " Color Schemes:
-" NO: Bundle 'https://github.com/tpope/vim-vividchalk'
-" NO: Bundle 'https://github.com/wgibbs/vim-irblack'
-" NO: Bundle 'https://github.com/altercation/vim-colors-solarized'
-" NO: Bundle 'https://github.com/cespare/zenburn'
+Bundle 'https://github.com/tpope/vim-vividchalk'
+Bundle 'https://github.com/wgibbs/vim-irblack'
+Bundle 'https://github.com/altercation/vim-colors-solarized'
+Bundle 'https://github.com/cespare/zenburn'
 
 " TODO: Bundle: https://github.com/hallettj/jslint.vim
 " TODO: Bundle: https://github.com/ecomba/vim-ruby-refactoring
@@ -301,12 +304,6 @@ Bundle 'https://github.com/groenewege/vim-less'
 " TODO: Bundle: https://github.com/rson/vim-conque
 " TODO: the only decent gdb frontend looks to be pyclewn?
 
-" exiled, never used:
-" Bundle 'https://github.com/tsaleh/vim-shoulda'
-" Bundle 'https://github.com/tpope/vim-haml
-" Bundle 'https://github.com/timcharper/textile.vim'
-" Bundle 'https://github.com/bbommarito/vim-slim'
-" Bundle 'https://github.com/bronson/vim-runtest'
 
 
 " Random Personal Stuff:
