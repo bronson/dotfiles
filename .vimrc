@@ -31,6 +31,8 @@ filetype indent plugin on
 syntax on
 
 
+call yankstack#setup() " need to call before defining any yank/paste keybindings
+
 set encoding=utf-8 fileencodings= " use utf8 by default
 set showcmd           " show incomplete cmds down the bottom
 set showmode          " show current mode down the bottom
@@ -236,6 +238,7 @@ Bundle 'https://github.com/tpope/vim-vinegar'
 Bundle 'https://github.com/majutsushi/tagbar'
 nmap <Space>l :TagbarToggle<cr>
 
+" TODO: get rid of this one
 Bundle 'https://github.com/vim-scripts/bufexplorer.zip'
 nmap <Space>b :BufExplorer<cr>
 
@@ -246,6 +249,11 @@ Bundle 'https://github.com/tpope/vim-rake'
 Bundle 'https://github.com/vim-scripts/a.vim'
 
 Bundle 'https://github.com/vim-scripts/IndexedSearch'
+Bundle 'https://github.com/maxbrunsfeld/vim-yankstack'
+let g:yankstack_map_keys = 0
+nmap <Space>p <Plug>yankstack_substitute_older_paste
+nmap <Space>P <Plug>yankstack_substitute_newer_paste
+
 
 Bundle 'https://github.com/tpope/vim-repeat'
 Bundle 'https://github.com/bronson/vim-visual-star-search'
