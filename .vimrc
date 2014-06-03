@@ -56,7 +56,7 @@ set nrformats=alpha,hex " C-A/C-X works on dec, hex, and chars (not octal so no 
 
 set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore=*.o,*.obj,*/tmp/*,*.so,*~ "stuff to ignore when tab completing
 
 set backspace=indent,eol,start "allow backspacing over everything in insert mode
 set history=1000               "store lots of :cmdline history
@@ -167,14 +167,6 @@ nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-h> :wincmd h<CR>
 nmap <silent> <C-l> :wincmd l<CR>
 
-" color schemes
-
-" desert is too low contrast
-" slate is great except comments are horrible
-" adaryn is very close to the solaris/emacs I used at OpenTV
-" nice: breeze, evening, navajo-night
-"colorscheme zenburn    (fails on my osx terminal)
-
 
 " highlight rspec keywords properly
 " modified from tpope and technicalpickles: https://gist.github.com/64635
@@ -213,10 +205,12 @@ Bundle 'https://github.com/bronson/vim-trailing-whitespace'
 Bundle 'https://github.com/bronson/vim-toggle-wrap'
 
 
-" UI Enhancements:
+" Utilities:
 Bundle 'https://github.com/kien/ctrlp.vim'
 " except caching continually gets completions wrong, even when I hit F5
 let g:ctrlp_use_caching = 0
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_match_window = 'min:4,max:72'
 
 Bundle 'https://github.com/Valloric/YouCompleteMe'
 Bundle 'https://github.com/SirVer/ultisnips'
@@ -258,6 +252,11 @@ nmap <Space>P <Plug>yankstack_substitute_newer_paste
 Bundle 'https://github.com/tpope/vim-repeat'
 Bundle 'https://github.com/bronson/vim-visual-star-search'
 
+" TODO: would I rather use https://github.com/tpope/vim-sleuth ?
+Bundle 'https://github.com/Raimondi/YAIFA'
+" verbosity=1 allows you to check YAIFA's results by running :messages
+let g:yaifa_verbosity = 0
+
 
 "
 " New Text Objects:
@@ -280,12 +279,6 @@ Bundle 'https://github.com/Julian/vim-textobj-variable-segment'
 Bundle 'https://github.com/jceb/vim-textobj-uri'
 
 
-" TODO: would I rather use https://github.com/tpope/vim-sleuth ?
-Bundle 'https://github.com/Raimondi/YAIFA'
-" verbosity=1 allows you to check YAIFA's results by running :messages
-let g:yaifa_verbosity = 0
-
-
 " Syntax Files:
 Bundle 'https://github.com/bronson/Arduino-syntax-file'
 Bundle 'https://github.com/pangloss/vim-javascript'
@@ -299,11 +292,20 @@ Bundle 'https://github.com/groenewege/vim-less'
 Bundle 'https://github.com/slim-template/vim-slim'
 
 
+" Appearance:
+
+Bundle 'https://github.com/vim-scripts/CursorLineCurrentWindow'
+set cursorline
+Bundle 'https://github.com/bling/vim-airline'
+
+
 " Color Schemes:
 Bundle 'https://github.com/tpope/vim-vividchalk'
 Bundle 'https://github.com/wgibbs/vim-irblack'
 Bundle 'https://github.com/altercation/vim-colors-solarized'
 Bundle 'https://github.com/cespare/zenburn'
+
+
 
 " TODO: Bundle: https://github.com/hallettj/jslint.vim
 " TODO: Bundle: https://github.com/ecomba/vim-ruby-refactoring
