@@ -212,13 +212,13 @@ let g:ctrlp_use_caching = 0
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_match_window = 'min:4,max:72'
 
-Bundle 'https://github.com/Valloric/YouCompleteMe'
-Bundle 'https://github.com/SirVer/ultisnips'
-Bundle 'https://github.com/honza/vim-snippets'
-" this kinda sucks (YCM should just allow return) but oh well
-let g:UltiSnipsExpandTrigger = "<c-j>"
-let g:UltiSnipsJumpForwardTrigger = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+" Bundle 'https://github.com/Valloric/YouCompleteMe'
+" Bundle 'https://github.com/SirVer/ultisnips'
+" Bundle 'https://github.com/honza/vim-snippets'
+" " this kinda sucks (YCM should just allow return) but oh well
+" let g:UltiSnipsExpandTrigger = "<c-j>"
+" let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+" let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
 
 Bundle 'https://github.com/tpope/vim-fugitive'
