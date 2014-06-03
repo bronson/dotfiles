@@ -11,3 +11,7 @@ endif
 
 set t_vb= " don't flash the screen for visualbell (:he vb)
 colorscheme evening
+
+" it's handy to show where the cursor is
+set cursorline
+set cursorcolumn

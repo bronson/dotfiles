@@ -285,6 +285,7 @@ Bundle 'https://github.com/pangloss/vim-javascript'
 Bundle 'https://github.com/vim-scripts/jQuery'
 Bundle 'https://github.com/tpope/vim-git'
 Bundle 'https://github.com/plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled=1
 Bundle 'https://github.com/kchmck/vim-coffee-script'
 Bundle 'https://github.com/AndrewRadev/vim-eco'
 Bundle 'https://github.com/ajf/puppet-vim'
@@ -294,9 +295,8 @@ Bundle 'https://github.com/slim-template/vim-slim'
 
 " Appearance:
 
-Bundle 'https://github.com/vim-scripts/CursorLineCurrentWindow'
-set cursorline
 Bundle 'https://github.com/bling/vim-airline'
+Bundle 'https://github.com/bronson/vim-crosshairs'
 
 
 " Color Schemes:
