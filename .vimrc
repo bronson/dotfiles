@@ -307,6 +307,7 @@ Bundle 'https://github.com/cespare/zenburn'
 
 
 
+" TODO: a path textobject?  vi/, va/
 " TODO: Bundle: https://github.com/hallettj/jslint.vim
 " TODO: Bundle: https://github.com/ecomba/vim-ruby-refactoring
 " TODO: Bundle: https://github.com/scrooloose/syntastic
