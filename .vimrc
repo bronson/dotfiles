@@ -179,6 +179,11 @@ autocmd VimEnter * if !argc() | Explore | endif
 autocmd VimEnter * if isdirectory(expand('<afile>')) | Explore | endif
 
 
+" make :gs pull up git status
+cabbrev <expr> gs ((getcmdtype() == ':' && getcmdpos() <= 3) ? 'Gstatus' : 'gs')
+command! Gs Gstatus
+
+
 "
 "          Plugins
 "
@@ -196,16 +201,12 @@ nmap <C-/> <Plug>CommentaryLine
 nmap <D-/> <Plug>CommentaryLine
 nmap <C-_> <Plug>CommentaryLine
 
-
 Bundle 'https://github.com/tpope/vim-surround'
 Bundle 'https://github.com/tpope/vim-endwise'
-Bundle 'https://github.com/sjl/gundo.vim'
-
-Bundle 'https://github.com/bronson/vim-trailing-whitespace'
-Bundle 'https://github.com/bronson/vim-toggle-wrap'
 
 
 " Utilities:
+
 Bundle 'https://github.com/kien/ctrlp.vim'
 " except caching continually gets completions wrong, even when I hit F5
 let g:ctrlp_use_caching = 0
@@ -239,7 +240,9 @@ nmap <Space>b :BufExplorer<cr>
 Bundle 'https://github.com/bronson/vim-closebuffer'
 Bundle 'https://github.com/vim-ruby/vim-ruby'
 Bundle 'https://github.com/tpope/vim-rails'
+Bundle 'https://github.com/tpope/vim-bundler'
 Bundle 'https://github.com/tpope/vim-rake'
+Bundle 'https://github.com/tpope/vim-unimpaired'
 Bundle 'https://github.com/vim-scripts/a.vim'
 
 Bundle 'https://github.com/vim-scripts/IndexedSearch'
@@ -248,7 +251,8 @@ let g:yankstack_map_keys = 0
 nmap <Space>p <Plug>yankstack_substitute_older_paste
 nmap <Space>P <Plug>yankstack_substitute_newer_paste
 
-
+Bundle 'https://github.com/sjl/gundo.vim'
+Bundle 'https://github.com/bronson/vim-toggle-wrap'
 Bundle 'https://github.com/tpope/vim-repeat'
 Bundle 'https://github.com/bronson/vim-visual-star-search'
 
@@ -257,9 +261,16 @@ Bundle 'https://github.com/Raimondi/YAIFA'
 " verbosity=1 allows you to check YAIFA's results by running :messages
 let g:yaifa_verbosity = 0
 
+Bundle 'https://github.com/rking/ag.vim'
+" use ag to generate ctrlp list since it obeys .gitignore
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+set grepprg=ag\ --nogroup\ --nocolor
+" hit K to do a recursive grep of the word under the cursor (probably no need, \* will do it better?)
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-"
-" New Text Objects:
+
+" Text Objects:
+
 " TODO: rewrite ruby-block-conv to use textobj-rubyblock
 Bundle 'https://github.com/bronson/vim-ruby-block-conv'
 Bundle 'https://github.com/glts/vim-textobj-comment'
@@ -280,6 +291,7 @@ Bundle 'https://github.com/jceb/vim-textobj-uri'
 
 
 " Syntax Files:
+
 Bundle 'https://github.com/bronson/Arduino-syntax-file'
 Bundle 'https://github.com/pangloss/vim-javascript'
 Bundle 'https://github.com/vim-scripts/jQuery'
@@ -297,13 +309,21 @@ Bundle 'https://github.com/slim-template/vim-slim'
 
 Bundle 'https://github.com/bling/vim-airline'
 Bundle 'https://github.com/bronson/vim-crosshairs'
+Bundle 'https://github.com/bronson/vim-trailing-whitespace'
 
 
 " Color Schemes:
+
 Bundle 'https://github.com/tpope/vim-vividchalk'
 Bundle 'https://github.com/wgibbs/vim-irblack'
 Bundle 'https://github.com/altercation/vim-colors-solarized'
 Bundle 'https://github.com/cespare/zenburn'
+Bundle 'https://github.com/jgdavey/vim-railscasts'
+Bundle 'https://github.com/vim-scripts/twilight'
+Bundle 'https://github.com/vim-scripts/Guardian'
+Bundle 'https://github.com/chriskempson/base16-vim'
+Bundle 'https://github.com/chriskempson/vim-tomorrow-theme'
+Bundle 'https://github.com/croaky/vim-colors-github'
 
 
 
@@ -316,6 +336,18 @@ Bundle 'https://github.com/cespare/zenburn'
 " TODO: the only decent gdb frontend looks to be pyclewn?
 
 
+" from https://github.com/nelstrom/dotfiles/blob/448f710b855970a8565388c6665a96ddf4976f9f/vimrc
+command! Path :call EchoPath()
+function! EchoPath()
+  echo join(split(&path, ","), "\n")
+endfunction
+
+command! TagFiles :call EchoTags()
+function! EchoTags()
+  echo join(split(&tags, ","), "\n")
+endfunction
+
+
 
 " Random Personal Stuff:
 " hitting :MP will make and program the firmware
@@ -323,3 +355,6 @@ command! MP make program
 command! MPA make program DEBUGGING=always
 command! MPP make program ENVIRONMENT=production
 
+
+" some goddamn plugin is messing this up?
+set textwidth=0
