@@ -179,9 +179,6 @@ autocmd VimEnter * if !argc() | Explore | endif
 autocmd VimEnter * if isdirectory(expand('<afile>')) | Explore | endif
 
 
-" make :gs pull up git status
-cabbrev <expr> gs ((getcmdtype() == ':' && getcmdpos() <= 3) ? 'Gstatus' : 'gs')
-command! Gs Gstatus
 
 
 "
@@ -204,15 +201,6 @@ nmap <C-_> <Plug>CommentaryLine
 Bundle 'https://github.com/tpope/vim-surround'
 Bundle 'https://github.com/tpope/vim-endwise'
 
-
-" Utilities:
-
-Bundle 'https://github.com/kien/ctrlp.vim'
-" except caching continually gets completions wrong, even when I hit F5
-let g:ctrlp_use_caching = 0
-let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_match_window = 'min:4,max:72'
-
 " Bundle 'https://github.com/Valloric/YouCompleteMe'
 " Bundle 'https://github.com/SirVer/ultisnips'
 " Bundle 'https://github.com/honza/vim-snippets'
@@ -222,7 +210,37 @@ let g:ctrlp_match_window = 'min:4,max:72'
 " let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
 
+" Navigation And Searching:
+
+Bundle 'https://github.com/kien/ctrlp.vim'
+" except caching continually gets completions wrong, even when I hit F5
+let g:ctrlp_use_caching = 0
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_match_window = 'min:4,max:72'
+" use ag to generate ctrlp list since it obeys .gitignore
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+Bundle 'https://github.com/rking/ag.vim'
+set grepprg=ag\ --nogroup\ --nocolor
+" hit K to do a recursive grep of the word under the cursor (probably no need, \* will do it better?)
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+Bundle 'https://github.com/tpope/vim-unimpaired'
+Bundle 'https://github.com/vim-scripts/a.vim'
+
+Bundle 'https://github.com/majutsushi/tagbar'
+nmap <Space>l :TagbarToggle<cr>
+
+Bundle 'https://github.com/bronson/vim-visual-star-search'
+
+
+" Utilities:
+
 Bundle 'https://github.com/tpope/vim-fugitive'
+" make :gs and :Gs pull up git status
+cabbrev <expr> gs ((getcmdtype() == ':' && getcmdpos() <= 3) ? 'Gstatus' : 'gs')
+command! Gs Gstatus
+
 " NO Bundle 'https://github.com/airblade/vim-gitgutter'
 " highlight link GitGutterAdd DiffAdd
 " highlight link GitGutterChange DiffChange
@@ -230,20 +248,11 @@ Bundle 'https://github.com/tpope/vim-fugitive'
 
 Bundle 'https://github.com/tpope/vim-vinegar'
 
-Bundle 'https://github.com/majutsushi/tagbar'
-nmap <Space>l :TagbarToggle<cr>
-
-" TODO: get rid of this one
-Bundle 'https://github.com/vim-scripts/bufexplorer.zip'
-nmap <Space>b :BufExplorer<cr>
-
 Bundle 'https://github.com/bronson/vim-closebuffer'
 Bundle 'https://github.com/vim-ruby/vim-ruby'
 Bundle 'https://github.com/tpope/vim-rails'
 Bundle 'https://github.com/tpope/vim-bundler'
 Bundle 'https://github.com/tpope/vim-rake'
-Bundle 'https://github.com/tpope/vim-unimpaired'
-Bundle 'https://github.com/vim-scripts/a.vim'
 
 Bundle 'https://github.com/vim-scripts/IndexedSearch'
 Bundle 'https://github.com/maxbrunsfeld/vim-yankstack'
@@ -252,21 +261,23 @@ nmap <Space>p <Plug>yankstack_substitute_older_paste
 nmap <Space>P <Plug>yankstack_substitute_newer_paste
 
 Bundle 'https://github.com/sjl/gundo.vim'
-Bundle 'https://github.com/bronson/vim-toggle-wrap'
 Bundle 'https://github.com/tpope/vim-repeat'
-Bundle 'https://github.com/bronson/vim-visual-star-search'
 
 " TODO: would I rather use https://github.com/tpope/vim-sleuth ?
 Bundle 'https://github.com/Raimondi/YAIFA'
 " verbosity=1 allows you to check YAIFA's results by running :messages
 let g:yaifa_verbosity = 0
 
-Bundle 'https://github.com/rking/ag.vim'
-" use ag to generate ctrlp list since it obeys .gitignore
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-set grepprg=ag\ --nogroup\ --nocolor
-" hit K to do a recursive grep of the word under the cursor (probably no need, \* will do it better?)
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" Bundle: https://github.com/scrooloose/syntastic
+let g:syntastic_check_on_open=1
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+"
+" TODO: can vim-unimpaired replace this plugin?
+Bundle 'https://github.com/bronson/vim-toggle-wrap'
+
+" TODO: get rid of this one?
+Bundle 'https://github.com/vim-scripts/bufexplorer.zip'
+nmap <Space>b :BufExplorer<cr>
 
 
 " Text Objects:
@@ -330,7 +341,6 @@ Bundle 'https://github.com/croaky/vim-colors-github'
 " TODO: a path textobject?  vi/, va/
 " TODO: Bundle: https://github.com/hallettj/jslint.vim
 " TODO: Bundle: https://github.com/ecomba/vim-ruby-refactoring
-" TODO: Bundle: https://github.com/scrooloose/syntastic
 " TODO: Bundle: https://github.com/int3/vim-extradite
 " TODO: Bundle: https://github.com/rson/vim-conque
 " TODO: the only decent gdb frontend looks to be pyclewn?
