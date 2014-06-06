@@ -344,6 +344,9 @@ Bundle 'https://github.com/croaky/vim-colors-github'
 " TODO: Bundle: https://github.com/int3/vim-extradite
 " TODO: Bundle: https://github.com/rson/vim-conque
 " TODO: the only decent gdb frontend looks to be pyclewn?
+"
+" Can I throw a visual select around the most recent paste?
+" Is this something yankstack can do?
 
 
 " from https://github.com/nelstrom/dotfiles/blob/448f710b855970a8565388c6665a96ddf4976f9f/vimrc
