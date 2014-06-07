@@ -178,7 +178,7 @@ highlight def link rubyRspec Function
 autocmd VimEnter * if !argc() | Explore | endif
 autocmd VimEnter * if isdirectory(expand('<afile>')) | Explore | endif
 
-nmap <Space>e :Explore .<cr>
+nmap <Space>e :Explore!<cr>
 nmap <Space>E :edit .<cr>
 
 
