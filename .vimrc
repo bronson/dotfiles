@@ -361,18 +361,6 @@ function! EchoTags()
 endfunction
 
 
-" not sure if I want this
-Bundle 'https://github.com/vim-scripts/ConfirmQuit.vim'
-" it's ok but it delays q and x!  horrible!  evil!
-if has("gui_running")
-  cunmap q<cr>
-  cunmap wq<cr>
-  cunmap x<cr>
-  cabbrev <silent> q <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'call ConfirmQuit(0)' : 'q')<CR>
-endif
-
-
-
 
 " Random Personal Stuff:
 " hitting :MP will make and program the firmware
