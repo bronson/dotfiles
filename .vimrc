@@ -150,8 +150,8 @@ autocmd BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
 " 'q' inside quickfix window closes it (like nerdtree, bufexplorer, etc)
 autocmd BufWinEnter * if &buftype == 'quickfix' | map q :cclose<CR> | endif
 " quicker to navigate the quickfix window, just control-n, control-p
-nmap <silent> <D-n> :cn<CR>
-nmap <silent> <D-p> :cp<CR>
+nmap <silent> <C-n> :cn<CR>
+nmap <silent> <C-p> :cp<CR>
 
 
 
@@ -215,9 +215,9 @@ Bundle 'https://github.com/tpope/vim-endwise'
 " Navigation And Searching:
 
 Bundle 'https://github.com/kien/ctrlp.vim'
-" except caching continually gets completions wrong, even when I hit F5
+let g:ctrlp_map = '<Space><Space>'
+" caching continually gets completions wrong, even when I hit F5
 let g:ctrlp_use_caching = 0
-" let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_match_window = 'min:4,max:72'
 " use ag to generate ctrlp list since it obeys .gitignore
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
