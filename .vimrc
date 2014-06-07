@@ -217,10 +217,12 @@ Bundle 'https://github.com/tpope/vim-endwise'
 Bundle 'https://github.com/kien/ctrlp.vim'
 " except caching continually gets completions wrong, even when I hit F5
 let g:ctrlp_use_caching = 0
-let g:ctrlp_cmd = 'CtrlPMixed'
+" let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_match_window = 'min:4,max:72'
 " use ag to generate ctrlp list since it obeys .gitignore
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+nmap <Space>b :CtrlPBuffer<cr>
+
 
 Bundle 'https://github.com/rking/ag.vim'
 set grepprg=ag\ --nogroup\ --nocolor
@@ -276,10 +278,6 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 "
 " TODO: can vim-unimpaired replace this plugin?
 Bundle 'https://github.com/bronson/vim-toggle-wrap'
-
-" TODO: get rid of this one?
-Bundle 'https://github.com/vim-scripts/bufexplorer.zip'
-nmap <Space>b :BufExplorer<cr>
 
 
 " Text Objects:
@@ -346,6 +344,7 @@ Bundle 'https://github.com/croaky/vim-colors-github'
 " TODO: Bundle: https://github.com/int3/vim-extradite
 " TODO: Bundle: https://github.com/rson/vim-conque
 " TODO: the only decent gdb frontend looks to be pyclewn?
+" TODO: another bufclose, how did I not find this?  https://github.com/vim-scripts/BufClose.vim
 "
 " Can I throw a visual select around the most recent paste?
 " Is this something yankstack can do?
