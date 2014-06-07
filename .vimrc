@@ -220,7 +220,7 @@ let g:ctrlp_map = '<Space><Space>'
 let g:ctrlp_use_caching = 0
 let g:ctrlp_match_window = 'min:4,max:72'
 " use ag to generate ctrlp list since it obeys .gitignore
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 nmap <Space>b :CtrlPBuffer<cr>
 
 
