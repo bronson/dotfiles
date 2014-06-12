@@ -337,7 +337,8 @@ Bundle 'https://github.com/chriskempson/vim-tomorrow-theme'
 Bundle 'https://github.com/croaky/vim-colors-github'
 
 
-
+" TODO: http://vimcasts.org/blog/2010/12/a-text-object-for-ruby-blocks/
+" TODO: http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 " TODO: a path textobject?  vi/, va/
 " TODO: Bundle: https://github.com/hallettj/jslint.vim
 " TODO: Bundle: https://github.com/ecomba/vim-ruby-refactoring
