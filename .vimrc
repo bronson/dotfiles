@@ -142,7 +142,7 @@ autocmd BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
 " 'q' inside quickfix window closes it (like nerdtree, bufexplorer, etc)
 autocmd BufWinEnter * if &buftype == 'quickfix' | map q :cclose<CR> | endif
 " quicker to navigate the quickfix window, just control-n, control-p
-" TODO: nope, ctrl-p is just too ingrained.  maybe unimpaired's q[ and q] is good enough?
+" TODO: nope, ctrl-p is just too ingrained.  maybe unimpaired's [q and ]q is good enough?
 " nmap <silent> <C-n> :cn<CR>
 " nmap <silent> <C-p> :cp<CR>
 
@@ -263,11 +263,15 @@ Bundle 'https://github.com/bronson/vim-toggle-wrap'
 
 " Running External Commands:
 
+" To make this work well, you either need to be running command-line vim inside
+" tmux, or running macvim with an instance of iTerm2 launched.
 Bundle 'https://github.com/thoughtbot/vim-rspec'
+let g:rspec_command = "Dispatch rspec {spec}"
 map <Leader>t :call RunNearestSpec()<CR>
 map <Leader>T :call RunCurrentSpecFile()<CR>
 map <Leader>r :call RunLastSpec()<CR>
 map <Leader>R :call RunAllSpecs()<CR>
+
 
 Bundle 'https://github.com/tpope/vim-dispatch'   " used by vim-rspec
 
