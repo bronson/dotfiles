@@ -263,16 +263,6 @@ Bundle 'https://github.com/bronson/vim-toggle-wrap'
 
 " Running External Commands:
 
-" To make this work well, you either need to be running command-line vim inside
-" tmux, or running macvim with an instance of iTerm2 launched.
-Bundle 'https://github.com/thoughtbot/vim-rspec'
-let g:rspec_command = "Dispatch rspec {spec}"
-map <Leader>t :call RunNearestSpec()<CR>
-map <Leader>T :call RunCurrentSpecFile()<CR>
-map <Leader>r :call RunLastSpec()<CR>
-map <Leader>R :call RunAllSpecs()<CR>
-
-
 Bundle 'https://github.com/tpope/vim-dispatch'   " used by vim-rspec
 
 Bundle 'https://github.com/tpope/vim-fugitive'
@@ -364,6 +354,89 @@ command! TagFiles :call EchoTags()
 function! EchoTags()
   echo join(split(&tags, ","), "\n")
 endfunction
+
+
+
+" try Gary Bernhard's test running code
+" https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
+
+" too easy to hit accidentally
+" function! MapCR()
+"   nnoremap <cr> :call RunTestFile()<cr>
+" endfunction
+" call MapCR()
+
+" TODO:
+" use Dispatch and populate the quickfix window
+" test cucumber .features file
+" add support for test::unit and minitest
+" add support for perl testing
+
+nnoremap <leader>t :call RunNearestTest()<cr>
+nnoremap <leader>T :call RunTestFile()<cr>
+" todo: re-run tests
+nnoremap <leader>R :call RunTests('.')<cr>
+
+function! RunTestFile(...)
+    if a:0
+        let command_suffix = a:1
+    else
+        let command_suffix = ""
+    endif
+
+    " Run the tests for the previously-marked file.
+    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
+    if in_test_file
+        call SetTestFile()
+    elseif !exists("t:grb_test_file")
+        return
+    end
+    call RunTests(t:grb_test_file . command_suffix)
+endfunction
+
+function! RunNearestTest()
+    let spec_line_number = line('.')
+    call RunTestFile(":" . spec_line_number)
+endfunction
+
+function! SetTestFile()
+    " Set the spec file that tests will be run for.
+    let t:grb_test_file=@%
+endfunction
+
+function! RunTests(filename)
+    " Write the file and run tests for the given filename
+    " TODO: maybe this should be optional?
+    if expand("%") != ""
+      :w
+    end
+
+    if match(a:filename, '\.feature$') != -1
+        exec ":!script/features " . a:filename
+    else
+        " First choice: project-specific test script
+        if filereadable("script/test")
+            exec ":!script/test " . a:filename
+        " Fall back to the .test-commands pipe if available, assuming someone
+        " is reading the other side and running the commands
+        elseif filewritable(".test-commands")
+          let cmd = 'rspec --color --format progress --require "~/lib/vim_rspec_formatter" --format VimFormatter --out tmp/quickfix'
+          exec ":!echo " . cmd . " " . a:filename . " > .test-commands"
+
+          " Write an empty string to block until the command completes
+          sleep 100m " milliseconds
+          :!echo > .test-commands
+          redraw!
+        " Fall back to a blocking test run with Bundler
+        elseif filereadable("Gemfile")
+            exec ":!bundle exec rspec --color " . a:filename
+        " Fall back to a normal blocking test run
+        else
+            exec ":!rspec --color " . a:filename
+        end
+    end
+endfunction
+
 
 
 
