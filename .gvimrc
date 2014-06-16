@@ -10,7 +10,9 @@ if has("gui_macvim")
 endif
 
 set t_vb= " don't flash the screen for visualbell (:he vb)
-colorscheme evening
+colorscheme solarized
+
+set number   " show line numbers in gui
 
 " it's handy to show where the cursor is
 highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=#2b2b2b guifg=NONE 

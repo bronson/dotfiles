@@ -76,7 +76,7 @@ set tags=.tags,tags;/
 " Store swapfiles in a single directory.
 set directory=~/.vim/swap,~/tmp,/var/tmp/,tmp
 
-set number
+set nonumber          " no line numbers in terminal (limited real estate), overridden by gui
 
 
 " indenting, languages
