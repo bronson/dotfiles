@@ -370,59 +370,66 @@ nnoremap <leader>t :call RunNearestTest()<cr>
 nnoremap <leader>T :call RunTestFile()<cr>
 nnoremap <leader>r :call RunTests(g:previous_test)<cr>
 " running all tests doesn't change the previous test.
-nnoremap <leader>R :call RunTests('.')<cr
+nnoremap <leader>R :call RunTests('.')<cr>
 
-function! RunTestFile(...)
-    if a:0
-        let command_suffix = a:1
+if !exists("g:test_runner")
+    let g:test_runner = ":!"
+    let g:test_runner = ":Dispatch "
+endif
+
+function! TestCommand(filename, lineno)
+    if a:lineno != 0
+        let fileline = a:filename . ':' . a:lineno
     else
-        let command_suffix = ""
+        let fileline = a:filename
     endif
 
-    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
-    if in_test_file
-        let g:previous_test=@% . command_suffix
+    if match(a:filename, '\.feature$') != -1
+        return g:test_runner . "script/features " . fileline
+    elseif match(a:filename, '_spec\.rb$') != -1
+        if filereadable("script/test")
+            return g:test_runner . "script/test " . fileline
+        elseif filereadable("Gemfile")
+            return g:test_runner . "bundle exec rspec --color " . fileline
+        else
+            return g:test_runner . "rspec --color " . fileline
+        end
+    elseif a:filename == '.'
+        " need to sense the command to run global tests
+        return g:test_runner . "rspec --color " . fileline
     end
+    return -1
+endfunction
+
+function! RunNearestTest()
+    call RunTestFile(line('.'))
+endfunction
+
+function! RunTestFile(...)
+    let line = 0
+    if a:0
+        let line = a:1
+    end
+
+    let command = TestCommand(expand("%"), line)
+    if command != -1
+        let g:previous_test = command
+    end
+
     if exists("g:previous_test")
         call RunTests(g:previous_test)
     end
 endfunction
 
-function! RunNearestTest()
-    call RunTestFile(":" . line('.'))
-endfunction
-
-function! RunTests(filename)
-    " Write the file and run tests for the given filename
+function! RunTests(test)
     " TODO: maybe this should be optional?
-    if expand("%") != ""
-      :w
-    end
+    :wa
 
-    if match(a:filename, '\.feature$') != -1
-        exec ":!script/features " . a:filename
-    else
-        " First choice: project-specific test script
-        if filereadable("script/test")
-            exec ":!script/test " . a:filename
-        " Fall back to the .test-commands pipe if available, assuming someone
-        " is reading the other side and running the commands
-        elseif filewritable(".test-commands")
-          let cmd = 'rspec --color --format progress --require "~/lib/vim_rspec_formatter" --format VimFormatter --out tmp/quickfix'
-          exec ":!echo " . cmd . " " . a:filename . " > .test-commands"
-
-          " Write an empty string to block until the command completes
-          sleep 100m " milliseconds
-          :!echo > .test-commands
-          redraw!
-        " Fall back to a blocking test run with Bundler
-        elseif filereadable("Gemfile")
-            exec ":!bundle exec rspec --color " . a:filename
-        " Fall back to a normal blocking test run
-        else
-            exec ":!rspec --color " . a:filename
-        end
+    let test = a:test
+    if test == '.'
+      let test = TestCommand('.', 0)
     end
+    exec test
 endfunction
 
 
