@@ -360,12 +360,6 @@ endfunction
 " try Gary Bernhard's test running code
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
 
-" too easy to hit accidentally
-" function! MapCR()
-"   nnoremap <cr> :call RunTestFile()<cr>
-" endfunction
-" call MapCR()
-
 " TODO:
 " use Dispatch and populate the quickfix window
 " test cucumber .features file
@@ -374,8 +368,9 @@ endfunction
 
 nnoremap <leader>t :call RunNearestTest()<cr>
 nnoremap <leader>T :call RunTestFile()<cr>
-" todo: re-run tests
-nnoremap <leader>R :call RunTests('.')<cr>
+nnoremap <leader>r :call RunTests(g:previous_test)<cr>
+" running all tests doesn't change the previous test.
+nnoremap <leader>R :call RunTests('.')<cr
 
 function! RunTestFile(...)
     if a:0
@@ -384,24 +379,17 @@ function! RunTestFile(...)
         let command_suffix = ""
     endif
 
-    " Run the tests for the previously-marked file.
     let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
     if in_test_file
-        call SetTestFile()
-    elseif !exists("t:grb_test_file")
-        return
+        let g:previous_test=@% . command_suffix
     end
-    call RunTests(t:grb_test_file . command_suffix)
+    if exists("g:previous_test")
+        call RunTests(g:previous_test)
+    end
 endfunction
 
 function! RunNearestTest()
-    let spec_line_number = line('.')
-    call RunTestFile(":" . spec_line_number)
-endfunction
-
-function! SetTestFile()
-    " Set the spec file that tests will be run for.
-    let t:grb_test_file=@%
+    call RunTestFile(":" . line('.'))
 endfunction
 
 function! RunTests(filename)
