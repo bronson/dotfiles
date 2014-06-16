@@ -243,6 +243,7 @@ Bundle 'https://github.com/tpope/vim-rails'
 Bundle 'https://github.com/tpope/vim-bundler'
 Bundle 'https://github.com/tpope/vim-rake'
 Bundle 'https://github.com/tpope/vim-vinegar'
+Bundle 'https://github.com/tpope/vim-speeddating'
 
 Bundle 'https://github.com/vim-scripts/IndexedSearch'
 Bundle 'https://github.com/maxbrunsfeld/vim-yankstack'
@@ -269,7 +270,7 @@ Bundle 'https://github.com/bronson/vim-toggle-wrap'
 
 Bundle 'https://github.com/thoughtbot/vim-rspec'
 
-Bundle 'https://github.com/tpope/dispatch'   " used by vim-rspec
+Bundle 'https://github.com/tpope/vim-dispatch'   " used by vim-rspec
 
 Bundle 'https://github.com/tpope/vim-fugitive'
 " make :gs and :Gs pull up git status
