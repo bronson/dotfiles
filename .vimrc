@@ -269,6 +269,10 @@ Bundle 'https://github.com/bronson/vim-toggle-wrap'
 " Running External Commands:
 
 Bundle 'https://github.com/thoughtbot/vim-rspec'
+map <Leader>t :call RunNearestSpec()<CR>
+map <Leader>T :call RunCurrentSpecFile()<CR>
+map <Leader>r :call RunLastSpec()<CR>
+map <Leader>R :call RunAllSpecs()<CR>
 
 Bundle 'https://github.com/tpope/vim-dispatch'   " used by vim-rspec
 
