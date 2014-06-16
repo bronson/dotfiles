@@ -99,11 +99,6 @@ autocmd FileType ruby setlocal iskeyword+=!,?
 "  :20 lines of command history, % the bufer list, and put it all in ~/.viminfo
 " set viminfo='10,\"100,:20,%,n~/.viminfo
 
-" wish I could make mapleader be space but vim waits for a second
-" every time you hit the space key.
-" <Plug>DiscretionaryEnd
-" let mapleader=" "
-
 
 " fixes
 
@@ -335,13 +330,10 @@ Bundle 'https://github.com/bronson/vim-trailing-whitespace'
 Bundle 'https://github.com/tpope/vim-vividchalk'
 Bundle 'https://github.com/wgibbs/vim-irblack'
 Bundle 'https://github.com/altercation/vim-colors-solarized'
-Bundle 'https://github.com/cespare/zenburn'
 Bundle 'https://github.com/jgdavey/vim-railscasts'
 Bundle 'https://github.com/vim-scripts/twilight'
-Bundle 'https://github.com/vim-scripts/Guardian'
 Bundle 'https://github.com/chriskempson/base16-vim'
 Bundle 'https://github.com/chriskempson/vim-tomorrow-theme'
-Bundle 'https://github.com/croaky/vim-colors-github'
 
 
 " TODO: http://vimcasts.org/blog/2010/12/a-text-object-for-ruby-blocks/
