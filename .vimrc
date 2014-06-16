@@ -142,8 +142,9 @@ autocmd BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
 " 'q' inside quickfix window closes it (like nerdtree, bufexplorer, etc)
 autocmd BufWinEnter * if &buftype == 'quickfix' | map q :cclose<CR> | endif
 " quicker to navigate the quickfix window, just control-n, control-p
-nmap <silent> <C-n> :cn<CR>
-nmap <silent> <C-p> :cp<CR>
+" TODO: nope, ctrl-p is just too ingrained.  maybe unimpaired's q[ and q] is good enough?
+" nmap <silent> <C-n> :cn<CR>
+" nmap <silent> <C-p> :cp<CR>
 
 
 
@@ -207,7 +208,6 @@ Bundle 'https://github.com/tpope/vim-endwise'
 " Navigation And Searching:
 
 Bundle 'https://github.com/kien/ctrlp.vim'
-let g:ctrlp_map = '<Space><Space>'
 " caching continually gets completions wrong, even when I hit F5
 let g:ctrlp_use_caching = 0
 let g:ctrlp_match_window = 'min:4,max:72'
