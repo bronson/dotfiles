@@ -115,9 +115,6 @@ imap <F1> <Esc>
 " NO, it conflicts with moving to different windows.
 " nnoremap <C-L> :nohlsearch<CR><C-L>
 
-" add a keybinding to toggle paste mode
-nnoremap <leader>p :set paste!<CR>:set paste?<CR>
-
 
 " if you :e a file whose parent directories don't exist, run ":mk."
 " HM, I don't like this.  makes /m wait forever before returning results.
@@ -240,23 +237,12 @@ Bundle 'https://github.com/bronson/vim-visual-star-search'
 
 " Utilities:
 
-Bundle 'https://github.com/tpope/vim-fugitive'
-" make :gs and :Gs pull up git status
-cabbrev <expr> gs ((getcmdtype() == ':' && getcmdpos() <= 3) ? 'Gstatus' : 'gs')
-command! Gs Gstatus
-
-" NO Bundle 'https://github.com/airblade/vim-gitgutter'
-" highlight link GitGutterAdd DiffAdd
-" highlight link GitGutterChange DiffChange
-" highlight link GitGutterDelete DiffDelete
-
-Bundle 'https://github.com/tpope/vim-vinegar'
-
 Bundle 'https://github.com/bronson/vim-closebuffer'
 Bundle 'https://github.com/vim-ruby/vim-ruby'
 Bundle 'https://github.com/tpope/vim-rails'
 Bundle 'https://github.com/tpope/vim-bundler'
 Bundle 'https://github.com/tpope/vim-rake'
+Bundle 'https://github.com/tpope/vim-vinegar'
 
 Bundle 'https://github.com/vim-scripts/IndexedSearch'
 Bundle 'https://github.com/maxbrunsfeld/vim-yankstack'
@@ -276,8 +262,24 @@ let g:yaifa_verbosity = 0
 let g:syntastic_check_on_open=1
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 "
-" TODO: can vim-unimpaired replace this plugin?
 Bundle 'https://github.com/bronson/vim-toggle-wrap'
+
+
+" Running External Commands:
+
+Bundle 'https://github.com/thoughtbot/vim-rspec'
+
+Bundle 'https://github.com/tpope/dispatch'   " used by vim-rspec
+
+Bundle 'https://github.com/tpope/vim-fugitive'
+" make :gs and :Gs pull up git status
+cabbrev <expr> gs ((getcmdtype() == ':' && getcmdpos() <= 3) ? 'Gstatus' : 'gs')
+command! Gs Gstatus
+
+" NO Bundle 'https://github.com/airblade/vim-gitgutter'
+" highlight link GitGutterAdd DiffAdd
+" highlight link GitGutterChange DiffChange
+" highlight link GitGutterDelete DiffDelete
 
 
 " Text Objects:
