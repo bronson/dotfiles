@@ -20,7 +20,7 @@ prompt_function() {
 
   local unclean_state="${LIGHT_YELLOW}⚡"
   local changes_to_push="${LIGHT_YELLOW}↑"
-  local changes_to_pull="${LIGHT_YELLOW}↑"
+  local changes_to_pull="${LIGHT_YELLOW}↓"
   local changes_to_push_and_pull="${LIGHT_YELLOW}↕"
 
   git rev-parse --git-dir &> /dev/null
