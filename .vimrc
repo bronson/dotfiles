@@ -444,3 +444,8 @@ command! MPP make program ENVIRONMENT=production
 
 " some goddamn plugin is messing this up?
 set textwidth=0
+
+
+" No need for https://github.com/yanick/environment/commit/2b06e50f8c700a4476e946562c3cae13556ef36c
+" since unimpaired's [n and ]n navigate conflicts and d[n and d]n resolves them.
+" (don't suppose there's a d]^n to interleave both...?)
