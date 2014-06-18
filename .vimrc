@@ -212,6 +212,8 @@ Bundle 'https://github.com/kien/ctrlp.vim'
 let g:ctrlp_use_caching = 0
 let g:ctrlp_match_window = 'min:4,max:72'
 " use ag to generate ctrlp list since it obeys .gitignore
+" major problem if you :e ~/.vimrc and then hit <c-p> though.  :(
+" completes entire homedir instead of just cwd.  any way of fixing this?
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 nmap <Space>b :CtrlPBuffer<cr>
 
@@ -270,10 +272,7 @@ Bundle 'https://github.com/tpope/vim-fugitive'
 cabbrev <expr> gs ((getcmdtype() == ':' && getcmdpos() <= 3) ? 'Gstatus' : 'gs')
 command! Gs Gstatus
 
-" NO Bundle 'https://github.com/airblade/vim-gitgutter'
-" highlight link GitGutterAdd DiffAdd
-" highlight link GitGutterChange DiffChange
-" highlight link GitGutterDelete DiffDelete
+Bundle 'https://github.com/bronson/vim-runtest'
 
 
 " Text Objects:
@@ -354,84 +353,6 @@ command! TagFiles :call EchoTags()
 function! EchoTags()
   echo join(split(&tags, ","), "\n")
 endfunction
-
-
-
-" try Gary Bernhard's test running code
-" https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
-
-" TODO:
-" use Dispatch and populate the quickfix window
-" test cucumber .features file
-" add support for test::unit and minitest
-" add support for perl testing
-
-nnoremap <leader>t :call RunNearestTest()<cr>
-nnoremap <leader>T :call RunTestFile()<cr>
-nnoremap <leader>r :call RunTests(g:previous_test)<cr>
-" running all tests doesn't change the previous test.
-nnoremap <leader>R :call RunTests('.')<cr>
-
-if !exists("g:test_runner")
-    let g:test_runner = ":!"
-    let g:test_runner = ":Dispatch "
-endif
-
-function! TestCommand(filename, lineno)
-    if a:lineno != 0
-        let fileline = a:filename . ':' . a:lineno
-    else
-        let fileline = a:filename
-    endif
-
-    if match(a:filename, '\.feature$') != -1
-        return g:test_runner . "script/features " . fileline
-    elseif match(a:filename, '_spec\.rb$') != -1
-        if filereadable("script/test")
-            return g:test_runner . "script/test " . fileline
-        elseif filereadable("Gemfile")
-            return g:test_runner . "bundle exec rspec --color " . fileline
-        else
-            return g:test_runner . "rspec --color " . fileline
-        end
-    elseif a:filename == '.'
-        " need to sense the command to run global tests
-        return g:test_runner . "rspec --color " . fileline
-    end
-    return -1
-endfunction
-
-function! RunNearestTest()
-    call RunTestFile(line('.'))
-endfunction
-
-function! RunTestFile(...)
-    let line = 0
-    if a:0
-        let line = a:1
-    end
-
-    let command = TestCommand(expand("%"), line)
-    if command != -1
-        let g:previous_test = command
-    end
-
-    if exists("g:previous_test")
-        call RunTests(g:previous_test)
-    end
-endfunction
-
-function! RunTests(test)
-    " TODO: maybe this should be optional?
-    :wa
-
-    let test = a:test
-    if test == '.'
-      let test = TestCommand('.', 0)
-    end
-    exec test
-endfunction
-
 
 
 
