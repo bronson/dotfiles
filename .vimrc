@@ -201,17 +201,17 @@ Bundle 'https://github.com/kien/ctrlp.vim'
 " caching continually gets completions wrong, even when I hit F5
 let g:ctrlp_use_caching = 0
 let g:ctrlp_match_window = 'min:4,max:72'
+" search in .git/.hg if it exists, else the current working directory.
+" (default is 'ra' which also searches in parent of current file, rarely
+" what you want, especially if you're editing ~/.vimrc or browsing help)
+let g:ctrlp_working_path_mode = 'r'
 " use ag to generate ctrlp list since it obeys .gitignore
-" major problem if you :e ~/.vimrc and then hit <c-p> though.  :(
-" completes entire homedir instead of just cwd.  any way of fixing this?
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 nmap <Space>b :CtrlPBuffer<cr>
 
 " when browsing buffers, C-@ deletes the buffer or selected buffers
 Bundle 'https://github.com/d11wtq/ctrlp_bdelete.vim'
 call ctrlp_bdelete#init()
-
-
 
 Bundle 'https://github.com/rking/ag.vim'
 set grepprg=ag\ --nogroup\ --nocolor
