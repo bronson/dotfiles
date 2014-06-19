@@ -288,6 +288,8 @@ command! Gs Gstatus
 
 Bundle 'https://github.com/bronson/vim-runtest'
 
+Bundle 'https://github.com/suan/vim-instant-markdown'
+
 
 " Text Objects:
 

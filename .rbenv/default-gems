@@ -3,3 +3,7 @@ gem-browse
 bundler
 bcat
 lunchy
+
+# for vim-instant-markdown
+pygments.rb
+redcarpet
