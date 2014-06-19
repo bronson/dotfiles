@@ -164,6 +164,8 @@ autocmd VimEnter * if isdirectory(expand('<afile>')) | Explore | endif
 nmap <Space>e :Explore!<cr>
 nmap <Space>E :edit .<cr>
 
+" Select most recent paste with gV (i.e. gV=)
+nmap gV `[v`]
 
 
 "
@@ -337,9 +339,6 @@ Bundle 'https://github.com/chriskempson/vim-tomorrow-theme'
 " TODO: Bundle: https://github.com/rson/vim-conque
 " TODO: the only decent gdb frontend looks to be pyclewn?
 " TODO: another bufclose, how did I not find this?  https://github.com/vim-scripts/BufClose.vim
-"
-" Can I throw a visual select around the most recent paste?
-" Is this something yankstack can do?
 
 
 " from https://github.com/nelstrom/dotfiles/blob/448f710b855970a8565388c6665a96ddf4976f9f/vimrc
