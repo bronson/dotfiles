@@ -232,6 +232,9 @@ nmap <Space>l :TagbarToggle<cr>
 
 Bundle 'https://github.com/bronson/vim-visual-star-search'
 
+" visual select an expression, hit + to expand selection, - to contract it
+Bundle 'https://github.com/terryma/vim-expand-region'
+
 
 " Utilities:
 
