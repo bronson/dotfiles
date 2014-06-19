@@ -117,6 +117,9 @@ imap <F1> <Esc>
 " cnoremap mk. !mkdir -p <c-r>=expand("%:h")<cr>/
 command! Mk execute "!mkdir -p " . shellescape(expand('%:h'), 1)
 
+" .md files are markdown, not Modula-2
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 
 " Vim "Mistakes":
 
