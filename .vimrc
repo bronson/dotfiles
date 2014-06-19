@@ -222,6 +222,11 @@ let g:agprg="ag --column --hidden"    " --hidden lets ag search hidden files but
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 Bundle 'https://github.com/tpope/vim-unimpaired'
+nmap <C-Up> [e
+nmap <C-Down> ]e
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
 Bundle 'https://github.com/vim-scripts/a.vim'
 
 Bundle 'https://github.com/majutsushi/tagbar'
