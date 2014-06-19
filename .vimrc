@@ -378,3 +378,22 @@ set textwidth=0
 " No need for https://github.com/yanick/environment/commit/2b06e50f8c700a4476e946562c3cae13556ef36c
 " since unimpaired's [n and ]n navigate conflicts and d[n and d]n resolves them.
 " (don't suppose there's a d]^n to interleave both...?)
+
+
+" If you want to see ```-fenced blocks properly syntax highlighted, hit :GFM
+" From https://github.com/junegunn/vim-easy-align/commit/aad50126157a8d6da814a2e02370c06c034a8b16#commitcomment-6737584
+command! GFM call GFM()
+function! GFM()
+  let langs = ['ruby', 'yaml', 'vim', 'c']
+
+  for lang in langs
+    unlet b:current_syntax
+    silent! exec printf("syntax include @%s syntax/%s.vim", lang, lang)
+    exec printf("syntax region %sSnip matchgroup=Snip start='```%s' end='```' contains=@%s",
+                \ lang, lang, lang)
+  endfor
+  let b:current_syntax='mkd'
+
+  syntax sync fromstart
+endfunction
+
