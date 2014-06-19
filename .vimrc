@@ -141,19 +141,9 @@ nmap :WQ! :wq!
 autocmd BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
 " 'q' inside quickfix window closes it (like nerdtree, bufexplorer, etc)
 autocmd BufWinEnter * if &buftype == 'quickfix' | map q :cclose<CR> | endif
-" quicker to navigate the quickfix window, just control-n, control-p
-" TODO: nope, ctrl-p is just too ingrained.  maybe unimpaired's [q and ]q is good enough?
-" nmap <silent> <C-n> :cn<CR>
-" nmap <silent> <C-p> :cp<CR>
 
 
-
-" Make Alt-Arrows switch between windows (like C-W h, etc)
-" nmap <silent> <A-Up> :wincmd k<CR>
-" nmap <silent> <A-Down> :wincmd j<CR>
-" nmap <silent> <A-Left> :wincmd h<CR>
-" nmap <silent> <A-Right> :wincmd l<CR>
-
+" TODO: this eats up some serious key bindings...  remove and get used to C-w C-k, C-w C-j, etc.
 " Make Control-direction switch between windows (like C-W h, etc)
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-j> :wincmd j<CR>
@@ -170,7 +160,7 @@ highlight def link rubyRspec Function
 " if no files specified, or a directory is specified, start with netrw showing
 autocmd VimEnter * if !argc() | Explore | endif
 autocmd VimEnter * if isdirectory(expand('<afile>')) | Explore | endif
-
+" space e opens netrw on directory containing current file, space E opens root dir
 nmap <Space>e :Explore!<cr>
 nmap <Space>E :edit .<cr>
 
@@ -216,6 +206,11 @@ let g:ctrlp_match_window = 'min:4,max:72'
 " completes entire homedir instead of just cwd.  any way of fixing this?
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 nmap <Space>b :CtrlPBuffer<cr>
+
+" when browsing buffers, C-@ deletes the buffer or selected buffers
+Bundle 'https://github.com/d11wtq/ctrlp_bdelete.vim'
+call ctrlp_bdelete#init()
+
 
 
 Bundle 'https://github.com/rking/ag.vim'
