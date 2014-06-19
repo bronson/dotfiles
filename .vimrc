@@ -220,6 +220,7 @@ nmap <Space>b :CtrlPBuffer<cr>
 
 Bundle 'https://github.com/rking/ag.vim'
 set grepprg=ag\ --nogroup\ --nocolor
+let g:agprg="ag --column --hidden"    " --hidden lets ag search hidden files but ignore ~/.agignore
 " hit K to do a recursive grep of the word under the cursor (probably no need, \* will do it better?)
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
