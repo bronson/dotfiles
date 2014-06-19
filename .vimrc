@@ -191,6 +191,11 @@ nmap <C-_> <Plug>CommentaryLine
 Bundle 'https://github.com/tpope/vim-surround'
 Bundle 'https://github.com/tpope/vim-endwise'
 
+Bundle 'https://github.com/junegunn/vim-easy-align'
+vmap <Enter> <Plug>(EasyAlign)
+nmap <Leader>a <Plug>(EasyAlign)
+
+
 " Bundle 'https://github.com/Valloric/YouCompleteMe'
 " Bundle 'https://github.com/SirVer/ultisnips'
 " Bundle 'https://github.com/honza/vim-snippets'
@@ -339,7 +344,6 @@ Bundle 'https://github.com/chriskempson/vim-tomorrow-theme'
 
 
 " TODO: http://vimcasts.org/blog/2010/12/a-text-object-for-ruby-blocks/
-" TODO: http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 " TODO: a path textobject?  vi/, va/
 " TODO: Bundle: https://github.com/hallettj/jslint.vim
 " TODO: Bundle: https://github.com/ecomba/vim-ruby-refactoring
