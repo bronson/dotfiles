@@ -382,9 +382,8 @@ set textwidth=0
 " (don't suppose there's a d]^n to interleave both...?)
 
 
-" If you want to see ```-fenced blocks properly syntax highlighted, hit :GFM
-" From https://github.com/junegunn/vim-easy-align/commit/aad50126157a8d6da814a2e02370c06c034a8b16#commitcomment-6737584
-command! GFM call GFM()
+" To syntax hilight github-flavored markdown fenced blocks
+" From https://github.com/junegunn/vim-easy-align/blob/0aa6289d8cb65d755f87adbe1e4b22233c0a0995/EXAMPLES.md
 function! GFM()
   let langs = ['ruby', 'yaml', 'vim', 'c']
 
@@ -398,4 +397,5 @@ function! GFM()
 
   syntax sync fromstart
 endfunction
+autocmd BufNewFile,BufReadPost *.md call GFM()
 
