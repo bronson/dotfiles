@@ -1,3 +1,5 @@
+--fields=+l
+
 --langdef=CoffeeScript
 --langmap=CoffeeScript:.coffee
 --regex-CoffeeScript=/^[ \t]*(@?[a-zA-Z$_\.1-9]+)[ \t]*(=|\:)[ \t]*(\(.*\))?[ \t]*(-|=)>/\1/f,function/
