@@ -232,18 +232,46 @@ let g:easy_align_delimiters = {
 \ }
 
 
-
-Bundle 'https://github.com/Valloric/YouCompleteMe'
-BundleCommand 'cd YouCompleteMe && git submodule update --init --recursive && ./install.sh --clang-completer'
-let g:ycm_collect_identifiers_from_tags_files = 1
 Bundle 'https://github.com/SirVer/ultisnips'
 Bundle 'https://github.com/honza/vim-snippets'
-" " this kinda sucks (YCM should just allow return) but oh well
+
+
+" Bundle 'https://github.com/Valloric/YouCompleteMe'
+" BundleCommand 'cd YouCompleteMe && git submodule update --init --recursive && ./install.sh --clang-completer'
+" let g:ycm_collect_identifiers_from_tags_files = 1
+" let g:ycm_min_num_of_chars_for_completion = 1
+
+" -- one attempt at getting YCM and US to play well together
+" this kinda sucks (YCM should just allow return) but oh well
 " let g:UltiSnipsExpandTrigger = "<c-j>"
 " let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 " let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
+" let g:ycm_key_list_select_completion=[]
+" let g:ycm_key_list_previous_completion=[]
+
+" -- and the other attempt  https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-46646204
+" let g:UltiSnipsExpandTrigger       = "<tab>"
+" let g:UltiSnipsJumpForwardTrigger  = "<tab>"
+" let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" " let g:UltiSnipsSnippetDirectories  = ["snips"]
+
+" function! g:UltiSnips_Complete()
+"     call UltiSnips#ExpandSnippet()
+"     if g:ulti_expand_res == 0
+"         if pumvisible()
+"             return "\<C-n>"
+"         else
+"             call UltiSnips#JumpForwards()
+"             if g:ulti_jump_forwards_res == 0
+"                return "\<TAB>"
+"             endif
+"         endif
+"     endif
+"     return ""
+" endfunction
+
+" au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+
 
 " Navigation And Searching:
 
