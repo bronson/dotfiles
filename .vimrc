@@ -194,6 +194,30 @@ Bundle 'https://github.com/tpope/vim-endwise'
 Bundle 'https://github.com/junegunn/vim-easy-align'
 vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
+" # aligns Ruby comments, d aligns C variable declarations
+let g:easy_align_delimiters = {
+\ '>': { 'pattern': '>>\|=>\|>' },
+\ '/': { 'pattern': '//\+\|/\*\|\*/', 'ignore_groups': ['String'] },
+\ '#': { 'pattern': '#\+', 'ignore_groups': ['String'], 'delimiter_align': 'l' },
+\ ']': {
+\     'pattern':       '[[\]]',
+\     'left_margin':   0,
+\     'right_margin':  0,
+\     'stick_to_left': 0
+\   },
+\ ')': {
+\     'pattern':       '[()]',
+\     'left_margin':   0,
+\     'right_margin':  0,
+\     'stick_to_left': 0
+\   },
+\ 'd': {
+\     'pattern': ' \(\S\+\s*[;=]\)\@=',
+\     'left_margin': 0,
+\     'right_margin': 0
+\   }
+\ }
+
 
 
 " Bundle 'https://github.com/Valloric/YouCompleteMe'
