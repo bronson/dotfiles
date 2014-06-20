@@ -107,8 +107,10 @@ map <F1> <Esc>
 imap <F1> <Esc>
 
 " Make kj exit insert mode, that's even easier.
-inoremap kj <Esc>
-vnoremap kj <Esc>
+" No, this is horrible.  kj is typed a lot when defining a linewise visual selection,
+" plus it delays 500msec every time you hit k to increase the selection upwards.  Tedious!
+" inoremap kj <Esc>
+" vnoremap kj <Esc>
 
 " <C-L> redraws the screen and also turns off highlighting the current search
 " NO, it conflicts with moving to different windows.
