@@ -147,6 +147,7 @@ autocmd BufWinEnter * if &buftype == 'quickfix' | map q :cclose<CR> | endif
 
 
 " TODO: this eats up some serious key bindings...  remove and get used to C-w C-k, C-w C-j, etc.
+"       HA, vimcasts uses these bindings.  http://vimcasts.org/episodes/working-with-windows/
 " Make Control-direction switch between windows (like C-W h, etc)
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-j> :wincmd j<CR>
@@ -220,14 +221,17 @@ let g:easy_align_delimiters = {
 
 
 
-" Bundle 'https://github.com/Valloric/YouCompleteMe'
-" Bundle 'https://github.com/SirVer/ultisnips'
-" Bundle 'https://github.com/honza/vim-snippets'
+Bundle 'https://github.com/Valloric/YouCompleteMe'
+BundleCommand 'cd YouCompleteMe && git submodule update --init --recursive && ./install.sh --clang-completer'
+let g:ycm_collect_identifiers_from_tags_files = 1
+Bundle 'https://github.com/SirVer/ultisnips'
+Bundle 'https://github.com/honza/vim-snippets'
 " " this kinda sucks (YCM should just allow return) but oh well
 " let g:UltiSnipsExpandTrigger = "<c-j>"
 " let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 " let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
 
 " Navigation And Searching:
 
