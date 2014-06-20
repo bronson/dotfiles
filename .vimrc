@@ -114,7 +114,6 @@ vnoremap kj <Esc>
 " NO, it conflicts with moving to different windows.
 " nnoremap <C-L> :nohlsearch<CR><C-L>
 
-
 " if you :e a file whose parent directories don't exist, run ":mk."
 " HM, I don't like this.  makes /m wait forever before returning results.
 " http://stackoverflow.com/questions/4292733/vim-creating-parent-directories-on-save
@@ -123,6 +122,10 @@ command! Mk execute "!mkdir -p " . shellescape(expand('%:h'), 1)
 
 " .md files are markdown, not Modula-2
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" This command will allow us to save a file we don't have permission to save
+" after we have already opened it.  sudo :w!
+cnoremap w!! w !sudo tee % >/dev/null
 
 
 " Vim "Mistakes":
