@@ -81,6 +81,8 @@ alias lla='ls -alF'
 alias tf='tail -f'
 alias gu='bundle exec guard -n false'
 alias jk='jekyll --auto --server'
+alias gv=gvim
+alias gvi=gvim
 
 alias gre=grep    # darn you vim's :gre command
 alias mak=make    # and :mak
@@ -90,6 +92,7 @@ alias MPA='make program DEBUGGING=always'
 alias MPP='make program ENVIRONMENT=production'
 
 # calculator: "? 3+13*3" will print 42
+# TODO: any way to store the output in a bash variable?
 ? () { echo "$*" | bc -l; }
 
 
