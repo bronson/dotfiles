@@ -124,6 +124,7 @@ command! Mk execute "!mkdir -p " . shellescape(expand('%:h'), 1)
 
 " .md files are markdown, not Modula-2
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = ['ruby', 'vim', 'c', 'css', 'coffee', 'html', 'javascript', 'perl', 'python', 'yaml', 'sh']
 
 " This command will allow us to save a file we don't have permission to save
 " after we have already opened it.  sudo :w!
@@ -452,22 +453,4 @@ set textwidth=0
 " No need for https://github.com/yanick/environment/commit/2b06e50f8c700a4476e946562c3cae13556ef36c
 " since unimpaired's [n and ]n navigate conflicts and d[n and d]n resolves them.
 " (don't suppose there's a d]^n to interleave both...?)
-
-
-" To syntax hilight github-flavored markdown fenced blocks
-" From https://github.com/junegunn/vim-easy-align/blob/0aa6289d8cb65d755f87adbe1e4b22233c0a0995/EXAMPLES.md
-function! GFM()
-  let langs = ['ruby', 'yaml', 'vim', 'c']
-
-  for lang in langs
-    unlet b:current_syntax
-    silent! exec printf("syntax include @%s syntax/%s.vim", lang, lang)
-    exec printf("syntax region %sSnip matchgroup=Snip start='```%s' end='```' contains=@%s",
-                \ lang, lang, lang)
-  endfor
-  let b:current_syntax='mkd'
-
-  syntax sync fromstart
-endfunction
-autocmd BufNewFile,BufReadPost *.md call GFM()
 
