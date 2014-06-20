@@ -106,6 +106,10 @@ autocmd FileType ruby setlocal iskeyword+=!,?
 map <F1> <Esc>
 imap <F1> <Esc>
 
+" Make kj exit insert mode, that's even easier.
+inoremap kj <Esc>
+vnoremap kj <Esc>
+
 " <C-L> redraws the screen and also turns off highlighting the current search
 " NO, it conflicts with moving to different windows.
 " nnoremap <C-L> :nohlsearch<CR><C-L>
@@ -258,6 +262,8 @@ let g:agprg="ag --column --hidden"    " --hidden lets ag search hidden files but
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 Bundle 'https://github.com/tpope/vim-unimpaired'
+" TODO: can yo and yO set `[ and `] so gV will select the area that was just pasted?
+" control-arrows to move lines up and down
 nmap <C-Up> [e
 nmap <C-Down> ]e
 vmap <C-Up> [egv
