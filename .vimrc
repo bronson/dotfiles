@@ -127,6 +127,11 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " after we have already opened it.  sudo :w!
 cnoremap w!! w !sudo tee % >/dev/null
 
+" Scroll through the command history without leaving the home row
+cnoremap <c-j> <down>
+cnoremap <c-k> <up>
+
+
 
 " Vim "Mistakes":
 
