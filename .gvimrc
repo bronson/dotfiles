@@ -5,6 +5,9 @@ if has("gui_macvim")
   " set guifont=* to bring up a font selector, set guifont? to see result
 endif
 
+set guioptions+=lLrR  " idiotic vim bug, vim 7.4.56  http://thisblog.runsfreesoftware.com/?q=Remove+scrollbars+from+Gvim
+set guioptions-=lLrR  " remove scroll bars from vim windows, it's just noise
+
 set t_vb= " don't flash the screen for visualbell (:he vb)
 
 colorscheme solarized
