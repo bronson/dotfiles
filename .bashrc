@@ -159,8 +159,6 @@ if [ "Darwin" == "$(uname)" ]; then
     [ -f /opt/local/etc/bash_completion ] && source /opt/local/etc/bash_completion
     [ -f $BREW_HOME/etc/bash_completion ] && source $BREW_HOME/etc/bash_completion
 
-    alias vi=/Applications/MacVim.app/Contents/MacOS/Vim
-    alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
     alias gvim=mvim
 
     # I alias gs to git status, no idea why homebrew doesn't allow full name
@@ -172,6 +170,7 @@ else
 #   emulate some things that osx gets right
 
     alias open=xdg-open
+    alias mvim=gvim
 
 fi
 
