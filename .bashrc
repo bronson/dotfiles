@@ -155,9 +155,7 @@ if [ "Darwin" == "$(uname)" ]; then
     export PATH="$PATH:/usr/local/mysql/bin"             # default osx mysql dmg
 
 
-    # if newer bash is installed by brew or ports, use its completion
-    [ -f /opt/local/etc/bash_completion ] && source /opt/local/etc/bash_completion
-    [ -f $BREW_HOME/etc/bash_completion ] && source $BREW_HOME/etc/bash_completion
+    [ -f "$(brew --prefix)/etc/bash_completion" ] && source "$(brew --prefix)/etc/bash_completion"
 
     alias gvim=mvim
 
