@@ -263,7 +263,7 @@ Bundle 'https://github.com/SirVer/ultisnips'
 Bundle 'https://github.com/honza/vim-snippets'
 
 
-" Bundle 'https://github.com/Valloric/YouCompleteMe'
+" NO Bundle 'https://github.com/Valloric/YouCompleteMe'
 " BundleCommand 'cd YouCompleteMe && git submodule update --init --recursive && ./install.sh --clang-completer'
 " let g:ycm_collect_identifiers_from_tags_files = 1
 " let g:ycm_min_num_of_chars_for_completion = 1
