@@ -135,7 +135,8 @@ __git_shortcut  gds   diff --stat
 __git_shortcut  gl    log
 __git_shortcut  glp   log -p
 __git_shortcut  gls   log --stat
-alias gs='git status -sb' # no completion for git status
+alias gs='git status -sb'   # no completion necessary
+alias gsa='git stash apply'
 
 
 
