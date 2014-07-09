@@ -101,6 +101,8 @@ alias MPP='make program ENVIRONMENT=production'
 #
 # How this works: https://github.com/bronson/dotfiles/issues/1
 
+which hub >/dev/null && eval "$(hub alias -s)"
+
 __define_git_completion () {
 eval "
     _git_$2_shortcut () {
