@@ -6,5 +6,8 @@
   "undef"   : true,
   "eqeqeq"  : true,
   "noarg"   : true,
-  "strict"  : false
+  "strict"  : false,
+
+  "expr"    : true,
+  "loopfunc" : true
 }

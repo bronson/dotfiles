@@ -135,7 +135,8 @@ __git_shortcut  gds   diff --stat
 __git_shortcut  gl    log
 __git_shortcut  glp   log -p
 __git_shortcut  gls   log --stat
-alias gs='git status -sb' # no completion for git status
+alias gs='git status -sb'   # no completion necessary
+alias gsa='git stash apply'
 
 
 
@@ -155,9 +156,7 @@ if [ "Darwin" == "$(uname)" ]; then
     export PATH="$PATH:/usr/local/mysql/bin"             # default osx mysql dmg
 
 
-    # if newer bash is installed by brew or ports, use its completion
-    [ -f /opt/local/etc/bash_completion ] && source /opt/local/etc/bash_completion
-    [ -f $BREW_HOME/etc/bash_completion ] && source $BREW_HOME/etc/bash_completion
+    [ -f "$(brew --prefix)/etc/bash_completion" ] && source "$(brew --prefix)/etc/bash_completion"
 
     alias gvim=mvim
 
