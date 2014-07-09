@@ -4,6 +4,8 @@
 " After installing this .vimrc, run vim-update-bundles to install the
 " plugins: https://github.com/bronson/vim-update-bundles
 
+" TODO: https://github.com/tpope/vim-sensible
+" TODO: https://github.com/tpope/vim-sleuth
 
 set nocompatible
 filetype on   " work around stupid osx bug
