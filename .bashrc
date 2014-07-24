@@ -199,8 +199,23 @@ fi
 #
 
 [ -d ~/.nvm ] && . ~/.nvm/nvm.sh
-which npm >/dev/null 2>&1 && . <(npm completion | cat)  # https://github.com/isaacs/npm/issues/1066
 export PATH="node_modules/.bin:$HOME/node_modules/.bin:$PATH"
+
+# https://lists.gnu.org/archive/html/bug-bash/2006-01/msg00018.html
+# which npm >/dev/null 2>&1 && . <(npm completion)
+if which npm >/dev/null 2>&1; then 
+  npm completion > /tmp/mavericks-sucks
+  . /tmp/mavericks-sucks
+  rm /tmp/mavericks-sucks
+fi
+
+# which grunt >/dev/null 2>&1 && . <(grunt --completion=bash)
+if which grunt >/dev/null 2>&1; then 
+  grunt --completion=bash > /tmp/mavericks-sucks
+  . /tmp/mavericks-sucks
+  rm /tmp/mavericks-sucks
+fi
+
 
 #
 #     Ruby
