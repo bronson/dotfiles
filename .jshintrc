@@ -7,7 +7,7 @@
   "latedef" : true,
   "newcap"  : true,
   "noarg"   : true,
-  "loopfunc" : true
+  "loopfunc" : true,
   "noarg"   : true,
   "node"    : true,
   "strict"  : false,
