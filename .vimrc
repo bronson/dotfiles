@@ -341,8 +341,8 @@ nmap <Space>l :TagbarToggle<cr>
 
 Bundle 'https://github.com/bronson/vim-visual-star-search'
 " use ag for recursive searching so we don't find 10,000 useless hits inside node_modules
-nnoremap <leader>* :execute "noautocmd Ag --literal '" . substitute(expand("<cword>"), "'", "''", 'g') . "'"<CR>
-vnoremap <leader>* :<C-u>call VisualStarSearchSet('/', 'raw')<CR>:execute "noautocmd Ag --literal '" . substitute(@/, "'", "''", 'g') . "'"<CR>
+nnoremap <leader>* :call ag#Ag('grep', '--literal ' . shellescape(expand("<cword>")))<CR>
+vnoremap <leader>* :<C-u>call VisualStarSearchSet('/', 'raw')<CR>:call ag#Ag('grep', '--literal ' . shellescape(@/))<CR>
 
 
 " visual select an expression, hit + to expand selection, - to contract it
