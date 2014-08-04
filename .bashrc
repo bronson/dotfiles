@@ -206,7 +206,7 @@ export PATH="node_modules/.bin:$HOME/node_modules/.bin:$PATH"
 if which npm >/dev/null 2>&1; then 
   npm completion > /tmp/mavericks-sucks
   . /tmp/mavericks-sucks
-  rm /tmp/mavericks-sucks
+  rm -f /tmp/mavericks-sucks
 fi
 
 # which grunt >/dev/null 2>&1 && . <(grunt --completion=bash)
