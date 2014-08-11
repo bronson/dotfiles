@@ -368,6 +368,7 @@ nmap <Space>P <Plug>yankstack_substitute_newer_paste
 Bundle 'https://github.com/sjl/gundo.vim'
 Bundle 'https://github.com/tpope/vim-repeat'
 
+Bundle "https://github.com/editorconfig/editorconfig-vim"
 " TODO: would I rather use https://github.com/tpope/vim-sleuth ?
 Bundle 'https://github.com/Raimondi/YAIFA'
 " verbosity=1 allows you to check YAIFA's results by running :messages
