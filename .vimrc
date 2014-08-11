@@ -377,8 +377,12 @@ let g:yaifa_verbosity = 0
 " Bundle: https://github.com/scrooloose/syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-"
+
 Bundle 'https://github.com/bronson/vim-toggle-wrap'
+
+Bundle 'https://github.com/sjl/clam.vim'
+nnoremap ! :Clam<space>
+vnoremap ! :ClamVisual<space>
 
 
 " Running External Commands:
