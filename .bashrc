@@ -229,7 +229,7 @@ alias be='bundle exec'
 alias bepre='bundle exec rake assets:precompile'
 alias r=rails
 alias rg='rails generate'
-alias rr='rspec'
+alias rr='bundle exec rspec'
 alias rs='rm -rf tmp/cache && > log/development.log && rails server'
 alias rc='rails console'
 
