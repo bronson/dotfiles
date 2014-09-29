@@ -1,2 +1,9 @@
 .git
 tags
+
+/tmp/
+/log/
+/node_modules/
+
+*.min.*
+**/*.min.*
