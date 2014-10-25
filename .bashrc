@@ -221,8 +221,14 @@ fi
 #     Ruby
 #
 
+# switching to chruby...
+[ -f /usr/local/share/chruby/chruby.sh ] && source /usr/local/share/chruby/chruby.sh
+[ -f /usr/local/share/chruby/auto.sh ]   && source /usr/local/share/chruby/auto.sh
+
+# switching away from rbenv...
 [ -f "$HOME/.rbenv/bin/rbenv" ] && export PATH="$PATH:$HOME/.rbenv/bin"
 which rbenv > /dev/null && eval "$(rbenv init -)"
+
 
 # Bundler can be a right pain at times
 alias be='bundle exec'
