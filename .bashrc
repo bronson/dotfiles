@@ -158,8 +158,8 @@ if [ "Darwin" == "$(uname)" ]; then
     export PATH="$PATH:/usr/local/mysql/bin"             # default osx mysql dmg
 
 
-    [ -f "$(brew --prefix)/etc/bash_completion" ] && source "$(brew --prefix)/etc/bash_completion"
-    [ -f "$(brew --prefix)/etc/bash_completion.d" ] && source "$(brew --prefix)/etc/bash_completion.d"
+    command -v brew >/dev/null 2>&1 && [ -f "$(brew --prefix)/etc/bash_completion" ] && source "$(brew --prefix)/etc/bash_completion"
+    command -v brew >/dev/null 2>&1 && [ -f "$(brew --prefix)/etc/bash_completion.d" ] && source "$(brew --prefix)/etc/bash_completion.d"
 
     alias gvim=mvim
 
