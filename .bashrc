@@ -159,6 +159,7 @@ if [ "Darwin" == "$(uname)" ]; then
 
 
     [ -f "$(brew --prefix)/etc/bash_completion" ] && source "$(brew --prefix)/etc/bash_completion"
+    [ -f "$(brew --prefix)/etc/bash_completion.d" ] && source "$(brew --prefix)/etc/bash_completion.d"
 
     alias gvim=mvim
 
