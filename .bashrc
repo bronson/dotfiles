@@ -206,16 +206,16 @@ export PATH="node_modules/.bin:$HOME/node_modules/.bin:$PATH"
 # and OMG Yosemite is still using bash 3.2.53??  Bash 4 was 5 years ago.
 # which npm >/dev/null 2>&1 && . <(npm completion)
 if which npm >/dev/null 2>&1; then 
-  npm completion > /tmp/apple-sucks-$$
-  . /tmp/mavericks-sucks-$$
-  rm -f /tmp/mavericks-sucks-$$
+  npm completion > /tmp/apple-bash-sucks-$$
+  . /tmp/apple-bash-sucks-$$
+  rm -f /tmp/apple-bash-sucks-$$
 fi
 
 # which grunt >/dev/null 2>&1 && . <(grunt --completion=bash)
 if which grunt >/dev/null 2>&1; then 
-  grunt --completion=bash > /tmp/mavericks-sucks-$$
-  . /tmp/mavericks-sucks-$$
-  rm /tmp/mavericks-sucks-$$
+  grunt --completion=bash > /tmp/apple-bash-sucks-$$
+  . /tmp/apple-bash-sucks-$$
+  rm /tmp/apple-bash-sucks-$$
 fi
 
 
