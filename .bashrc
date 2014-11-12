@@ -225,8 +225,9 @@ fi
 #
 
 # switching to chruby...
-[ -f /usr/local/share/chruby/chruby.sh ] && source /usr/local/share/chruby/chruby.sh
-[ -f /usr/local/share/chruby/auto.sh ]   && source /usr/local/share/chruby/auto.sh
+[ -f /usr/local/share/chruby/chruby.sh ]       && source /usr/local/share/chruby/chruby.sh
+[ -f /usr/local/share/chruby/auto.sh ]         && source /usr/local/share/chruby/auto.sh
+[ -f /usr/local/share/chruby-default-gems.sh ] && source /usr/local/share/chruby-default-gems.sh
 
 # switching away from rbenv...
 [ -f "$HOME/.rbenv/bin/rbenv" ] && export PATH="$PATH:$HOME/.rbenv/bin"
