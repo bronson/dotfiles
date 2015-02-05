@@ -334,8 +334,6 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
-Bundle 'https://github.com/vim-scripts/a.vim'
-
 Bundle 'https://github.com/majutsushi/tagbar'
 nmap <Space>l :TagbarToggle<cr>
 
@@ -358,6 +356,8 @@ Bundle 'https://github.com/tpope/vim-bundler'
 Bundle 'https://github.com/tpope/vim-rake'
 Bundle 'https://github.com/tpope/vim-vinegar'
 Bundle 'https://github.com/tpope/vim-speeddating'
+Bundle 'https://github.com/tpope/vim-projectionist'
+
 
 Bundle 'https://github.com/vim-scripts/IndexedSearch'
 Bundle 'https://github.com/maxbrunsfeld/vim-yankstack'
