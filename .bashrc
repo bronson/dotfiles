@@ -239,7 +239,7 @@ alias bepre='bundle exec rake assets:precompile'
 alias r=rails
 alias rg='rails generate'
 alias rr='bundle exec rspec'
-alias rs='rm -rf tmp/cache log/development.log && rails server'
+alias rs='sh -c "rm -rf tmp/cache log/development.log && rails server"'
 alias rc='rails console'
 
 # i.e. production rake db:migrate
