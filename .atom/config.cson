@@ -1,0 +1,35 @@
+"*":
+  welcome:
+    showOnStartup: false
+  linter:
+    subtleLinterErrors: [
+      "haml-lint"
+    ]
+    lintOnChangeInterval: 2500
+    lintOnChange: false
+  "isotope-ui":
+    {}
+  autosave:
+    enabled: true
+  "autocomplete-plus":
+    {}
+  "fuzzy-finder":
+    {}
+  core:
+    disabledPackages: [
+      "metrics"
+      "exception-reporting"
+    ]
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    invisibles:
+      {}
+  "markdown-preview":
+    {}
+  "git-log":
+    {}
+  "cursor-history":
+    {}
