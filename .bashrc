@@ -247,12 +247,14 @@ production() { RAILS_ENV=production "$@"; }
 
 
 #
-#     Vim
+#     Editors
 #
 
 export EDITOR='vim'
 # use gvim instead of terminal vim to edit bundles
 export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
+
+export ATOM_REPOS_HOME="$HOME"  # otherwise apm clones to ~/github
 
 
 #
