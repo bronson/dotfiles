@@ -61,7 +61,6 @@ shopt -s histappend                         # Append to history file instead of 
 shopt -s cmdhist                            # store multiline commands as 1 line
 shopt -s checkwinsize                       # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
 export HISTCONTROL="ignoreboth"             # store duplicate lines once, ignore lines beginning with a space
-export HISTIGNORE="&:ls:[bf]g:exit:%[0-9]"  # ignore simple commands
 unset HISTFILESIZE                          # keep unlimited history
 
 
