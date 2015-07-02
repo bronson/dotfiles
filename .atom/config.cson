@@ -5,14 +5,11 @@
     subtleLinterErrors: [
       "haml-lint"
     ]
-  "isotope-ui":
-    {}
+  "isotope-ui": {}
   autosave:
     enabled: true
-  "autocomplete-plus":
-    {}
-  "fuzzy-finder":
-    {}
+  "autocomplete-plus": {}
+  "fuzzy-finder": {}
   core:
     disabledPackages: [
       "metrics"
@@ -23,11 +20,10 @@
       "solarized-dark-syntax"
     ]
   editor:
-    invisibles:
-      {}
-  "markdown-preview":
-    {}
-  "git-log":
-    {}
-  "cursor-history":
-    {}
+    invisibles: {}
+  "markdown-preview": {}
+  "git-log": {}
+  "cursor-history": {}
+  tabs:
+    enableVcsColoring: true
+    usePreviewTabs: true
