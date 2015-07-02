@@ -5,6 +5,7 @@
     subtleLinterErrors: [
       "haml-lint"
     ]
+    lintOnFly: false
   "isotope-ui": {}
   autosave:
     enabled: true
@@ -14,16 +15,17 @@
     disabledPackages: [
       "metrics"
       "exception-reporting"
+      "wrap-guide"
     ]
     themes: [
       "one-dark-ui"
-      "solarized-dark-syntax"
+      "oceanic-reef-syntax"
     ]
   editor:
     invisibles: {}
+    autoIndentOnPaste: false
   "markdown-preview": {}
   "git-log": {}
   "cursor-history": {}
-  tabs:
-    enableVcsColoring: true
-    usePreviewTabs: true
+  "linter-jshint": {}
+  "atom-ternjs": {}
