@@ -184,13 +184,6 @@ autocmd BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
 autocmd BufWinEnter * if &buftype == 'quickfix' | map q :cclose<CR> | endif
 
 
-" TODO: this eats up some serious key bindings...  remove and get used to C-w C-k, C-w C-j, etc.
-"       HA, vimcasts uses these bindings.  http://vimcasts.org/episodes/working-with-windows/
-" Make Control-direction switch between windows (like C-W h, etc)
-nmap <silent> <C-k> :wincmd k<CR>
-nmap <silent> <C-j> :wincmd j<CR>
-nmap <silent> <C-h> :wincmd h<CR>
-nmap <silent> <C-l> :wincmd l<CR>
 " use Cmd-[ and Cmd-] to swtich panes, like iTerm2.
 nmap <silent> <D-[> :wincmd h<CR>
 nmap <silent> <D-]> :wincmd l<CR>
