@@ -9,7 +9,8 @@
   "isotope-ui": {}
   autosave:
     enabled: true
-  "autocomplete-plus": {}
+  "autocomplete-plus":
+    confirmCompletion: "tab"
   "fuzzy-finder": {}
   core:
     disabledPackages: [
@@ -17,6 +18,8 @@
       "exception-reporting"
       "wrap-guide"
       "vim-mode"
+      "welcome"
+      "background-tips"
     ]
     themes: [
       "one-dark-ui"
@@ -32,3 +35,17 @@
   "atom-ternjs": {}
   "vim-mode": {}
   "vim-mode-next": {}
+  tabs:
+    usePreviewTabs: true
+    enableVcsColoring: true
+  notifications: {}
+  "file-icons":
+    onChanges: true
+  "vim-surround": {}
+  "bracket-matcher":
+    autocompleteSmartQuotes: false
+    autocompleteBrackets: false
+  "find-and-replace":
+    openProjectFindResultsInRightPane: true
+  zentabs:
+    maximumOpenedTabs: 8
