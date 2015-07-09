@@ -18,8 +18,8 @@ atom-text-editor {
 
 }
 
-// To style other content in the text editor's shadow DOM, use the ::shadow
-// expression
-atom-text-editor::shadow .cursor {
 
+// set the cursor to a pointer in command mode, leave it as an I-beam in insert mode
+atom-text-editor.vim-mode.command-mode::shadow .editor-contents--private {
+    cursor: default;
 }
