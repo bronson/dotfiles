@@ -43,3 +43,22 @@
 'atom-text-editor.vim-mode.command-mode':
   'ctrl-i': 'cursor-history:next'
   'ctrl-o': 'cursor-history:prev'
+
+# temporary workaround for issue in https://github.com/atom/vim-mode/pull/568
+'atom-text-editor.vim-mode.insert-mode':
+  'up': 'unset!'
+  'down': 'unset!'
+
+'atom-text-editor':
+  'ctrl-s': 'lazy-motion:forward'
+  'ctrl-S': 'lazy-motion:backward'
+
+'.platform-darwin atom-text-editor.lazy-motion':
+  'ctrl-s': 'lazy-motion:forward'
+  'ctrl-S': 'lazy-motion:backward'
+  'ctrl-g': 'lazy-motion:forward'
+  'cmd-g': 'lazy-motion:forward'
+  ']': 'lazy-motion:forward'
+  'ctrl-G': 'lazy-motion:backward'
+  'cmd-G': 'lazy-motion:backward'
+  '[': 'lazy-motion:backward'

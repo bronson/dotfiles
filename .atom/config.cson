@@ -17,9 +17,9 @@
       "metrics"
       "exception-reporting"
       "wrap-guide"
-      "vim-mode"
       "welcome"
       "background-tips"
+      "vim-mode"
     ]
     themes: [
       "one-dark-ui"
