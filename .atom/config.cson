@@ -20,6 +20,7 @@
       "welcome"
       "background-tips"
       "vim-mode"
+      "linter-rubocop"
     ]
     themes: [
       "one-dark-ui"
@@ -49,3 +50,6 @@
     openProjectFindResultsInRightPane: true
   zentabs:
     maximumOpenedTabs: 8
+  "rubocop-auto-correct": {}
+  "linter-rubocop": {}
+  "merge-conflicts": {}
