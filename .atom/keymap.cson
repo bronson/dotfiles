@@ -43,6 +43,7 @@
 'atom-text-editor.vim-mode.command-mode':
   'ctrl-i': 'cursor-history:next'
   'ctrl-o': 'cursor-history:prev'
+  '-': 'tree-view:show'
 
 # temporary workaround for issue in https://github.com/atom/vim-mode/pull/568
 'atom-text-editor.vim-mode.insert-mode':
