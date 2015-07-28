@@ -225,6 +225,7 @@ fi
 [ -f /usr/local/share/chruby-default-gems.sh ] && source /usr/local/share/chruby-default-gems.sh
 # do everything I can think of to make rdoc go away
 export RUBY_CONFIGURE_OPTS=--disable-install-doc
+ruby-install() { /usr/local/bin/ruby-install "$@" -- --disable-install-rdoc; }
 
 # Bundler can be a right pain at times
 alias be='bundle exec'
