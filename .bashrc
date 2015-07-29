@@ -236,9 +236,6 @@ alias rr='bundle exec rspec'
 alias rs='sh -c "rm -rf tmp/cache log/development.log && rails server"'
 alias rc='rails console'
 
-# i.e. production rake db:migrate
-production() { RAILS_ENV=production "$@"; }
-
 
 #
 #     Editors
