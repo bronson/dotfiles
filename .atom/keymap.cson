@@ -40,7 +40,7 @@
 'body':
   'ctrl-p': 'fuzzy-finder:toggle-file-finder'
 
-'atom-text-editor.vim-mode.command-mode':
+'atom-text-editor.vim-mode.normal-mode':
   'ctrl-i': 'cursor-history:next'
   'ctrl-o': 'cursor-history:prev'
 
