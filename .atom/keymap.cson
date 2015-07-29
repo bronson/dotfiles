@@ -1,42 +1,3 @@
-# Your keymap
-#
-# Atom keymaps work similarly to style sheets. Just as style sheets use
-# selectors to apply styles to elements, Atom keymaps use selectors to associate
-# keystrokes with events in specific contexts.
-#
-# You can create a new keybinding in this file by typing "key" and then hitting
-# tab.
-#
-# Here's an example taken from Atom's built-in keymap:
-#
-# 'atom-text-editor':
-#   'enter': 'editor:newline'
-#
-# 'atom-workspace':
-#   'ctrl-shift-p': 'core:move-up'
-#   'ctrl-p': 'core:move-down'
-#
-# You can find more information about keymaps in these guides:
-# * https://atom.io/doc/slatest/using-atom-basic-customization#customizing-key-bindings
-# * https://atom.io/docs/latest/behind-atom-keymaps-in-depth
-#
-# This file uses CoffeeScript Object Notation (CSON).
-# If you are unfamiliar with CSON, you can read more about it here:
-# https://github.com/bevry/cson#what-is-cson
-
-# '.platform-darwin .tree-view':
-#   'ctrl-f': 'unset!'
-# 'body':
-#   'ctrl-f': 'unset!'
-# 'body .native-key-bindings':
-#   'ctrl-f': 'unset!'
-
-# 'body':
-#   'ctrl-f': 'core:page-down'
-# 'body .native-key-bindings':
-#   'ctrl-f': 'core:page-down'
-
-
 'body':
   'ctrl-p': 'fuzzy-finder:toggle-file-finder'
 
@@ -62,3 +23,24 @@
   'ctrl-G': 'lazy-motion:backward'
   'cmd-G': 'lazy-motion:backward'
   '[': 'lazy-motion:backward'
+
+'atom-text-editor.vim-mode.command-mode':
+  'ctrl-w x':     'paner:swap-item'
+  'ctrl-w X':     'paner:send-item'
+  'ctrl-w enter': 'paner:maximize'
+  'ctrl-w K':     'paner:very-top'
+  'ctrl-w J':     'paner:very-bottom'
+  'ctrl-w H':     'paner:very-left'
+  'ctrl-w L':     'paner:very-right'
+
+'.preview-pane.project-find-navigation':
+  'l':     'core:move-right'
+  'h':     'core:move-left'
+  'j':     'project-find-navigation:select-next-and-confirm'
+  'k':     'project-find-navigation:select-prev-and-confirm'
+  'enter': 'project-find-navigation:confirm'
+'atom-workspace:not([mini])':
+  'cmd-ctrl-shift-f': 'project-find-navigation:activate-results-pane'
+# 'body':
+#   'cmd-ctrl-n': 'project-find-navigation:select-next-and-confirm'
+#   'cmd-ctrl-p': 'project-find-navigation:select-prev-and-confirm'
