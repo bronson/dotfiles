@@ -41,6 +41,5 @@
   'enter': 'project-find-navigation:confirm'
 'atom-workspace:not([mini])':
   'cmd-ctrl-shift-f': 'project-find-navigation:activate-results-pane'
-# 'body':
-#   'cmd-ctrl-n': 'project-find-navigation:select-next-and-confirm'
-#   'cmd-ctrl-p': 'project-find-navigation:select-prev-and-confirm'
+  'ctrl-cmd-n': 'project-find-navigation:next'
+  'ctrl-cmd-p': 'project-find-navigation:prev'
