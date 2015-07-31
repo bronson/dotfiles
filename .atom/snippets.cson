@@ -12,3 +12,8 @@
   'Console log':
     'prefix': 'cl'
     'body': 'console.log $1'
+
+'.source.ruby':
+  'byebug':
+    'prefix': 'bye'
+    'body': 'require "byebug"; byebug'
