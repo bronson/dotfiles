@@ -223,11 +223,9 @@ fi
 [ -f /usr/local/share/chruby/chruby.sh ]       && source /usr/local/share/chruby/chruby.sh
 [ -f /usr/local/share/chruby/auto.sh ]         && source /usr/local/share/chruby/auto.sh
 [ -f /usr/local/share/chruby-default-gems.sh ] && source /usr/local/share/chruby-default-gems.sh
-
-# switching away from rbenv...
-[ -f "$HOME/.rbenv/bin/rbenv" ] && export PATH="$PATH:$HOME/.rbenv/bin"
-which rbenv > /dev/null && eval "$(rbenv init -)"
-
+# do everything I can think of to make rdoc go away
+export RUBY_CONFIGURE_OPTS=--disable-install-doc
+ruby-install() { /usr/local/bin/ruby-install "$@" -- --disable-install-rdoc; }
 
 # Bundler can be a right pain at times
 alias be='bundle exec'
@@ -237,9 +235,6 @@ alias rg='rails generate'
 alias rr='bundle exec rspec'
 alias rs='sh -c "rm -rf tmp/cache log/development.log && rails server"'
 alias rc='rails console'
-
-# i.e. production rake db:migrate
-production() { RAILS_ENV=production "$@"; }
 
 
 #
