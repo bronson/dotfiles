@@ -19,16 +19,25 @@
       "wrap-guide"
       "welcome"
       "background-tips"
-      "vim-mode"
       "linter-rubocop"
+      "package-cop"
+      "linter-haml"
+      "smart-tab-name"
+      "linter-eslint"
+      "linter-jscs"
+      "linter-jshint"
+      "vim-mode"
+      "table-edit"
     ]
     themes: [
       "one-dark-ui"
       "oceanic-reef-syntax"
     ]
+    destroyEmptyPanes: false
   editor:
     invisibles: {}
     autoIndentOnPaste: false
+    backUpBeforeSaving: true
   "markdown-preview": {}
   "git-log": {}
   "cursor-history": {}
@@ -37,11 +46,11 @@
   "vim-mode": {}
   "vim-mode-next": {}
   tabs:
-    usePreviewTabs: true
     enableVcsColoring: true
   notifications: {}
   "file-icons":
     onChanges: true
+    coloured: false
   "vim-surround": {}
   "bracket-matcher":
     autocompleteSmartQuotes: false
@@ -53,3 +62,12 @@
   "rubocop-auto-correct": {}
   "linter-rubocop": {}
   "merge-conflicts": {}
+  "linter-reek": {}
+  react: {}
+  "advanced-open-file":
+    createFileInstantly: true
+  pigments: {}
+  "git-plus": {}
+  "smart-tab-name": {}
+  "tree-view":
+    hideIgnoredNames: true

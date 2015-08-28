@@ -43,3 +43,5 @@
   'cmd-ctrl-shift-f': 'project-find-navigation:activate-results-pane'
   'ctrl-cmd-n': 'project-find-navigation:next'
   'ctrl-cmd-p': 'project-find-navigation:prev'
+  'shift-cmd-n': 'project-find-navigation:next'
+  'shift-cmd-p': 'project-find-navigation:prev'
