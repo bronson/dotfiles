@@ -32,22 +32,25 @@
   untracked = cyan
 
 [alias]
+  watch = "!watch -n 0.3 'git status --short --branch; echo; git --no-pager diff --shortstat;'"
+
   a     = add
   ae    = add --edit
   ai    = add --interactive
   ap    = add --patch
   au    = add --update
   b     = branch
+  ba    = branch -a
   bls   = branch -v # list branches with last commit in
-  brm   = branch -d # remove if branch-to-be-removed if fully merged into HEAD
-  brmf  = branch -D # force removal
+  ; brm   = branch -d # remove if branch-to-be-removed if fully merged into HEAD
+  ; brmf  = branch -D # force removal
   bmv   = branch -m
-  cg    = config --global
-  ceg   = config --global --edit
-  clg   = config --global --list
-  c     = config
-  cl    = config --list
-  ce    = config --edit
+  ; cg    = config --global
+  ; ceg   = config --global --edit
+  ; clg   = config --global --list
+  ; c     = config
+  ; cl    = config --list
+  ; ce    = config --edit
   co    = checkout
   cob   = checkout -b
   com   = "!f() { git fetch; git checkout -b master origin/master; }; f"
