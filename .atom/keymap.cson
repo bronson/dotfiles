@@ -1,9 +1,13 @@
 'body':
   'ctrl-p': 'fuzzy-finder:toggle-file-finder'
 
-'atom-text-editor.vim-mode.normal-mode':
+'atom-workspace':
   'ctrl-i': 'cursor-history:next'
   'ctrl-o': 'cursor-history:prev'
+  'ctrl-cmd-i': 'cursor-history:next-within-editor'
+  'ctrl-cmd-o': 'cursor-history:prev-within-editor'
+
+'atom-text-editor.vim-mode.normal-mode':
   '-': 'tree-view:show'
 
 # temporary workaround for issue in https://github.com/atom/vim-mode/pull/568
@@ -25,7 +29,7 @@
   'cmd-G': 'lazy-motion:backward'
   '[': 'lazy-motion:backward'
 
-'atom-text-editor.vim-mode.command-mode':
+'atom-text-editor.vim-mode.normal-mode':
   'ctrl-w x':     'paner:swap-item'
   'ctrl-w X':     'paner:send-item'
   'ctrl-w enter': 'paner:maximize'
@@ -44,5 +48,5 @@
   'cmd-ctrl-shift-f': 'project-find-navigation:activate-results-pane'
   'ctrl-cmd-n': 'project-find-navigation:next'
   'ctrl-cmd-p': 'project-find-navigation:prev'
-  'shift-cmd-n': 'project-find-navigation:next'
-  'shift-cmd-p': 'project-find-navigation:prev'
+  'ctrl-shift-N': 'project-find-navigation:next'
+  'ctrl-shift-P': 'project-find-navigation:next'
