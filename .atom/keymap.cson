@@ -21,12 +21,12 @@
 
 '.platform-darwin atom-text-editor.lazy-motion':
   'ctrl-s': 'lazy-motion:forward'
-  'ctrl-S': 'lazy-motion:backward'
+  'ctrl-shift-S': 'lazy-motion:backward'
   'ctrl-g': 'lazy-motion:forward'
+  'ctrl-shift-G': 'lazy-motion:backward'
   'cmd-g': 'lazy-motion:forward'
+  'cmd-shift-G': 'lazy-motion:backward'
   ']': 'lazy-motion:forward'
-  'ctrl-G': 'lazy-motion:backward'
-  'cmd-G': 'lazy-motion:backward'
   '[': 'lazy-motion:backward'
 
 'atom-text-editor.vim-mode.normal-mode':
@@ -49,4 +49,4 @@
   'ctrl-cmd-n': 'project-find-navigation:next'
   'ctrl-cmd-p': 'project-find-navigation:prev'
   'ctrl-shift-N': 'project-find-navigation:next'
-  'ctrl-shift-P': 'project-find-navigation:next'
+  'ctrl-shift-P': 'project-find-navigation:prev'
