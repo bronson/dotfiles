@@ -89,7 +89,7 @@ command! Mk execute "!mkdir -p " . shellescape(expand('%:h'), 1)
 
 " .md files are markdown, not Modula-2
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-let g:markdown_fenced_languages = ['ruby', 'vim', 'c', 'css', 'coffee', 'html', 'javascript', 'perl', 'python', 'yaml', 'sh']
+let g:markdown_fenced_languages = ['ruby', 'vim', 'c', 'css', 'html', 'javascript', 'perl', 'python', 'yaml', 'sh']
 
 
 
