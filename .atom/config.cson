@@ -20,13 +20,11 @@
       "welcome"
       "background-tips"
       "linter-rubocop"
-      "package-cop"
       "linter-haml"
       "smart-tab-name"
       "linter-eslint"
       "linter-jscs"
       "linter-jshint"
-      "vim-mode"
       "table-edit"
     ]
     themes: [
@@ -34,6 +32,7 @@
       "oceanic-reef-syntax"
     ]
     destroyEmptyPanes: false
+    audioBeep: false
   editor:
     invisibles: {}
     autoIndentOnPaste: false
@@ -71,3 +70,12 @@
   "smart-tab-name": {}
   "tree-view":
     hideIgnoredNames: true
+  "highlight-selected": {}
+  "git-blame-plus": {}
+  "git-blame":
+    columnWidth: 250
+  blame: {}
+  "keybinding-cheatsheet": {}
+  "vim-mode-plus":
+    incrementalSearch: true
+    setCursorToStartOfChangeOnUndoRedo: true

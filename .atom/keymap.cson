@@ -7,29 +7,29 @@
   'ctrl-cmd-i': 'cursor-history:next-within-editor'
   'ctrl-cmd-o': 'cursor-history:prev-within-editor'
 
-'atom-text-editor.vim-mode.normal-mode':
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   '-': 'tree-view:show'
 
 # temporary workaround for issue in https://github.com/atom/vim-mode/pull/568
-'atom-text-editor.vim-mode.insert-mode':
-  'up': 'unset!'
-  'down': 'unset!'
+# 'atom-text-editor.vim-mode-plus.insert-mode':
+#   'up': 'unset!'
+#   'down': 'unset!'
 
-'atom-text-editor':
-  'ctrl-s': 'lazy-motion:forward'
-  'ctrl-S': 'lazy-motion:backward'
+# 'atom-text-editor':
+#   'ctrl-s': 'lazy-motion:forward'
+#   'ctrl-S': 'lazy-motion:backward'
 
-'.platform-darwin atom-text-editor.lazy-motion':
-  'ctrl-s': 'lazy-motion:forward'
-  'ctrl-shift-S': 'lazy-motion:backward'
-  'ctrl-g': 'lazy-motion:forward'
-  'ctrl-shift-G': 'lazy-motion:backward'
-  'cmd-g': 'lazy-motion:forward'
-  'cmd-shift-G': 'lazy-motion:backward'
-  ']': 'lazy-motion:forward'
-  '[': 'lazy-motion:backward'
+# '.platform-darwin atom-text-editor.lazy-motion':
+#   'ctrl-s': 'lazy-motion:forward'
+#   'ctrl-shift-S': 'lazy-motion:backward'
+#   'ctrl-g': 'lazy-motion:forward'
+#   'ctrl-shift-G': 'lazy-motion:backward'
+#   'cmd-g': 'lazy-motion:forward'
+#   'cmd-shift-G': 'lazy-motion:backward'
+#   ']': 'lazy-motion:forward'
+#   '[': 'lazy-motion:backward'
 
-'atom-text-editor.vim-mode.normal-mode':
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   'ctrl-w x':     'paner:swap-item'
   'ctrl-w X':     'paner:send-item'
   'ctrl-w enter': 'paner:maximize'
@@ -37,6 +37,9 @@
   'ctrl-w J':     'paner:very-bottom'
   'ctrl-w H':     'paner:very-left'
   'ctrl-w L':     'paner:very-right'
+
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  ':': 'user-ex-command-open'
 
 '.preview-pane.project-find-navigation':
   'l':     'core:move-right'
