@@ -31,7 +31,6 @@
       "one-dark-ui"
       "oceanic-reef-syntax"
     ]
-    destroyEmptyPanes: false
     audioBeep: false
   editor:
     invisibles: {}
@@ -79,3 +78,5 @@
   "vim-mode-plus":
     incrementalSearch: true
     setCursorToStartOfChangeOnUndoRedo: true
+    flashOnUndoRedo: true
+    flashOnUndoRedoDuration: 300

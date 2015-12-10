@@ -35,6 +35,9 @@ atom.commands.add 'atom-workspace',
   'ex-command:w': -> dispatch 'core:save'
   'ex-command:W': -> dispatch 'core:save'
   'ex-command:wq': -> dispatch 'core:save', 'core:close'
+  'ex-command:s': -> dispatch 'pane:split-down'
+  'ex-command:v': -> dispatch 'pane:split-right'
+  'ex-command:vs': -> dispatch 'pane:split-right'
 
 exCommandsPrefix = 'Ex Command: '
 atom.commands.add 'atom-workspace',
