@@ -16,16 +16,8 @@
     disabledPackages: [
       "metrics"
       "exception-reporting"
-      "wrap-guide"
       "welcome"
       "background-tips"
-      "linter-rubocop"
-      "linter-haml"
-      "smart-tab-name"
-      "linter-eslint"
-      "linter-jscs"
-      "linter-jshint"
-      "table-edit"
     ]
     themes: [
       "one-dark-ui"
