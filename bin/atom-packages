@@ -1,0 +1,3 @@
+#!/bin/bash
+
+diff -u ~/.atom/packages.list <(apm list -b -i)
