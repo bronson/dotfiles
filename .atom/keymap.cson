@@ -53,3 +53,12 @@
   'ctrl-cmd-p': 'project-find-navigation:prev'
   'ctrl-shift-N': 'project-find-navigation:next'
   'ctrl-shift-P': 'project-find-navigation:prev'
+
+# some easier-to-hit keybindings for rspec testing
+'atom-workspace':
+  'ctrl-cmd-t': 'rspec:run'
+  'ctrl-cmd-r':	'rspec:run-for-line'
+  'ctrl-cmd-e':	'rspec:run-last'
+  'ctrl-cmd-shift-R':	'rspec:run-all'
+  'ctrl-cmd-shift-T':	'rspec:run-all'
+  'ctrl-cmd-shift-E':	'rspec:run-all'

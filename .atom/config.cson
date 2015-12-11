@@ -32,6 +32,9 @@
       "oceanic-reef-syntax"
     ]
     audioBeep: false
+    packagesWithKeymapsDisabled: [
+      "rspec"
+    ]
   editor:
     invisibles: {}
     autoIndentOnPaste: false
