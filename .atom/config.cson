@@ -27,6 +27,7 @@
     packagesWithKeymapsDisabled: [
       "rspec"
       "ruby-test-switcher"
+      "rails-transporter"
     ]
   editor:
     invisibles: {}
@@ -76,3 +77,4 @@
     setCursorToStartOfChangeOnUndoRedo: true
     flashOnUndoRedo: true
     flashOnUndoRedoDuration: 300
+  "rails-transporter": {}

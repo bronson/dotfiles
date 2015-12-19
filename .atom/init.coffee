@@ -37,6 +37,19 @@ atom.commands.add 'atom-workspace',
   'ex-command:split': -> dispatch 'pane:split-down'
   'ex-command:vertical-split': -> dispatch 'pane:split-right'
 
+  'ex-command:controller': -> dispatch 'rails-transporter:open-controller'
+  'ex-command:view-finder': -> dispatch 'rails-transporter:open-view-finder'
+  'ex-command:view': -> dispatch 'rails-transporter:open-view'
+  'ex-command:layout': -> dispatch 'rails-transporter:open-layout'
+  'ex-command:model': -> dispatch 'rails-transporter:open-model'
+  'ex-command:helper': -> dispatch 'rails-transporter:open-helper'
+  'ex-command:test': -> dispatch 'rails-transporter:open-test'
+  'ex-command:spec': -> dispatch 'rails-transporter:open-spec'
+  'ex-command:partial-template': -> dispatch 'rails-transporter:open-partial-template'
+  'ex-command:asset': -> dispatch 'rails-transporter:open-asset'
+  'ex-command:migration-finder': -> dispatch 'rails-transporter:open-migration-finder'
+  'ex-command:factory': -> dispatch 'rails-transporter:open-factory'
+
 exCommandsPrefix = 'Ex Command: '
 atom.commands.add 'atom-workspace',
   'user-ex-command-open': ->
