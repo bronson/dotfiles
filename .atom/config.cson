@@ -26,6 +26,7 @@
     audioBeep: false
     packagesWithKeymapsDisabled: [
       "rspec"
+      "ruby-test-switcher"
     ]
   editor:
     invisibles: {}

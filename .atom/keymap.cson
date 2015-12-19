@@ -48,3 +48,6 @@
   'ctrl-cmd-shift-R':	'rspec:run-all'
   'ctrl-cmd-shift-T':	'rspec:run-all'
   'ctrl-cmd-shift-E':	'rspec:run-all'
+  # and add ability to swtich between source and test file
+  # 'cmd-ctrl-.': 'ruby-test-switcher:switch'
+  'cmd-t': 'ruby-test-switcher:switch-without-split'
