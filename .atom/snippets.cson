@@ -16,4 +16,8 @@
 '.source.ruby':
   'byebug':
     'prefix': 'bye'
-    'body': 'require "byebug"; byebug'
+    'body': 'require \'byebug\'; byebug'
+# https://github.com/atom/snippets/issues/107
+  'byebug (short)':
+    'prefix': 'by'
+    'body': 'require \'byebug\'; byebug'
