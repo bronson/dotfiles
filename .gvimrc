@@ -10,7 +10,6 @@ set guioptions-=lLrR  " remove scroll bars from vim windows, it's just noise
 
 set t_vb= " don't flash the screen for visualbell (:he vb)
 
-colorscheme solarized
 set background=dark
 
 set number   " show line numbers in gui
