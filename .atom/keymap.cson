@@ -1,16 +1,13 @@
+# evil!  if any selector matches one previous, it just overrides all
+# its maps.  you can only have a single of each selector in a file.
+
 'body':
+  # cmd-p, ctrl-p: it's all the same to me
   'ctrl-p': 'fuzzy-finder:toggle-file-finder'
 
-'atom-workspace':
-  'ctrl-i': 'cursor-history:next'
-  'ctrl-o': 'cursor-history:prev'
-  'ctrl-cmd-i': 'cursor-history:next-within-editor'
-  'ctrl-cmd-o': 'cursor-history:prev-within-editor'
-
-'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+'atom-text-editor.vim-mode-plus.normal-mode':
   '-': 'tree-view:show'
 
-'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   'ctrl-w x':     'paner:swap-item'
   'ctrl-w X':     'paner:send-item'
   'ctrl-w enter': 'paner:maximize'
@@ -19,12 +16,10 @@
   'ctrl-w H':     'paner:very-left'
   'ctrl-w L':     'paner:very-right'
 
-'atom-text-editor.vim-mode-plus.normal-mode':
   'g f':      'open-this:here'
   'ctrl-w f': 'open-this:split-down'
   'ctrl-w F': 'open-this:split-right'
 
-'atom-text-editor.vim-mode-plus.normal-mode':
   ':': 'user-ex-command-open'
 
 '.preview-pane.project-find-navigation':
@@ -33,6 +28,7 @@
   'j':     'project-find-navigation:select-next-and-confirm'
   'k':     'project-find-navigation:select-prev-and-confirm'
   'enter': 'project-find-navigation:confirm'
+
 'atom-workspace:not([mini])':
   'cmd-ctrl-shift-f': 'project-find-navigation:activate-results-pane'
   'ctrl-cmd-n': 'project-find-navigation:next'
@@ -51,3 +47,8 @@
   # and add ability to swtich between source and test file
   # 'cmd-ctrl-.': 'ruby-test-switcher:switch'
   'cmd-t': 'ruby-test-switcher:switch-without-split'
+
+  'ctrl-i': 'cursor-history:next'
+  'ctrl-o': 'cursor-history:prev'
+  'ctrl-cmd-i': 'cursor-history:next-within-editor'
+  'ctrl-cmd-o': 'cursor-history:prev-within-editor'
