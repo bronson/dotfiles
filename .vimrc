@@ -1,9 +1,13 @@
-" bare ~/.vimrc
+" prototype ~/.vimrc
 "
-" This tries to make Vim as capable as possible without using any plugins.
-" Don't use abbreviations!  Spelling things out makes grepping easy.
+" This tries to take Vim as close to common defaults as possible.
 
+" explicity set nocompatible so it's always set, even if you're invoking
+" like `vim -u this/vimrc file-to-edit`
 set nocompatible
+
+
+" to worry about:
 filetype on   " work around stupid osx bug
 filetype off
 
@@ -20,7 +24,7 @@ set incsearch         " find the next match as we type the search
 set hlsearch          " hilight searches by default
 set nowrap            " by default, dont wrap lines (see <leader>w)
 set showmatch         " briefly jump to matching }] when typing
-set nostartofline     " don't jump to start of line as a side effect (i.e. <<)
+" set nostartofline     " don't jump to start of line as a side effect (i.e. <<)
 
 set scrolloff=3       " lines to keep visible before and after cursor
 set sidescrolloff=7   " columns to keep visible before and after cursor
