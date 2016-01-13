@@ -77,5 +77,4 @@
     setCursorToStartOfChangeOnUndoRedo: true
     flashOnUndoRedo: true
     flashOnUndoRedoDuration: 300
-  "rails-transporter":
-    viewFileExtension: "html.haml"
+  "rails-transporter": {}
