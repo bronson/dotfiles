@@ -5,6 +5,10 @@
   # cmd-p, ctrl-p: it's all the same to me
   'ctrl-p': 'fuzzy-finder:toggle-file-finder'
 
+'atom-text-editor':
+  # for some reason Atom doesn't give replace next a shortcut or a button!
+  'cmd-alt-g': 'find-and-replace:replace-next'
+
 'atom-text-editor.vim-mode-plus.normal-mode':
   '-': 'tree-view:show'
 
