@@ -1,6 +1,7 @@
 require 'irb/ext/save-history'
 IRB.conf[:SAVE_HISTORY] = 10000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
+IRB.conf[:BACK_TRACE_LIMIT] = 10000
 
 
 # calls vi to edit the previous command.  if you save, the command gets executed.
