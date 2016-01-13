@@ -226,11 +226,11 @@ ruby-install() { /usr/local/bin/ruby-install "$@" -- --disable-install-rdoc; }
 # Bundler can be a right pain at times
 alias be='bundle exec'
 alias bepre='bundle exec rake assets:precompile'
-alias r=rails
-alias rg='rails generate'
-alias rr='bundle exec rspec'
+alias r='bin/rails'
+alias rg='bin/rails generate'
+alias rr='bin/rspec'
 alias rs='sh -c "rm -rf tmp/cache log/development.log && rails server"'
-alias rc='rails console'
+alias rc='bin/rails console'
 
 
 #
