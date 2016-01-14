@@ -77,4 +77,10 @@
     setCursorToStartOfChangeOnUndoRedo: true
     flashOnUndoRedo: true
     flashOnUndoRedoDuration: 300
-  "rails-transporter": {}
+  "rails-transporter":
+    viewFileExtension: [
+      "html.erb"
+      "text.erb"
+      "html.slim"
+      "html.haml"
+    ]
