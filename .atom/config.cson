@@ -1,82 +1,64 @@
 "*":
-  welcome:
-    showOnStartup: false
-  linter:
-    subtleLinterErrors: [
-      "haml-lint"
-    ]
-    lintOnFly: false
-  "isotope-ui": {}
-  autosave:
-    enabled: true
+  "advanced-open-file":
+    createFileInstantly: true
+  "atom-ternjs": {}
   "autocomplete-plus":
     confirmCompletion: "tab"
-  "fuzzy-finder": {}
+  autosave:
+    enabled: true
+  blame: {}
+  "bracket-matcher":
+    autocompleteBrackets: false
+    autocompleteSmartQuotes: false
   core:
+    audioBeep: false
     disabledPackages: [
       "metrics"
       "exception-reporting"
       "welcome"
       "background-tips"
     ]
-    themes: [
-      "one-dark-ui"
-      "oceanic-reef-syntax"
-    ]
-    audioBeep: false
     packagesWithKeymapsDisabled: [
       "rspec"
       "ruby-test-switcher"
       "rails-transporter"
     ]
+    themes: [
+      "one-dark-ui"
+      "oceanic-reef-syntax"
+    ]
+  "cursor-history": {}
   editor:
-    invisibles: {}
     autoIndentOnPaste: false
     backUpBeforeSaving: true
-  "markdown-preview": {}
-  "git-log": {}
-  "cursor-history": {}
-  "linter-jshint": {}
-  "atom-ternjs": {}
-  "vim-mode": {}
-  "vim-mode-next": {}
-  tabs:
-    enableVcsColoring: true
-  notifications: {}
+    invisibles: {}
   "file-icons":
-    onChanges: true
     coloured: false
-  "vim-surround": {}
-  "bracket-matcher":
-    autocompleteSmartQuotes: false
-    autocompleteBrackets: false
+    onChanges: true
   "find-and-replace":
     openProjectFindResultsInRightPane: true
-  zentabs:
-    maximumOpenedTabs: 8
-  "rubocop-auto-correct": {}
-  "linter-rubocop": {}
-  "merge-conflicts": {}
-  "linter-reek": {}
-  react: {}
-  "advanced-open-file":
-    createFileInstantly: true
-  pigments: {}
-  "git-plus": {}
-  "smart-tab-name": {}
-  "tree-view":
-    hideIgnoredNames: true
-  "highlight-selected": {}
-  "git-blame-plus": {}
+  "fuzzy-finder": {}
   "git-blame":
     columnWidth: 250
-  blame: {}
+  "git-blame-plus": {}
+  "git-log": {}
+  "git-plus": {}
+  "highlight-selected": {}
+  "isotope-ui": {}
   "keybinding-cheatsheet": {}
-  "vim-mode-plus":
-    incrementalSearch: true
-    setCursorToStartOfChangeOnUndoRedo: true
-    flashOnUndoRedo: true
-    flashOnUndoRedoDuration: 300
+  linter:
+    lintOnFly: false
+    subtleLinterErrors: [
+      "haml-lint"
+    ]
+  "linter-jshint": {}
+  "linter-reek": {}
+  "linter-rubocop": {}
+  "linter-ruby": {}
+  "markdown-preview": {}
+  "merge-conflicts": {}
+  notifications: {}
+  pigments: {}
   "rails-transporter":
     viewFileExtension: [
       "html.erb"
@@ -84,3 +66,22 @@
       "html.slim"
       "html.haml"
     ]
+  react: {}
+  "rubocop-auto-correct": {}
+  "smart-tab-name": {}
+  tabs:
+    enableVcsColoring: true
+  "tree-view":
+    hideIgnoredNames: true
+  "vim-mode": {}
+  "vim-mode-next": {}
+  "vim-mode-plus":
+    flashOnUndoRedo: true
+    flashOnUndoRedoDuration: 300
+    incrementalSearch: true
+    setCursorToStartOfChangeOnUndoRedo: true
+  "vim-surround": {}
+  welcome:
+    showOnStartup: false
+  zentabs:
+    maximumOpenedTabs: 8
