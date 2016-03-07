@@ -3,5 +3,5 @@
 if [ "$1" == 'update' ]; then
   apm list -b -i > ~/.atom/packages.list
 else
-  diff -u ~/.atom/packages.list <(apm list -b -i)
+  diff -u ~/.atom/packages.list <(apm list -b -i --no-dev)
 fi
