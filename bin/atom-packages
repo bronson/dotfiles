@@ -1,7 +1,8 @@
 #!/bin/bash
 
 packages() {
-  apm list -b -i --no-dev
+  # remove version numbers because it generates too much noise, also blank lines
+  apm list -b -i --no-dev | sed -e 's/@.*$//' -e '/^\s*$/d'
 }
 
 if [ "$1" == 'update' ]; then
