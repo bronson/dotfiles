@@ -1,7 +1,11 @@
 #!/bin/bash
 
+packages() {
+  apm list -b -i --no-dev
+}
+
 if [ "$1" == 'update' ]; then
-  apm list -b -i > ~/.atom/packages.list
+  packages > ~/.atom/packages.list
 else
-  diff -u ~/.atom/packages.list <(apm list -b -i --no-dev)
+  diff -u ~/.atom/packages.list <(packages)
 fi
