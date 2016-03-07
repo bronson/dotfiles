@@ -87,7 +87,7 @@ alias MPP='make program ENVIRONMENT=production'
 
 # calculator: "? 3+13*3" will print 42
 # TODO: any way to store the output in a bash variable?
-? () { echo "$*" | bc -l; }
+? () { echo "$@" | bc -l; }
 
 
 #
@@ -126,9 +126,19 @@ __git_shortcut  gcia  commit '-a -v'
 __git_shortcut  gd    diff
 __git_shortcut  gdc   diff --cached
 __git_shortcut  gds   diff --stat
+__git_shortcut  gfo   fetch origin
+__git_shortcut  gfu   fetch upstream
 __git_shortcut  gl    log
 __git_shortcut  glp   log -p
 __git_shortcut  gls   log --stat
+__git_shortcut  gm    merge
+__git_shortcut  gmom  merge origin/master
+__git_shortcut  gmum  merge upstream/master
+__git_shortcut  gpl   pull
+__git_shortcut  gplom pull origin master
+__git_shortcut  gplum pull upstream master
+__git_shortcut  gps   push
+__git_shortcut  gpsom push origin master
 alias gs='git status -sb'   # no completion necessary
 alias gsa='git stash apply'
 
