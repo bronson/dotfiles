@@ -1,5 +1,6 @@
 [core]
   excludesfile = ~/.gitignore-global
+	pager = diff-so-fancy | less --tabs=1,5 -R
 [user]
   name = Scott Bronson
   email = brons_git@rinspin.com
@@ -39,7 +40,6 @@
   ai    = add --interactive
   ap    = add --patch
   au    = add --update
-  add-ws = "!sh -c 'git --no-pager diff -w --no-color "$@" | git apply --cached --ignore-whitespace' -"
   b     = branch
   ba    = branch -a
   bls   = branch -v # list branches with last commit in
@@ -120,6 +120,3 @@
 
 [init]
   templatedir = ~/.git_template
-[pager]
-  diff = diff-so-fancy | less --tabs=4 -RFX
-  show = diff-so-fancy | less --tabs=4 -RFX
