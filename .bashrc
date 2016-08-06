@@ -239,7 +239,7 @@ alias bepre='bundle exec rake assets:precompile'
 alias r='bin/rails'
 alias rg='bin/rails generate'
 alias rr='bin/rspec'
-alias rs='sh -c "rm -rf tmp/cache log/development.log && rails server"'
+alias rs='sh -c "rm -rf tmp/cache log/development.log && bin/rails server"'
 alias rc='bin/rails console'
 
 
