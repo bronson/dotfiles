@@ -17,11 +17,13 @@
       "exception-reporting"
       "welcome"
       "background-tips"
+      "linter-jscs"
     ]
     packagesWithKeymapsDisabled: [
       "rspec"
       "ruby-test-switcher"
       "rails-transporter"
+      "todo-show"
     ]
     themes: [
       "one-dark-ui"

@@ -24,8 +24,6 @@
   'ctrl-w f': 'open-this:split-down'
   'ctrl-w F': 'open-this:split-right'
 
-  ':': 'user-ex-command-open'
-
 '.preview-pane.project-find-navigation':
   'l':     'core:move-right'
   'h':     'core:move-left'
