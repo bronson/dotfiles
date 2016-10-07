@@ -27,6 +27,14 @@
   'ctrl-w f': 'open-this:split-down'
   'ctrl-w F': 'open-this:split-right'
 
+  # still not sure how vim-mode-plus's surround works
+  'y s': 'vim-mode-plus:surround'
+  'y s w': 'vim-mode-plus:surround-word'
+  'd s': 'vim-mode-plus:delete-surround'
+  'y s c': 'vim-mode-plus:change-surround'
+  'c s': 'vim-mode-plus:change-surround'
+  'y m s':  'vim-mode-plus:map-surround'
+
 '.preview-pane.project-find-navigation':
   'l':     'core:move-right'
   'h':     'core:move-left'

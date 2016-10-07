@@ -80,6 +80,7 @@
   "vim-mode-plus":
     flashOnUndoRedo: true
     flashOnUndoRedoDuration: 300
+    highlightSearch: true
     incrementalSearch: true
     setCursorToStartOfChangeOnUndoRedo: true
   "vim-surround": {}
