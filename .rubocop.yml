@@ -1,0 +1,12 @@
+Style/MethodDefParentheses:
+  Enabled: false
+
+# no space differentiates this from assignment
+Style/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: no_space
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 20

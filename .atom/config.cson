@@ -17,11 +17,13 @@
       "exception-reporting"
       "welcome"
       "background-tips"
+      "linter-jscs"
     ]
     packagesWithKeymapsDisabled: [
       "rspec"
       "ruby-test-switcher"
       "rails-transporter"
+      "todo-show"
     ]
     themes: [
       "one-dark-ui"
@@ -78,6 +80,7 @@
   "vim-mode-plus":
     flashOnUndoRedo: true
     flashOnUndoRedoDuration: 300
+    highlightSearch: true
     incrementalSearch: true
     setCursorToStartOfChangeOnUndoRedo: true
   "vim-surround": {}
