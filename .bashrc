@@ -118,11 +118,13 @@ __git_shortcut () {
 }
 
 __git_shortcut  ga    add
-__git_shortcut  gb    branch
+__git_shortcut  gb    branch --column
 __git_shortcut  gba   branch -a
+__git_shortcut  gbr   branch --sort=committerdate  # recent
 __git_shortcut  gco   checkout
 __git_shortcut  gci   commit -v
-__git_shortcut  gcia  commit '-a -v'
+__git_shortcut  gcia  commit -a -v
+__git_shortcut  gcane commit --amend --no-edit
 __git_shortcut  gd    diff
 __git_shortcut  gdc   diff --cached
 __git_shortcut  gds   diff --stat
@@ -141,6 +143,7 @@ __git_shortcut  gps   push
 __git_shortcut  gpsom push origin master
 alias gs='git status -sb'   # no completion necessary
 alias gsa='git stash apply'
+__git_shortcut  grH   reset --hard HEAD
 
 
 
