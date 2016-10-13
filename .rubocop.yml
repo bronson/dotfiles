@@ -1,11 +1,14 @@
-AllCops:
-  RunRailsCops: true
+Rails:
+  Enabled: true
 
-# parans in method defs are needless noise
+EmptyLines:
+  Enabled: false
+
+# parens in method defs are needless noise
 Style/MethodDefParentheses:
   Enabled: false
 
-# differentiate named arguments from assignment
+# this visually differentiates named arguments from assignment
 Style/SpaceAroundEqualsInParameterDefault:
   EnforcedStyle: no_space
 
