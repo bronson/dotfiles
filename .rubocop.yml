@@ -1,12 +1,26 @@
+AllCops:
+  RunRailsCops: true
+
+# parans in method defs are needless noise
 Style/MethodDefParentheses:
   Enabled: false
 
-# no space differentiates this from assignment
+# differentiate named arguments from assignment
 Style/SpaceAroundEqualsInParameterDefault:
   EnforcedStyle: no_space
+
+# use raise or Kernel.abort.  no need to ever use fail
+Style/SignalException:
+  EnforcedStyle: only_raise
 
 Metrics/LineLength:
   Max: 120
 
 Metrics/MethodLength:
   Max: 20
+
+# assignments in conditionals are always surprising.
+Style/ParenthesesAroundCondition:
+  AllowSafeAssignment: false
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: false
