@@ -35,6 +35,10 @@
   'c s': 'vim-mode-plus:change-surround'
   'y m s':  'vim-mode-plus:map-surround'
 
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  ')': 'vim-mode-plus:move-to-next-sentence-skip-blank-row'
+  '(': 'vim-mode-plus:move-to-previous-sentence-skip-blank-row'
+
 '.preview-pane.project-find-navigation':
   'l':     'core:move-right'
   'h':     'core:move-left'
