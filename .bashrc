@@ -208,13 +208,6 @@ fi
 [ -d ~/.nvm ] && . ~/.nvm/nvm.sh
 export PATH="node_modules/.bin:$HOME/node_modules/.bin:$PATH"
 
-# which grunt >/dev/null 2>&1 && . <(grunt --completion=bash)
-if which grunt >/dev/null 2>&1; then 
-  grunt --completion=bash > /tmp/apple-bash-sucks-$$
-  . /tmp/apple-bash-sucks-$$
-  rm /tmp/apple-bash-sucks-$$
-fi
-
 
 #
 #     Ruby
