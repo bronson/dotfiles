@@ -69,3 +69,7 @@
   'ctrl-o': 'cursor-history:prev'
   'ctrl-cmd-i': 'cursor-history:next-within-editor'
   'ctrl-cmd-o': 'cursor-history:prev-within-editor'
+
+# make it easy to fuzzy-find a file into a new pane
+'.fuzzy-finder':
+  'cmd-enter': 'pane:split-right'

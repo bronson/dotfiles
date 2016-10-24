@@ -10,14 +10,15 @@
   "bracket-matcher":
     autocompleteBrackets: false
     autocompleteSmartQuotes: false
+  build:
+    saveOnBuild: true
   core:
     audioBeep: false
     disabledPackages: [
-      "metrics"
       "exception-reporting"
       "welcome"
       "background-tips"
-      "linter-jscs"
+      "metrics"
     ]
     packagesWithKeymapsDisabled: [
       "rspec"
@@ -25,12 +26,14 @@
       "rails-transporter"
       "todo-show"
     ]
+    telemetryConsent: "no"
     themes: [
       "one-dark-ui"
       "oceanic-reef-syntax"
     ]
   "cursor-history": {}
   editor:
+    atomicSoftTabs: false
     autoIndentOnPaste: false
     backUpBeforeSaving: true
     invisibles: {}
@@ -82,7 +85,15 @@
     flashOnUndoRedoDuration: 300
     highlightSearch: true
     incrementalSearch: true
+    incrementalSearchVisitDirection: "relative"
     setCursorToStartOfChangeOnUndoRedo: true
+    smoothScrollOnFullScrollMotion: true
+    smoothScrollOnFullScrollMotionDuration: 200
+    smoothScrollOnHalfScrollMotion: true
+    smoothScrollOnHalfScrollMotionDuration: 200
+    stayOnDelete: true
+    stayOnTransformString: true
+    stayOnYank: true
   "vim-surround": {}
   welcome:
     showOnStartup: false
