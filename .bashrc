@@ -118,6 +118,7 @@ __git_shortcut () {
 }
 
 __git_shortcut  ga    add
+__git_shortcut  gap   add -p
 __git_shortcut  gb    branch --column
 __git_shortcut  gba   branch -a
 __git_shortcut  gbr   branch --sort=committerdate  # recent
