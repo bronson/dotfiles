@@ -1,6 +1,8 @@
 advanced-open-file
-atom-ternjs
 autocomplete-elixir
+build
+build-make
+busy
 color-picker
 cursor-history
 file-icons
@@ -13,6 +15,7 @@ language-elixir
 language-haml
 language-viml
 linter
+linter-clang
 linter-coffeelint
 linter-csslint
 linter-elixir-credo
@@ -21,7 +24,6 @@ linter-erb
 linter-eslint
 linter-haml
 linter-js-yaml
-linter-jscs
 linter-jsonlint
 linter-reek
 linter-rubocop
@@ -34,8 +36,6 @@ open-this
 paner
 phoenix-elixir-snippets
 project-find-navigation
-project-plus
-quick-editor
 rails-transporter
 react
 rspec
