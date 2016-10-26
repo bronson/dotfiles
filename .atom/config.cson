@@ -87,6 +87,8 @@
     incrementalSearch: true
     incrementalSearchVisitDirection: "relative"
     setCursorToStartOfChangeOnUndoRedo: true
+    showHoverOnOperate: true
+    showHoverSearchCounter: true
     smoothScrollOnFullScrollMotion: true
     smoothScrollOnFullScrollMotionDuration: 200
     smoothScrollOnHalfScrollMotion: true
