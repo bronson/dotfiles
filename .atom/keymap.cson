@@ -39,13 +39,6 @@
   ')': 'vim-mode-plus:move-to-next-sentence-skip-blank-row'
   '(': 'vim-mode-plus:move-to-previous-sentence-skip-blank-row'
 
-'.preview-pane.project-find-navigation':
-  'l':     'core:move-right'
-  'h':     'core:move-left'
-  'j':     'project-find-navigation:select-next-and-confirm'
-  'k':     'project-find-navigation:select-prev-and-confirm'
-  'enter': 'project-find-navigation:confirm'
-
 'atom-workspace:not([mini])':
   'cmd-ctrl-shift-f': 'project-find-navigation:activate-results-pane'
   'ctrl-cmd-n': 'project-find-navigation:next'
