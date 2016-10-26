@@ -232,6 +232,13 @@ alias rc='bin/rails console'
 
 
 #
+#     Rust
+#
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+
+#
 #     Editors
 #
 
