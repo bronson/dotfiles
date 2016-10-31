@@ -60,7 +60,9 @@ export GREP_OPTIONS='--color=auto --exclude=tags --exclude=TAGS --exclude=*.min.
 shopt -s histappend                         # Append to history file instead of overwriting
 shopt -s cmdhist                            # store multiline commands as 1 line
 shopt -s checkwinsize                       # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
-unset HISTFILESIZE                          # keep unlimited history
+
+HISTSIZE=1000
+HISTFILESIZE=100000
 
 
 #
