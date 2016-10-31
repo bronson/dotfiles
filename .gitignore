@@ -18,6 +18,7 @@
 /.*[._-]lock
 /.*[._-]cookie
 /.xsession-errors*
+/.Xauthority
 
 # finally, these need special-casing
 /.ICEauthority
