@@ -1,0 +1,12 @@
+linters:
+  LineLength:
+    enabled: true
+    max: 120
+
+  RuboCop:
+    ignored_cops:
+      - Style/SpaceAfterColon
+      - Style/SpaceAroundOperators
+
+  SpaceInsideHashAttributes:
+    enabled: false

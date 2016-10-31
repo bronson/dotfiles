@@ -1,0 +1,28 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed.
+ *
+ * If you are unfamiliar with LESS, you can read more about it here:
+ * http://www.lesscss.org
+ */
+
+.tree-view {
+
+}
+
+// style the background and foreground colors on the atom-text-editor-element
+// itself
+atom-text-editor {
+
+}
+
+
+// set the cursor to a pointer in command mode, leave it as an I-beam in insert mode
+atom-text-editor.vim-mode.normal-mode::shadow .editor-contents--private {
+    cursor: default;
+}
+
+// make the command palette look a little different from the fuzzy finder
+.command-palette { background-color: #00A; }

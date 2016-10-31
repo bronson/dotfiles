@@ -60,9 +60,9 @@ export GREP_OPTIONS='--color=auto --exclude=tags --exclude=TAGS --exclude=*.min.
 shopt -s histappend                         # Append to history file instead of overwriting
 shopt -s cmdhist                            # store multiline commands as 1 line
 shopt -s checkwinsize                       # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
-export HISTCONTROL="ignoreboth"             # store duplicate lines once, ignore lines beginning with a space
-export HISTIGNORE="&:ls:[bf]g:exit:%[0-9]"  # ignore simple commands
-unset HISTFILESIZE                          # keep unlimited history
+
+HISTSIZE=1000
+HISTFILESIZE=100000
 
 
 #
@@ -79,9 +79,7 @@ alias ll='ls -lF'
 alias lla='ls -alF'
 
 alias tf='tail -f'
-alias gu='bundle exec guard -n false'
 alias jk='jekyll --auto --server'
-
 alias gre=grep    # darn you vim's :gre command
 alias mak=make    # and :mak
 
@@ -90,7 +88,8 @@ alias MPA='make program DEBUGGING=always'
 alias MPP='make program ENVIRONMENT=production'
 
 # calculator: "? 3+13*3" will print 42
-? () { echo "$*" | bc -l; }
+# TODO: any way to store the output in a bash variable?
+? () { echo "$@" | bc -l; }
 
 
 #
@@ -121,18 +120,33 @@ __git_shortcut () {
 }
 
 __git_shortcut  ga    add
-__git_shortcut  gb    branch
+__git_shortcut  gap   add -p
+__git_shortcut  gb    branch --column
 __git_shortcut  gba   branch -a
+__git_shortcut  gbr   branch --sort=committerdate  # recent
 __git_shortcut  gco   checkout
 __git_shortcut  gci   commit -v
-__git_shortcut  gcia  commit '-a -v'
+__git_shortcut  gcia  commit -a -v
+__git_shortcut  gcane commit --amend --no-edit
 __git_shortcut  gd    diff
 __git_shortcut  gdc   diff --cached
 __git_shortcut  gds   diff --stat
+__git_shortcut  gfo   fetch origin
+__git_shortcut  gfu   fetch upstream
 __git_shortcut  gl    log
 __git_shortcut  glp   log -p
 __git_shortcut  gls   log --stat
-alias gs='git status -sb' # no completion for git status
+__git_shortcut  gm    merge
+__git_shortcut  gmom  merge origin/master
+__git_shortcut  gmum  merge upstream/master
+__git_shortcut  gpl   pull
+__git_shortcut  gplom pull origin master
+__git_shortcut  gplum pull upstream master
+__git_shortcut  gps   push
+__git_shortcut  gpsom push origin master
+alias gs='git status -sb'   # no completion necessary
+alias gsa='git stash apply'
+__git_shortcut  grH   reset --hard HEAD
 
 
 
@@ -152,12 +166,9 @@ if [ "Darwin" == "$(uname)" ]; then
     export PATH="$PATH:/usr/local/mysql/bin"             # default osx mysql dmg
 
 
-    # if newer bash is installed by brew or ports, use its completion
-    [ -f /opt/local/etc/bash_completion ] && source /opt/local/etc/bash_completion
-    [ -f $BREW_HOME/etc/bash_completion ] && source $BREW_HOME/etc/bash_completion
+    command -v brew >/dev/null 2>&1 && [ -f "$(brew --prefix)/etc/bash_completion" ] && source "$(brew --prefix)/etc/bash_completion"
+    command -v brew >/dev/null 2>&1 && [ -f "$(brew --prefix)/etc/bash_completion.d" ] && source "$(brew --prefix)/etc/bash_completion.d"
 
-    alias vi=/Applications/MacVim.app/Contents/MacOS/Vim
-    alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
     alias gvim=mvim
 
     # I alias gs to git status, no idea why homebrew doesn't allow full name
@@ -169,6 +180,7 @@ else
 #   emulate some things that osx gets right
 
     alias open=xdg-open
+    alias mvim=gvim
 
 fi
 
@@ -196,36 +208,47 @@ fi
 #
 
 [ -d ~/.nvm ] && . ~/.nvm/nvm.sh
-which npm >/dev/null 2>&1 && . <(npm completion | cat)  # https://github.com/isaacs/npm/issues/1066
 export PATH="node_modules/.bin:$HOME/node_modules/.bin:$PATH"
+
 
 #
 #     Ruby
 #
 
-[ -f "$HOME/.rbenv/bin/rbenv" ] && export PATH="$PATH:$HOME/.rbenv/bin"
-which rbenv > /dev/null && eval "$(rbenv init -)"
+# switching to chruby...
+[ -f /usr/local/share/chruby/chruby.sh ]       && source /usr/local/share/chruby/chruby.sh
+[ -f /usr/local/share/chruby/auto.sh ]         && source /usr/local/share/chruby/auto.sh
+[ -f /usr/local/share/chruby-default-gems.sh ] && source /usr/local/share/chruby-default-gems.sh
+# do everything I can think of to make rdoc go away
+export RUBY_CONFIGURE_OPTS=--disable-install-doc
+ruby-install() { /usr/local/bin/ruby-install "$@" -- --disable-install-rdoc; }
 
 # Bundler can be a right pain at times
 alias be='bundle exec'
 alias bepre='bundle exec rake assets:precompile'
-alias r=rails
-alias rg='rails generate'
-alias rr='rspec'
-alias rs='rm -rf tmp/cache && > log/development.log && rails server'
-alias rc='rails console'
-
-# i.e. production rake db:migrate
-production() { RAILS_ENV=production "$@"; }
+alias r='bin/rails'
+alias rg='bin/rails generate'
+alias rr='bin/rspec'
+alias rs='sh -c "rm -rf tmp/cache log/development.log && bin/rails server"'
+alias rc='bin/rails console'
 
 
 #
-#     Vim
+#     Rust
+#
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+
+#
+#     Editors
 #
 
 export EDITOR='vim'
 # use gvim instead of terminal vim to edit bundles
 export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
+
+export ATOM_REPOS_HOME="$HOME"  # otherwise apm clones to ~/github
 
 
 #
@@ -233,6 +256,7 @@ export GEM_EDITOR=gvim BUNDLER_EDITOR=gvim
 #
 
 export PGDATA='/usr/local/var/postgres'
+export DOCKER_HOST='tcp://127.0.0.1:4243'
 
 
 #

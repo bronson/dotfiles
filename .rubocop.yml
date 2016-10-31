@@ -1,0 +1,49 @@
+Rails:
+  Enabled: true
+
+# not sure about this one, gem install rubocop-rspec
+# require: 'rubocop-rspec'
+
+# multiple expectations are a-ok.
+RSpec/MultipleExpectations:
+  Enabled: false
+
+# sometimes 2 blank lines offer a nice separation of subjects
+EmptyLines:
+  Enabled: false
+
+# parens in method defs are needless noise
+Style/MethodDefParentheses:
+  Enabled: false
+
+# this visually differentiates named arguments from assignment
+Style/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: no_space
+
+# use raise or Kernel.abort.  no need to ever use fail
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+# %w[] makes it clear it's an array.  https://github.com/bbatsov/ruby-style-guide/pull/563
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%i': []
+    '%I': []
+    '%w': []
+    '%W': []
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 20
+
+# assignments in conditionals are always surprising.
+Style/ParenthesesAroundCondition:
+  AllowSafeAssignment: false
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: false
+
+# multi-line stabby procs are A-OK.  https://github.com/bbatsov/rubocop/issues/1520
+Style/Lambda:
+  Enabled: false

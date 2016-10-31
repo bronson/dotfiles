@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Restores audio when it goes silent on Mavericks.  Lame.
+# https://discussions.apple.com/thread/5482053?start=75&tstart=0
+
+# sudo killall coreaudiod
+
+sudo kextunload  /System/Library/Extensions/AppleHDA.kext
+sudo kextload  /System/Library/Extensions/AppleHDA.kext

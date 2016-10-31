@@ -1,0 +1,17 @@
+# this file is used by chruby-default-gems
+
+bundler
+
+# tpope navigation
+gem-ctags
+gem-browse
+
+# cat output to the browser
+bcat
+
+# lauch osx processes
+lunchy
+
+# for vim-instant-markdown
+pygments.rb
+redcarpet

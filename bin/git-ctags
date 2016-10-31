@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+# git-ctags
+#
+# Manually generate ctags without needing to commit or pull first.
+#
+#
+# USAGE
+#
+# First set up ctaggery: http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html
+# Then install this script anywhere on your PATH.
+#
+# Now, any time you want to regenerate the ctags in your repository, run:
+#
+#     git ctags
+
+
+git_dir="$(git rev-parse --git-dir 2>/dev/null)"
+if [ -z "$git_dir" ]; then
+  echo "not a git directory"
+  exit 1
+fi
+exec "$git_dir/hooks/ctags"

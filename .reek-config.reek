@@ -1,0 +1,3 @@
+# a method name ending in a number is uncommunicative?  That's arbitary.
+UncommunicativeMethodName:
+  enabled: false

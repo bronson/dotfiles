@@ -1,0 +1,103 @@
+"*":
+  "advanced-open-file":
+    createFileInstantly: true
+  "atom-ternjs": {}
+  "autocomplete-plus":
+    confirmCompletion: "tab"
+  autosave:
+    enabled: true
+  blame: {}
+  "bracket-matcher":
+    autocompleteBrackets: false
+    autocompleteSmartQuotes: false
+  build:
+    saveOnBuild: true
+  core:
+    audioBeep: false
+    disabledPackages: [
+      "exception-reporting"
+      "welcome"
+      "background-tips"
+      "metrics"
+    ]
+    packagesWithKeymapsDisabled: [
+      "rspec"
+      "ruby-test-switcher"
+      "rails-transporter"
+      "todo-show"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "oceanic-reef-syntax"
+    ]
+  "cursor-history": {}
+  editor:
+    atomicSoftTabs: false
+    autoIndentOnPaste: false
+    backUpBeforeSaving: true
+    invisibles: {}
+  "file-icons":
+    coloured: false
+    onChanges: true
+  "find-and-replace":
+    openProjectFindResultsInRightPane: true
+  "fuzzy-finder": {}
+  "git-blame":
+    columnWidth: 250
+  "git-blame-plus": {}
+  "git-log": {}
+  "git-plus": {}
+  "highlight-selected": {}
+  "isotope-ui": {}
+  "keybinding-cheatsheet": {}
+  linter:
+    lintOnFly: false
+    subtleLinterErrors: [
+      "haml-lint"
+    ]
+  "linter-jshint": {}
+  "linter-reek": {}
+  "linter-rubocop": {}
+  "linter-ruby": {}
+  "markdown-preview": {}
+  "merge-conflicts": {}
+  notifications: {}
+  pigments: {}
+  "rails-transporter":
+    viewFileExtension: [
+      "html.erb"
+      "text.erb"
+      "html.slim"
+      "html.haml"
+    ]
+  react: {}
+  "rubocop-auto-correct": {}
+  "smart-tab-name": {}
+  tabs:
+    enableVcsColoring: true
+  "tree-view":
+    hideIgnoredNames: true
+  "vim-mode": {}
+  "vim-mode-next": {}
+  "vim-mode-plus":
+    flashOnUndoRedo: true
+    flashOnUndoRedoDuration: 300
+    highlightSearch: true
+    incrementalSearch: true
+    incrementalSearchVisitDirection: "relative"
+    setCursorToStartOfChangeOnUndoRedo: true
+    showHoverOnOperate: true
+    showHoverSearchCounter: true
+    smoothScrollOnFullScrollMotion: true
+    smoothScrollOnFullScrollMotionDuration: 200
+    smoothScrollOnHalfScrollMotion: true
+    smoothScrollOnHalfScrollMotionDuration: 200
+    stayOnDelete: true
+    stayOnTransformString: true
+    stayOnYank: true
+  "vim-surround": {}
+  welcome:
+    showOnStartup: false
+  zentabs:
+    maximumOpenedTabs: 8

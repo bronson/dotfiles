@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+# ensure we're running in the user's home dir (so, not homebrew)
+# this should take care of 100% CPU when running brew update
+# (bash-only would be:  [[ "$PWD/" = "$HOME/"* ]] || exit 0  )
+case $PWD/ in
+  $HOME/*) ;;
+  *) exit 0 ;;
+esac
+
+# ensure only a single ctags can run (useful when rebasing)
+mkdir .git/tags_lock 2>/dev/null || exit 0
+trap "rmdir .git/tags_lock" EXIT
+
+PATH="/usr/local/bin:$PATH"
+trap "rm -f .git/tags.$$" EXIT
+ctags --tag-relative -Rf.git/tags.$$ --languages=-sql,-css --exclude=.git --exclude=node_modules --exclude='*\.min\.*'
+mv .git/tags.$$ .git/tags

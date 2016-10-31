@@ -13,6 +13,7 @@
 # ignore these common files
 /.dotfiles.git
 /.viminfo
+/.*[._-]hist
 /.*[._-]history
 /.*[._-]auth
 /.*[._-]lock
@@ -20,13 +21,20 @@
 /.xsession-errors*
 /.Xauthority
 
-# finally, these need special-casing
-/.ICEauthority
+# finally, the poorly named ones
+/.CFUserTextEncoding
 /.dmrc
+/.eaglerc
 /.gitk
 /.gtk-bookmarks
 /.guvcviewrc
+/.ICEauthority
 /.imsettings.log
 /.lesshst
+/.netrc
+/.rnd
+/.serverauth.*
+/.sublime
 /.sudo_as_admin_successful
+/.Xauthority
 
