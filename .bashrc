@@ -219,7 +219,7 @@ export PATH="node_modules/.bin:$HOME/node_modules/.bin:$PATH"
 [ -f /usr/local/share/chruby/chruby.sh ]       && source /usr/local/share/chruby/chruby.sh
 [ -f /usr/local/share/chruby/auto.sh ]         && source /usr/local/share/chruby/auto.sh
 [ -f /usr/local/share/chruby-default-gems.sh ] && source /usr/local/share/chruby-default-gems.sh
-# do everything I can think of to make rdoc go away
+# do everything I can think of to make slowass rdoc go away
 export RUBY_CONFIGURE_OPTS=--disable-install-doc
 ruby-install() { /usr/local/bin/ruby-install "$@" -- --disable-install-rdoc; }
 
@@ -237,8 +237,10 @@ alias rc='bin/rails console'
 #     Rust
 #
 
-export PATH="$HOME/.cargo/bin:$PATH"
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+if [ -f ~/.cargo/bin/rustc ]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+  export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+fi
 
 
 #
