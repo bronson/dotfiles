@@ -160,7 +160,11 @@ if [ "Darwin" == "$(uname)" ]; then
     export CLICOLOR=true
 
 
-    export BREW_HOME=/usr/local                          # recommended location
+    # Putting user binaries in system directoris is straight up insane
+    # but they say otherwise there will be lots of breakage.  Seems unlikely?
+    # BREW_HOME=~/.brew is definitely worth testing one day.
+    export BREW_HOME=/usr/local          # recommended location
+    export HOMEBREW_ANALYTICS_DEBUG=1    # let's see if I want analytics on or not
 
     export PATH="$BREW_HOME/bin:/usr/local/sbin:$PATH"                  # brew
     export PATH="$PATH:/usr/local/mysql/bin"             # default osx mysql dmg
