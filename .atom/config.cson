@@ -64,6 +64,9 @@
   "merge-conflicts": {}
   notifications: {}
   pigments: {}
+  racer:
+    racerBinPath: "/Users/bronson/.cargo/bin/racer"
+    rustSrcPath: "/Users/bronson/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src"
   "rails-transporter":
     viewFileExtension: [
       "html.erb"
