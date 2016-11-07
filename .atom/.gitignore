@@ -1,5 +1,13 @@
-storage
+atom-shell
+blob-store
 compile-cache
 dev
+recovery
+storage
+
+.apm
 .npm
 .node-gyp
+
+# use package-sync to synchronize packages
+packages
