@@ -77,6 +77,12 @@
   react: {}
   "rubocop-auto-correct": {}
   "smart-tab-name": {}
+  "sync-settings":
+    _analyticsUserId: "1453367b-1a72-4326-91d2-3533ad77a2c5"
+    _lastBackupHash: "3aa0276390ee8913b77a2b2b6cf6926c9a043b19"
+    analytics: false
+    gistId: "160b027786af6dfa160a00e414279304"
+    personalAccessToken: "e31ae70e6cdeaed3df78c785169c782574aaebc3"
   tabs:
     enableVcsColoring: true
   "tree-view":
