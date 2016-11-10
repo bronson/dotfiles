@@ -1,3 +1,15 @@
-# a method name ending in a number is uncommunicative?  That's arbitary.
+# A method name ending in a number is uncommunicative?
+# Not when it comes to HTTP response codes.
 UncommunicativeMethodName:
   enabled: false
+
+# Whether a method uses state or not is an implementation detail.
+# Not sure why Reek thinks this should influence a class's public API.
+UtilityFunction:
+  enabled: false
+
+# Not sure how I feel about this one...  Factoring everything out into
+# locals makes rspec specs noticeably harder to read.  Maybe there's a
+# way I can loosen this up just for *_spec.rb  files?
+DuplicateMethodCall:
+  max_calls: 2
