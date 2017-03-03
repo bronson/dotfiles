@@ -1,9 +1,6 @@
 Rails:
   Enabled: true
 
-# not sure about this one, gem install rubocop-rspec
-# require: 'rubocop-rspec'
-
 # multiple expectations are a-ok.
 RSpec/MultipleExpectations:
   Enabled: false
