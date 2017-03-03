@@ -19,6 +19,11 @@
       "welcome"
       "background-tips"
       "metrics"
+      "autocomplete-elixir"
+      "language-elixir"
+      "linter-elixir-credo"
+      "linter-elixirc"
+      "phoenix-elixir-snippets"
     ]
     packagesWithKeymapsDisabled: [
       "rspec"
