@@ -69,7 +69,6 @@
   "linter-rust":
     cargoCommand: "rustc"
   "linter-ui-default":
-    showPanel: true
     showProviderName: true
     tooltipFollows: "Keyboard"
   "markdown-preview": {}

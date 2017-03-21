@@ -39,13 +39,6 @@
   ')': 'vim-mode-plus:move-to-next-sentence-skip-blank-row'
   '(': 'vim-mode-plus:move-to-previous-sentence-skip-blank-row'
 
-'atom-workspace:not([mini])':
-  'cmd-ctrl-shift-f': 'project-find-navigation:activate-results-pane'
-  'ctrl-cmd-n': 'project-find-navigation:next'
-  'ctrl-cmd-p': 'project-find-navigation:prev'
-  'ctrl-shift-N': 'project-find-navigation:next'
-  'ctrl-shift-P': 'project-find-navigation:prev'
-
 # some easier-to-hit keybindings for rspec testing
 'atom-workspace':
   'ctrl-cmd-t': 'rspec:run'
