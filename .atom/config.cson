@@ -47,7 +47,7 @@
     coloured: false
     onChanges: true
   "find-and-replace":
-    openProjectFindResultsInRightPane: true
+    projectSearchResultsPaneSplitDirection: "right"
   "fuzzy-finder": {}
   "git-blame":
     columnWidth: 250
@@ -66,6 +66,9 @@
   "linter-reek": {}
   "linter-rubocop": {}
   "linter-ruby": {}
+  "linter-rust":
+    cargoCommand: "rustc"
+  "linter-ui-default": {}
   "markdown-preview": {}
   "merge-conflicts": {}
   notifications: {}
