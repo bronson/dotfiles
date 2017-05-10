@@ -244,6 +244,16 @@ fi
 
 
 #
+#     Android
+#
+
+if [ -d ~/Android/sdk ]; then
+  export ANDROID_HOME="$HOME"/Android/sdk
+  export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+fi
+
+
+#
 #     Editors
 #
 

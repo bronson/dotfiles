@@ -68,7 +68,9 @@
   "linter-ruby": {}
   "linter-rust":
     cargoCommand: "rustc"
-  "linter-ui-default": {}
+  "linter-ui-default":
+    showProviderName: true
+    tooltipFollows: "Keyboard"
   "markdown-preview": {}
   "merge-conflicts": {}
   notifications: {}
