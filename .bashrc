@@ -249,7 +249,8 @@ fi
 
 if [ -d ~/Android/sdk ]; then
   export ANDROID_HOME="$HOME"/Android/sdk
-  export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+  export ANDROID_NDK_HOME="$HOME"/Android/sdk/ndk-bundle
+  export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK_HOME"
 fi
 
 
