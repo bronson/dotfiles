@@ -9,10 +9,6 @@
   # for some reason Atom doesn't give replace next a shortcut or a button!
   'cmd-alt-g': 'find-and-replace:replace-next'
 
-'atom-text-editor.vim-mode-plus.normal-mode':
-  ':': 'vim-mode-plus-ex-mode:open'
-  '!': 'vim-mode-plus-ex-mode:toggle-setting'
-
   '-': 'tree-view:show'
 
   'ctrl-w x':     'paner:swap-item'
