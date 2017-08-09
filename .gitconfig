@@ -1,6 +1,5 @@
 [core]
   excludesfile = ~/.gitignore-global
-	pager = diff-so-fancy | less --tabs=1,5 -R
 [user]
   name = Scott Bronson
   email = brons_git@rinspin.com
