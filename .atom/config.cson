@@ -36,7 +36,7 @@
       "one-dark-ui"
       "oceanic-reef-syntax"
     ]
-    useCustomTitleBar: true
+    titleBar: "custom"
   "cursor-history": {}
   editor:
     atomicSoftTabs: false
