@@ -44,3 +44,7 @@ Style/Lambda:
 # no I'm not going to stick this comment in every single source file
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+# for small arrays I definitely prefer [:a] to %i[a]
+Style/SymbolArray:
+  Enabled: false
