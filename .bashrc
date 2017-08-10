@@ -218,19 +218,20 @@ export PATH="node_modules/.bin:$HOME/node_modules/.bin:$PATH"
 #     Ruby
 #
 
-# switching to chruby...
+# using chruby and ruby-install
 [ -f /usr/local/share/chruby/chruby.sh ]       && source /usr/local/share/chruby/chruby.sh
 [ -f /usr/local/share/chruby/auto.sh ]         && source /usr/local/share/chruby/auto.sh
 [ -f /usr/local/share/chruby-default-gems.sh ] && source /usr/local/share/chruby-default-gems.sh
-# do everything I can think of to make slowass rdoc go away
+
+# do everything I can think of to make slowass & useless rdoc go away
 export RUBY_CONFIGURE_OPTS=--disable-install-doc
 ruby-install() { /usr/local/bin/ruby-install "$@" -- --disable-install-rdoc; }
 
-# Bundler can be a right pain at times
 alias be='bundle exec'
+alias rc='bin/rails console'
+alias rgen='bin/rails generate'
 alias rr='bin/rspec'
 alias rs='sh -c "rm -rf tmp/cache log/development.log && bin/rails server"'
-alias rc='bin/rails console'
 
 
 #

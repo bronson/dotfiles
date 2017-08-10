@@ -40,3 +40,7 @@ Lint/AssignmentInCondition:
 # multi-line stabby procs are A-OK.  https://github.com/bbatsov/rubocop/issues/1520
 Style/Lambda:
   Enabled: false
+
+# no I'm not going to stick this comment in every single source file
+Style/FrozenStringLiteralComment:
+  Enabled: false
