@@ -58,6 +58,7 @@
   "isotope-ui": {}
   "keybinding-cheatsheet": {}
   linter:
+    lintOnChangeInterval: 1600
     subtleLinterErrors: [
       "haml-lint"
     ]
