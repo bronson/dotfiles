@@ -48,3 +48,7 @@ Style/FrozenStringLiteralComment:
 # for small arrays I definitely prefer [:a] to %i[a]
 Style/SymbolArray:
   Enabled: false
+
+# I often want two-line empty methods: easier to edit and often looks less cluttered
+Style/EmptyMethod:
+  Enabled: false
