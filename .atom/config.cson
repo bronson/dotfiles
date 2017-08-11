@@ -111,6 +111,7 @@
     stayOnDelete: true
     stayOnTransformString: true
     stayOnYank: true
+    useClipboardAsDefaultRegister: false
   "vim-surround": {}
   welcome:
     showOnStartup: false
