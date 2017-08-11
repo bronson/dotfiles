@@ -268,16 +268,23 @@ export ATOM_REPOS_HOME="$HOME"  # otherwise apm clones to ~/github
 
 
 #
-#     Etc
+#     Google Cloud
 #
 
-export PGDATA='/usr/local/var/postgres'
-export DOCKER_HOST='tcp://127.0.0.1:4243'
+alias gc=gcloud
 
 [ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc ] && \
   source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc
 [ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc ] &&
   source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc
+
+
+#
+#     Etc
+#
+
+export PGDATA='/usr/local/var/postgres'
+export DOCKER_HOST='tcp://127.0.0.1:4243'
 
 
 #
