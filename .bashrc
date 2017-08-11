@@ -231,7 +231,7 @@ alias be='bundle exec'
 alias rc='bin/rails console'
 alias rgen='bin/rails generate'
 alias rr='bin/rspec'
-alias rs='sh -c "rm -rf tmp/cache log/development.log && bin/rails server"'
+alias rs='rm -rf tmp/cache log/development.log && bin/rails server'
 
 
 #
