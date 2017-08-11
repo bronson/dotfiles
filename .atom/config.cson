@@ -24,6 +24,7 @@
       "linter-elixir-credo"
       "linter-elixirc"
       "phoenix-elixir-snippets"
+      "linter-stylelint"
     ]
     packagesWithKeymapsDisabled: [
       "rspec"
@@ -68,6 +69,9 @@
   "linter-ruby": {}
   "linter-rust":
     cargoCommand: "rustc"
+  "linter-stylelint":
+    disableWhenNoConfig: false
+    useStandard: true
   "linter-ui-default":
     showPanel: true
     showProviderName: true
