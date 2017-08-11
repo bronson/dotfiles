@@ -284,7 +284,6 @@ alias gc=gcloud
 #
 
 export PGDATA='/usr/local/var/postgres'
-export DOCKER_HOST='tcp://127.0.0.1:4243'
 
 
 #
