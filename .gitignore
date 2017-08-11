@@ -38,4 +38,6 @@
 /.sublime
 /.sudo_as_admin_successful
 /.Xauthority
+# can't store .yarnrc yet: https://github.com/yarnpkg/yarn/issues/4134
+/.yarnrc
 
