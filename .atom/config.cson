@@ -105,6 +105,7 @@
     highlightSearch: true
     incrementalSearch: true
     incrementalSearchVisitDirection: "relative"
+    keymapPToPutWithAutoIndent: true
     setCursorToStartOfChangeOnUndoRedo: true
     showHoverOnOperate: true
     showHoverSearchCounter: true
