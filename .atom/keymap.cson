@@ -4,6 +4,9 @@
 'body':
   # cmd-p, ctrl-p: it's all the same to me
   'ctrl-p': 'fuzzy-finder:toggle-file-finder'
+  # TODO: seems like these should be upstream!
+  'ctrl-cmd-{': 'pane:move-item-left'
+  'ctrl-cmd-}': 'pane:move-item-right'
 
 'atom-text-editor.vim-mode-plus.normal-mode':
   '-': 'tree-view:toggle'
