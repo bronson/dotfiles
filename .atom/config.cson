@@ -1,6 +1,8 @@
 "*":
   "advanced-open-file":
     createFileInstantly: true
+  "atom-jest-snippets":
+    toggleSemicolons: false
   "atom-ternjs": {}
   "autocomplete-plus":
     confirmCompletion: "tab"
