@@ -78,6 +78,7 @@ alias la='ls -A'
 alias ll='ls -lF'
 alias lla='ls -alF'
 
+alias ab='atom-beta .'
 alias tf='tail -f'
 alias jk='jekyll --auto --server'
 alias gre=grep    # darn you vim's :gre command
