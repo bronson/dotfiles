@@ -4,22 +4,39 @@
 'body':
   # cmd-p, ctrl-p: it's all the same to me
   'ctrl-p': 'fuzzy-finder:toggle-file-finder'
+
   # TODO: seems like these should be upstream!
   'ctrl-cmd-{': 'pane:move-item-left'
   'ctrl-cmd-}': 'pane:move-item-right'
 
+'atom-workspace':
+  'ctrl-i': 'cursor-history:next'
+  'ctrl-o': 'cursor-history:prev'
+  'ctrl-cmd-i': 'cursor-history:next-within-editor'
+  'ctrl-cmd-o': 'cursor-history:prev-within-editor'
+
 'atom-text-editor.vim-mode-plus.normal-mode':
+  'ctrl-]': 'hyperclick:confirm-cursor'
   '-': 'tree-view:toggle'
   # '-': 'vim-mode-plus-user:jasmine-increase-focus'
   'ctrl--': 'vim-mode-plus-user:jasmine-increase-focus'
 
-#
-# 'atom-text-editor':
-#   # for some reason Atom doesn't give replace next a shortcut or a button!
-#   'cmd-alt-g': 'find-and-replace:replace-next'
-#
-#   # '-': 'tree-view:show'
-#
+  'g f':      'open-this:here'
+  'ctrl-w f': 'open-this:split-down'
+  'ctrl-w F': 'open-this:split-right'
+
+# make it easy to fuzzy-find a file into a new pane
+'.fuzzy-finder':
+  'cmd-enter': 'pane:split-right'
+
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  ')': 'vim-mode-plus:move-to-next-sentence-skip-blank-row'
+  '(': 'vim-mode-plus:move-to-previous-sentence-skip-blank-row'
+
+# for some reason Atom doesn't give replace next a shortcut or a button!
+'atom-text-editor':
+  'cmd-alt-g': 'find-and-replace:replace-next'
+
 #   'ctrl-w x':     'paner:swap-item'
 #   'ctrl-w X':     'paner:send-item'
 #   'ctrl-w enter': 'paner:maximize'
@@ -28,23 +45,6 @@
 #   'ctrl-w H':     'paner:very-left'
 #   'ctrl-w L':     'paner:very-right'
 #
-#   'g f':      'open-this:here'
-#   'ctrl-w f': 'open-this:split-down'
-#   'ctrl-w F': 'open-this:split-right'
-#
-# still not sure how vim-mode-plus's surround works
-#
-# 'atom-text-editor':
-#   'y s': 'vim-mode-plus:surround'
-#   'y s w': 'vim-mode-plus:surround-word'
-#   'd s': 'vim-mode-plus:delete-surround'
-#   'y s c': 'vim-mode-plus:change-surround'
-#   'c s': 'vim-mode-plus:change-surround'
-#   'y m s':  'vim-mode-plus:map-surround'
-#
-# 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
-#   ')': 'vim-mode-plus:move-to-next-sentence-skip-blank-row'
-#   '(': 'vim-mode-plus:move-to-previous-sentence-skip-blank-row'
 #
 # # some easier-to-hit keybindings for rspec testing
 # 'atom-workspace':
@@ -58,11 +58,3 @@
 #   # 'cmd-ctrl-.': 'ruby-test-switcher:switch'
 #   'cmd-shift-.': 'ruby-test-switcher:switch-without-split'
 #
-#   'ctrl-i': 'cursor-history:next'
-#   'ctrl-o': 'cursor-history:prev'
-#   'ctrl-cmd-i': 'cursor-history:next-within-editor'
-#   'ctrl-cmd-o': 'cursor-history:prev-within-editor'
-#
-# # make it easy to fuzzy-find a file into a new pane
-# '.fuzzy-finder':
-#   'cmd-enter': 'pane:split-right'

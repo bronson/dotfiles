@@ -3,6 +3,8 @@
     createFileInstantly: true
   "atom-jest-snippets":
     toggleSemicolons: false
+  "atom-package-deps":
+    ignored: []
   "atom-ternjs": {}
   "autocomplete-plus":
     confirmCompletion: "tab"
@@ -26,7 +28,8 @@
       "linter-elixir-credo"
       "linter-elixirc"
       "phoenix-elixir-snippets"
-      "linter-stylelint"
+      "linter"
+      "linter-ui-default"
     ]
     packagesWithKeymapsDisabled: [
       "rspec"
@@ -74,7 +77,10 @@
   "linter-stylelint":
     disableWhenNoConfig: false
     useStandard: true
+  "linter-tslint":
+    enableSemanticRules: true
   "linter-ui-default":
+    panelHeight: 248
     showPanel: true
     showProviderName: true
     tooltipFollows: "Keyboard"
@@ -107,7 +113,6 @@
     highlightSearch: true
     incrementalSearch: true
     incrementalSearchVisitDirection: "relative"
-    keymapPToPutWithAutoIndent: true
     setCursorToStartOfChangeOnUndoRedo: true
     showHoverOnOperate: true
     showHoverSearchCounter: true
