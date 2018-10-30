@@ -92,6 +92,7 @@ alias MPP='make program ENVIRONMENT=production'
 # TODO: any way to store the output in a bash variable?
 ? () { echo "$@" | bc -l; }
 
+alias snapify='exiftool -creator="ScanSnap Manager #iX500"'
 
 #
 #      Git Aliases
