@@ -6,7 +6,7 @@ tags
 __MACOSX/*
 
 # swapfiles for various editors
-*.sw[n-p]
+*.sw[l-p]
 *~
 
 # JetBrains Idea workspace file, never a need to check it in.
