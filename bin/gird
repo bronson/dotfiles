@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Run this script to generate hashes for every file in a directory tree:
+#    gird Photos
+# Running 'gird' operates on the current directory, as if you had typed 'gird .'
+#
+# To check the hashes, run 'gird -c'
+#
+# Hard-coded to use sha1 because that's faster than all other algorithms, including md5 and cksum
+# (on my Mac anyway). I don't actually care about cryptographic integrity.
+
+case "$1" in
+  'c' | 'check' | '-c' | '--check')
+    echo 'not yet'
+    ;;
+
+  *)
+    find "${1:-.}" -type d -not -path '*/\.*' -print0 | xargs -0 -n1 -I{I} sh -c \
+      'echo processing {I}; cd {I}; find . -type f -maxdepth 1 -not -path '"'"'*/\.*'"'"' -print0 | xargs -0 shasum -a 1 > .sha1sums'
+    ;;
+esac
