@@ -78,9 +78,10 @@ alias la='ls -A'
 alias ll='ls -lF'
 alias lla='ls -alF'
 
-alias ab='atom-beta .'
+# sorted du -s (size on disk of named directory)
+dus() { du -hs "$@" | sort -rh; }
+
 alias tf='tail -f'
-alias jk='jekyll --auto --server'
 alias gre=grep    # darn you vim's :gre command
 alias mak=make    # and :mak
 
@@ -92,6 +93,7 @@ alias MPP='make program ENVIRONMENT=production'
 # TODO: any way to store the output in a bash variable?
 ? () { echo "$@" | bc -l; }
 
+# allow abbyy to ocr this file
 alias snapify='exiftool -creator="ScanSnap Manager #iX500"'
 
 #
