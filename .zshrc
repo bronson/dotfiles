@@ -7,6 +7,21 @@ export ZSH=$HOME/.oh-my-zsh
 # .f stands for dotfiles.  .f diff, .f log, .f pull, etc.
 alias .f="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
 
+# for homebrew
+export PATH="/usr/local/sbin:$PATH"
+
+# aliases I like
+alias sl=ls
+dus() { du -hs "$@" | sort -rh; }
+
+# calculator: "? 3+13*3" will print 42
+# TODO: any way to store the output in a bash variable?
+? () { echo "$@" | bc -l; }
+
+# allow abbyy to ocr this file
+alias snapify='exiftool -creator="ScanSnap Manager #iX500"'
+
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
