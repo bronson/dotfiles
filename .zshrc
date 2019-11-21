@@ -63,6 +63,7 @@ plugin https://github.com/zsh-users/zsh-autosuggestions
 
 unset -f plugin
 
+export PATH="$HOME/bin:$PATH"
 
 # allow abbyy to ocr this file
 alias snapify='exiftool -creator="ScanSnap Manager #iX500"'
