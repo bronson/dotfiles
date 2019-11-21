@@ -11,7 +11,6 @@ export PATH="/usr/local/sbin:$PATH"
 
 # aliases I like
 alias sl=ls
-alias ..='cd ..'
 dus() { du -hs "$@" | sort -rh; }
 
 # I'm in zsh but the git completions are way worse than my old bash!
@@ -25,6 +24,27 @@ alias gpl='git pull'
 # TODO: can I store bc's output in a shell variable?
 function '?' { echo "$@" | bc -l; }
 alias '?'='noglob ?'
+
+# use built-in zsh completion
+autoload -Uz compinit && compinit
+
+# cd into dirs by typing the name, (including .. to go up)
+setopt AUTO_CD
+
+# give me a giant, always up-to-date history file
+HISTSIZE=2000 # maximum lines remembered in a session
+SAVEHIST=9000 # maximum lines in the history file
+setopt SHARE_HISTORY       # share history across multiple zsh sessions
+setopt APPEND_HISTORY      # append to history
+setopt INC_APPEND_HISTORY  # adds commands as they are typed, not at shell exit
+setopt HIST_EXPIRE_DUPS_FIRST # remove redundant lines first
+
+# start typing a command, then hit up-arrow to search in history
+bindkey '^[[A' up-line-or-search
+
+# allow zsh to prompt for corrections
+setopt CORRECT
+setopt CORRECT_ALL
 
 
 # antigen looks pretty heavy. This might suffice for now.
@@ -46,4 +66,3 @@ unset -f plugin
 
 # allow abbyy to ocr this file
 alias snapify='exiftool -creator="ScanSnap Manager #iX500"'
-
