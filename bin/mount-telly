@@ -1,2 +1,0 @@
-mkdir -p /tmp/mnt
-sshfs -C telly@192.168.1.4: /tmp/mnt
