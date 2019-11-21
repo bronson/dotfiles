@@ -11,6 +11,7 @@ export PATH="/usr/local/sbin:$PATH"
 
 # aliases I like
 alias sl=ls
+alias ..='cd ..'
 dus() { du -hs "$@" | sort -rh; }
 
 # I'm in zsh but the git completions are way worse than my old bash!
