@@ -63,6 +63,9 @@ plugin https://github.com/zsh-users/zsh-autosuggestions
 
 unset -f plugin
 
+# for Visual Studio Code
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
 export PATH="$HOME/bin:$PATH"
 
 # allow abbyy to ocr this file
