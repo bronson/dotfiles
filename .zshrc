@@ -14,11 +14,12 @@ alias sl=ls
 dus() { du -hs "$@" | sort -rh; }
 
 # I'm in zsh but the git completions are way worse than my old bash!
-alias gs='git status -sb'
+alias gd='git diff'
 alias gl='git log'
 alias glp='git log -p'
 alias gls=glg
 alias gpl='git pull'
+alias gs='git status -sb'
 
 # calculator: "? 3+13*3" will print 42
 # TODO: can I store bc's output in a shell variable?
