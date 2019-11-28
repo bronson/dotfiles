@@ -1,0 +1,5 @@
+{
+    "git.path": "/usr/local/bin/git",
+    "files.autoSave": "onWindowChange",
+    "editor.renderWhitespace": "selection"
+}
