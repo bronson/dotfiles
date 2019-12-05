@@ -1,5 +1,10 @@
 {
     "git.path": "/usr/local/bin/git",
     "files.autoSave": "onWindowChange",
-    "editor.renderWhitespace": "selection"
+    "editor.renderWhitespace": "selection",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "editor.renderFinalNewline": false,
+    "files.insertFinalNewline": true
 }
