@@ -14,6 +14,7 @@ alias sl=ls
 dus() { du -hs "$@" | sort -rh; }
 
 # I'm in zsh but the git completions are way worse than my old bash!
+alias gcia='git cia'
 alias gd='git diff'
 alias gl='git log'
 alias glp='git log -p'
@@ -31,6 +32,9 @@ autoload -Uz compinit && compinit
 
 # cd into dirs by typing the name, (including .. to go up)
 setopt AUTO_CD
+
+# only complete the unambiguous part; don't complete the entire first file/dir.
+unsetopt menu_complete
 
 # give me a giant, always up-to-date history file
 HISTSIZE=2000 # maximum lines remembered in a session
