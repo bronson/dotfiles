@@ -18,7 +18,7 @@ alias gcia='git cia'
 alias gd='git diff'
 alias gl='git log'
 alias glp='git log -p'
-alias gls=glg
+alias gls='git log --stat'
 alias gpl='git pull'
 alias gs='git status -sb'
 
