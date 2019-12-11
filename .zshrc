@@ -51,6 +51,8 @@ bindkey '^[[A' up-line-or-search
 setopt CORRECT
 setopt CORRECT_ALL
 
+# Make hitting return just show another prompt
+MNML_MAGICENTER=
 
 # antigen looks pretty heavy. This might suffice for now.
 plugin() { 
