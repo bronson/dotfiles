@@ -6,5 +6,9 @@
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.codeLens.enabled": false,
     "editor.renderFinalNewline": false,
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "debug.node.autoAttach": "on",
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingOvertype": "never",
+    "editor.autoClosingQuotes": "never"
 }
