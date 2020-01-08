@@ -64,9 +64,8 @@
     atomicSoftTabs: false
     autoIndentOnPaste: false
     backUpBeforeSaving: true
-    fontSize: 17
+    fontSize: 15
     invisibles: {}
-    showInvisibles: true
   "file-icons":
     coloured: false
     onChanges: true
