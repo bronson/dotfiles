@@ -116,6 +116,3 @@
   pushInsteadOf = "https://gist.github.com/"
   pushInsteadOf = "http://gist.github.com/"
   pushInsteadOf = "gist:"
-
-[init]
-  templatedir = ~/.git_template
