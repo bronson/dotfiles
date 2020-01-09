@@ -14,12 +14,14 @@ alias sl=ls
 dus() { du -hs "$@" | sort -rh; }
 
 # I'm in zsh but the git completions are way worse than my old bash!
+alias gb='git branch'
 alias gcia='git cia'
+alias gco='git co'
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias gl='git log'
 alias glp='git log -p'
 alias gls='git log --stat'
-alias gpl='git pull'
 alias gs='git status -sb'
 
 # calculator: "? 3+13*3" will print 42
@@ -46,10 +48,6 @@ setopt HIST_EXPIRE_DUPS_FIRST # remove redundant lines first
 
 # start typing a command, then hit up-arrow to search in history
 bindkey '^[[A' up-line-or-search
-
-# allow zsh to prompt for corrections
-setopt CORRECT
-setopt CORRECT_ALL
 
 # Make hitting return just show another prompt
 MNML_MAGICENTER=
