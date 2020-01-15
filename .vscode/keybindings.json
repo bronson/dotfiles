@@ -2,6 +2,8 @@
 [
     { "key": "cmd+shift+g",          "command": "workbench.view.scm" },
 
+    { "key": "ctrl+p",          "command": "workbench.action.quickOpen" },
+
     // without this keybinding, cmd-c is ignored. With it, I can copy text to the clipboard.
     // is this an issue with vscodevim?
     { "key": "cmd+c",                "command": "editor.action.clipboardCopyAction", "when": "editorTextFocus" },

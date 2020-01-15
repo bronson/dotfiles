@@ -10,5 +10,7 @@
     "debug.node.autoAttach": "on",
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingOvertype": "never",
-    "editor.autoClosingQuotes": "never"
+    "editor.autoClosingQuotes": "never",
+    "workbench.colorTheme": "Oceanic Plus",
+    "window.zoomLevel": 0
 }
