@@ -1,8 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-#
-# git clone https://github.com/subnixr/minimal .minimal
-
 # .f stands for dotfiles.  .f diff, .f log, .f pull, etc.
 alias .f="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
 
@@ -47,10 +42,7 @@ setopt INC_APPEND_HISTORY  # adds commands as they are typed, not at shell exit
 setopt HIST_EXPIRE_DUPS_FIRST # remove redundant lines first
 
 # start typing a command, then hit up-arrow to search in history
-bindkey '^[[A' up-line-or-search
-
-# Make hitting return just show another prompt
-MNML_MAGICENTER=
+# bindkey '^[[A' up-line-or-search
 
 # antigen looks pretty heavy. This might suffice for now.
 plugin() { 
@@ -63,7 +55,11 @@ plugin() {
   fi
 }
 
-plugin https://github.com/subnixr/minimal
+# Turn off minimal because it breaks zsh-autosuggestions
+# (the suggestions remain visible on the command line, even if they weren't used)
+# Make hitting return just show another prompt
+# MNML_MAGICENTER=
+# plugin https://github.com/subnixr/minimal
 plugin https://github.com/zsh-users/zsh-autosuggestions
 
 unset -f plugin
