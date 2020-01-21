@@ -1,3 +1,5 @@
+# To debug weird interactions, run zsh -df and then source files one-by-one.
+
 # .f stands for dotfiles.  .f diff, .f log, .f pull, etc.
 alias .f="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
 
@@ -44,6 +46,16 @@ setopt HIST_EXPIRE_DUPS_FIRST # remove redundant lines first
 # start typing a command, then hit up-arrow to search in history
 # bindkey '^[[A' up-line-or-search
 
+export PATH="$HOME/bin:$PATH"
+
+# for Visual Studio Code
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# allow abbyy to ocr this file
+alias snapify='exiftool -creator="ScanSnap Manager #iX500"'
+
+
+
 # antigen looks pretty heavy. This might suffice for now.
 plugin() { 
   url="$1" 
@@ -61,13 +73,6 @@ plugin() {
 # MNML_MAGICENTER=
 # plugin https://github.com/subnixr/minimal
 plugin https://github.com/zsh-users/zsh-autosuggestions
+plugin https://github.com/zsh-users/zsh-syntax-highlighting
 
 unset -f plugin
-
-# for Visual Studio Code
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-
-export PATH="$HOME/bin:$PATH"
-
-# allow abbyy to ocr this file
-alias snapify='exiftool -creator="ScanSnap Manager #iX500"'
