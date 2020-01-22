@@ -1,11 +1,14 @@
 // Place your key bindings in this file to override the defaults
 [
-    { "key": "cmd+shift+g",          "command": "workbench.view.scm" },
+    { "key": "cmd+shift+g",     "command": "workbench.view.scm" },
 
     { "key": "ctrl+p",          "command": "workbench.action.quickOpen" },
-    { "key": "shift+ctrl+p",     "command": "workbench.action.showCommands" },
+    { "key": "shift+ctrl+p",    "command": "workbench.action.showCommands" },
+
+    { "key": "cmd+shift+alt+f", "command": "workbench.action.replaceInFiles" },
+    { "key": "cmd+shift+ctrl+f","command": "workbench.action.replaceInFiles" },
 
     // without this keybinding, cmd-c is ignored. With it, I can copy text to the clipboard.
     // is this an issue with vscodevim?
-    { "key": "cmd+c",                "command": "editor.action.clipboardCopyAction", "when": "editorTextFocus" },
+    { "key": "cmd+c",           "command": "editor.action.clipboardCopyAction", "when": "editorTextFocus" },
 ]
