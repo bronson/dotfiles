@@ -12,6 +12,7 @@ dus() { du -hs "$@" | sort -rh; }
 
 # I'm in zsh but the git completions are way worse than my old bash!
 alias gb='git branch'
+alias gci='git ci'
 alias gcia='git cia'
 alias gco='git co'
 alias gd='git diff'
@@ -52,6 +53,7 @@ export PATH="$HOME/bin:$PATH"
 
 # for Visual Studio Code
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:/Applications/VSCodium.app/Contents/Resources/app/bin"
 
 # allow abbyy to ocr this file
 alias snapify='exiftool -creator="ScanSnap Manager #iX500"'
