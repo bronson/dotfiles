@@ -39,8 +39,8 @@ setopt AUTO_CD
 unsetopt menu_complete
 
 # give me a giant, always up-to-date history file
-HISTSIZE=2000 # maximum lines remembered in a session
-SAVEHIST=9000 # maximum lines in the history file
+HISTSIZE=2000 # maximum lines remembered in a session (memory)
+SAVEHIST=9000 # maximum lines in the history file     (disk space)
 setopt SHARE_HISTORY       # share history across multiple zsh sessions
 setopt APPEND_HISTORY      # append to history
 setopt INC_APPEND_HISTORY  # adds commands as they are typed, not at shell exit
@@ -78,5 +78,9 @@ plugin() {
 # plugin https://github.com/subnixr/minimal
 plugin https://github.com/zsh-users/zsh-autosuggestions
 plugin https://github.com/zsh-users/zsh-syntax-highlighting
+plugin https://github.com/zsh-users/zsh-history-substring-search
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 unset -f plugin
