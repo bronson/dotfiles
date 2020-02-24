@@ -12,5 +12,7 @@
     "editor.autoClosingOvertype": "never",
     "editor.autoClosingQuotes": "never",
     "workbench.colorTheme": "Oceanic Plus",
-    "window.zoomLevel": 0
+    "window.zoomLevel": 0,
+    "editor.wordWrap": "on",
+    "explorer.confirmDragAndDrop": false
 }
