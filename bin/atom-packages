@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# This script helps keep Atom's installed packages in sync.
+# To start using it, run `atom-packages snapshot`.
+
+packages() {
+  # remove version numbers because it generates too much noise, also blank lines
+  apm list -b -i --no-dev | sed -e 's/@.*$//' -e '/^\s*$/d'
+}
+
+diff_list() {
+  diff -u ~/.atom/packages.list <(packages)
+}
+
+case "$1" in
+  'snapshot')
+    packages > ~/.atom/packages.list
+    ;;
+
+  'install')
+    apm install $(diff_list | sed -n 's/^-\([^-].*\)/\1/p')
+    ;;
+
+  'show' | *)
+    diff_list
+    ;;
+esac
