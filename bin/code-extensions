@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # This script is meant to keep VS Code's extensions in your dotfiles repo
-# To start using it, run `code-extensions snapshot`
+# * To start using it, run `code-extensions snapshot`
+# * To see how to bring your extensions up-to-date, run `code-extensions sync`
+# * To set the current list of extensions as official, `code-extensions snapshot`
+
 
 extensions() {
   # remove version numbers because it generates too much noise, also blank lines
@@ -17,8 +20,18 @@ case "$1" in
     extensions > ~/.vscode/extensions.list
     ;;
 
-  'install')
-    echo code --install-extension $(diff_list | sed -n 's/^-\([^-].*\)/\1/p')
+  'sync' | 'install')
+    to_install="$(diff_list | sed -n 's/^-\([^-].*\)/\1/p')"
+    if [ -n "$to_install" ]; then
+      echo code --install-extension $to_install
+    fi
+    to_remove="$(diff_list | sed -n 's/^\+\([^+].*\)/\1/p')"
+    if [ -n "$to_remove" ]; then
+      echo code --uninstall-extension $to_remove
+    fi
+    if [ -z "$to_install" ] && [ -z "$to_remove" ]; then
+      echo up to date
+    fi
     ;;
 
   'show' | *)
