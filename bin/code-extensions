@@ -15,10 +15,19 @@ diff_list() {
   diff -u ~/.vscode/extensions.list <(extensions)
 }
 
+if [ "$1" == 'snapshot' ]; then
+  extensions > ~/.vscode/extensions.list
+  exit 0
+fi
+
+if [ ! -f ~/.vscode/extensions.list ]; then
+  echo "please set things up by running:"
+  echo "  $0 snapshot"
+  exit 1
+fi
+
 case "$1" in
-  'snapshot')
-    extensions > ~/.vscode/extensions.list
-    ;;
+  # 'snapshot' is handled above
 
   'sync' | 'install')
     to_install="$(diff_list | sed -n 's/^-\([^-].*\)/\1/p')"
