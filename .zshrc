@@ -41,7 +41,6 @@ unsetopt menu_complete
 # give me a giant, always up-to-date history file
 HISTSIZE=2000 # maximum lines remembered in a session (memory)
 SAVEHIST=9000 # maximum lines in the history file     (disk space)
-setopt SHARE_HISTORY       # share history across multiple zsh sessions
 setopt APPEND_HISTORY      # append to history
 setopt INC_APPEND_HISTORY  # adds commands as they are typed, not at shell exit
 setopt HIST_EXPIRE_DUPS_FIRST # remove redundant lines first
