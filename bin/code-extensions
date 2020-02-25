@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# This script is meant to keep VS Code's extensions in your dotfiles repo
+# To start using it, run `code-extensions snapshot`
+
+extensions() {
+  # remove version numbers because it generates too much noise, also blank lines
+  code --list-extensions
+}
+
+diff_list() {
+  diff -u ~/.vscode/extensions.list <(extensions)
+}
+
+case "$1" in
+  'snapshot')
+    extensions > ~/.vscode/extensions.list
+    ;;
+
+  'install')
+    echo code --install-extension $(diff_list | sed -n 's/^-\([^-].*\)/\1/p')
+    ;;
+
+  'show' | *)
+    diff_list
+    ;;
+esac
