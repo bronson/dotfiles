@@ -17,29 +17,26 @@ diff_list() {
   diff -u ~/.vscode/extensions.list <(extensions)
 }
 
-if [ "$1" == 'snapshot' ]; then
-  extensions > ~/.vscode/extensions.list
-  exit 0
-fi
-
-if [ ! -f ~/.vscode/extensions.list ]; then
+if [ ! -f ~/.vscode/extensions.list ] && [ "$1" != 'snapshot' ]; then
   echo "please set things up by running:"
   echo "  $0 snapshot"
   exit 1
 fi
 
 case "$1" in
-  # 'snapshot' is handled above
+  'snapshot')
+    extensions > ~/.vscode/extensions.list
+    ;;
 
-  'sync' | 'install')
+  'sync' | 'install' | 'uninstall')
     to_install="$(diff_list | sed -n 's/^-\([^-].*\)/\1/p')"
-    if [ -n "$to_install" ]; then
+    if [ -n "$to_install" ] && [ "$1" != 'uninstall' ]; then
       for extension in $to_install; do
         echo code --install-extension $extension
       done
     fi
     to_remove="$(diff_list | sed -n 's/^\+\([^+].*\)/\1/p')"
-    if [ -n "$to_remove" ]; then
+    if [ -n "$to_remove" ] && [ "$1" != 'install' ]; then
       for extension in $to_remove; do
         echo code --uninstall-extension $extension
       done
