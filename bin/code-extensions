@@ -17,6 +17,20 @@ diff_list() {
   diff -u ~/.vscode/extensions.list <(extensions)
 }
 
+repeat-all() {
+  action="$1"
+  shift
+
+  while [ -n "$1" ]; do
+    echo code "$action" "$1"
+    code "$action" "$1" || break
+    shift
+  done
+
+  # if there was an error, show the extensions we're not installing
+  [ -n "$1" ] && echo "SKIPPING: $@"
+}
+
 if [ ! -f ~/.vscode/extensions.list ] && [ "$1" != 'snapshot' ]; then
   echo "please set things up by running:"
   echo "  $0 snapshot"
@@ -28,25 +42,25 @@ case "$1" in
     extensions > ~/.vscode/extensions.list
     ;;
 
-  'sync' | 'install' | 'uninstall')
-    to_install="$(diff_list | sed -n 's/^-\([^-].*\)/\1/p')"
-    if [ -n "$to_install" ] && [ "$1" != 'uninstall' ]; then
-      for extension in $to_install; do
-        echo code --install-extension $extension
-      done
+  'sync' | 'install' | 'uninstall' | 'remove')
+    if [ "$1" != 'uninstall' ] && [ "$1" != 'remove' ]; then
+      to_install="$(diff_list | sed -n 's/^-\([^-].*\)/\1/p')"
+      repeat-all --install-extension $to_install
     fi
-    to_remove="$(diff_list | sed -n 's/^\+\([^+].*\)/\1/p')"
-    if [ -n "$to_remove" ] && [ "$1" != 'install' ]; then
-      for extension in $to_remove; do
-        echo code --uninstall-extension $extension
-      done
+    if [ "$1" != 'install' ]; then
+      to_remove="$(diff_list | sed -n 's/^\+\([^+].*\)/\1/p')"
+      repeat-all --uninstall-extension $to_remove
     fi
     if [ -z "$to_install" ] && [ -z "$to_remove" ]; then
       echo up to date
     fi
     ;;
 
-  'show' | *)
+  'show' | '')
     diff_list
     ;;
+
+  *)
+    echo unknown command $1
+    echo try: $0 snapshot, show, or sync
 esac
