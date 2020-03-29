@@ -14,5 +14,6 @@
     "workbench.colorTheme": "Oceanic Plus",
     "window.zoomLevel": 0,
     "editor.wordWrap": "on",
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "editor.acceptSuggestionOnEnter": "off"
 }
