@@ -30,7 +30,10 @@ function '?' { echo "$@" | bc -l; }
 alias '?'='noglob ?'
 
 # use built-in zsh completion
-autoload -Uz compinit && compinit
+# holy shit, zsh just completed "rm mardoc/shop/wes<tab>" into "rm mardoc-save/shop/wes.md"
+# and then I hit return. It is NEVER OK to change what has already been completed!
+  # I think this is where zsh and I part ways. I won't use a shell that is so careless.
+# autoload -Uz compinit && compinit
 
 # cd into dirs by typing the name, (including .. to go up)
 setopt AUTO_CD
