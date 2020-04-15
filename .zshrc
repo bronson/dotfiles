@@ -35,9 +35,6 @@ alias '?'='noglob ?'
   # I think this is where zsh and I part ways. I won't use a shell that is so careless.
 # autoload -Uz compinit && compinit
 
-# cd into dirs by typing the name, (including .. to go up)
-setopt AUTO_CD
-
 # only complete the unambiguous part; don't complete the entire first file/dir.
 unsetopt menu_complete
 
