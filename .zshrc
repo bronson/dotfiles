@@ -30,13 +30,12 @@ function '?' { echo "$@" | bc -l; }
 alias '?'='noglob ?'
 
 # use built-in zsh completion
-# holy shit, zsh just completed "rm mardoc/shop/wes<tab>" into "rm mardoc-save/shop/wes.md"
-# and then I hit return. It is NEVER OK to change what has already been completed!
-  # I think this is where zsh and I part ways. I won't use a shell that is so careless.
-# autoload -Uz compinit && compinit
-
-# only complete the unambiguous part; don't complete the entire first file/dir.
-unsetopt menu_complete
+# holy crap, zsh just completed "rm mardoc/shop/wes<tab>" into "rm mardoc-save/shop/wes.md"
+# and then I hit return. Blew away an important file. It is not ok to change what has already been completed!
+# hope this fixes it...
+setopt noautomenu
+setopt nomenucomplete
+autoload -Uz compinit && compinit
 
 # give me a giant, always up-to-date history file
 HISTSIZE=2000 # maximum lines remembered in a session (memory)
@@ -45,18 +44,15 @@ setopt APPEND_HISTORY      # append to history
 setopt INC_APPEND_HISTORY  # adds commands as they are typed, not at shell exit
 setopt HIST_EXPIRE_DUPS_FIRST # remove redundant lines first
 
-# start typing a command, then hit up-arrow to search in history
-# bindkey '^[[A' up-line-or-search
-
 export PATH="$HOME/bin:$PATH"
 
 # for Visual Studio Code
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH="$PATH:/Applications/VSCodium.app/Contents/Resources/app/bin"
 
+
 # allow abbyy to ocr this file
 alias snapify='exiftool -creator="ScanSnap Manager #iX500"'
-
 
 
 # antigen looks pretty heavy. This might suffice for now.
