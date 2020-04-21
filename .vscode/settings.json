@@ -1,12 +1,13 @@
 {
     "git.path": "/usr/local/bin/git",
-    "files.autoSave": "onWindowChange",
+    "files.autoSave": "onFocusChange",
     "editor.renderWhitespace": "selection",
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.codeLens.enabled": false,
     "editor.renderFinalNewline": false,
     "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     "debug.node.autoAttach": "on",
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingOvertype": "never",
@@ -15,5 +16,8 @@
     "window.zoomLevel": 0,
     "editor.wordWrap": "on",
     "explorer.confirmDragAndDrop": false,
-    "editor.acceptSuggestionOnEnter": "off"
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.wrappingIndent": "deepIndent",
+    "debug.showBreakpointsInOverviewRuler": true,
+    "editor.minimap.size": "fit"
 }
