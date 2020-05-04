@@ -17,7 +17,6 @@
     "editor.wordWrap": "on",
     "explorer.confirmDragAndDrop": false,
     "editor.acceptSuggestionOnEnter": "off",
-    "editor.wrappingIndent": "deepIndent",
     "debug.showBreakpointsInOverviewRuler": true,
     "editor.minimap.size": "fit"
 }
