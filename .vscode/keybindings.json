@@ -11,4 +11,8 @@
     // without this keybinding, cmd-c is ignored. With it, I can copy text to the clipboard.
     // is this an issue with vscodevim?
     { "key": "cmd+c",           "command": "editor.action.clipboardCopyAction", "when": "editorTextFocus" },
+
+    // control-n to jump to the next multi-file search result, ctrl-shift-n to jump to prev
+    { "key": "ctrl+n",          "command": "search.action.focusNextSearchResult", "when": "hasSearchResult || inSearchEditor" },
+    { "key": "ctrl+shift+n",    "command": "search.action.focusPreviousSearchResult", "when": "hasSearchResult || inSearchEditor" },
 ]
