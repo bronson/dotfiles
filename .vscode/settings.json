@@ -18,5 +18,6 @@
     "explorer.confirmDragAndDrop": false,
     "editor.acceptSuggestionOnEnter": "off",
     "debug.showBreakpointsInOverviewRuler": true,
-    "editor.minimap.size": "fit"
+    "editor.minimap.size": "fit",
+    "diffEditor.renderSideBySide": false
 }
