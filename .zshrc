@@ -24,10 +24,11 @@ alias glp='git log -p'
 alias gls='git log --stat'
 alias gs='git status -sb'
 
-# calculator: "? 3+13*3" will print 42
-# TODO: can I store bc's output in a shell variable?
-function '?' { echo "$@" | bc -l; }
-alias '?'='noglob ?'
+# calculator:
+#   `$ ? 3+13*3` will print 42. Stores the result in $x.
+#   `$ ? $r/6` then prints 7.
+function '?' { x="$(echo "$@" | bc -l)"; echo "$x" }
+alias '?'='noglob ?'  # so expressions like `? 1*2` aren't expanded by the shell
 
 # use built-in zsh completion
 # holy crap, zsh just completed "rm mardoc/shop/wes<tab>" into "rm mardoc-save/shop/wes.md"
