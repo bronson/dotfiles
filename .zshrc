@@ -12,16 +12,18 @@ dus() { if [ $# -eq 0 ]; then du -hs *; else du -hs "$@"; fi | sort -rh }
 
 # I'm in zsh but the git completions are way worse than my old bash!
 alias gb='git branch'
-alias gci='git ci'
-alias gcia='git cia'
-alias gco='git co'
+alias gci='git commit -v --untracked-files=no'
+alias gcia='git commit -v -a --untracked-files=no'
+alias gco='git checkout'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gdw='git diff --word-diff'
 alias gd.='git diff --word-diff --word-diff-regex=.'
 alias gl='git log'
+alias glg='git log --graph --oneline'
+alias glol='git log --oneline --abbrev-commit --graph --decorate'
 alias glp='git log -p'
-alias gls='git log --stat'
+alias gls='git log --stat --graph'
 alias gs='git status -sb'
 
 # calculator:
@@ -32,7 +34,7 @@ alias '?'='noglob ?'  # so expressions like `? 1*2` aren't expanded by the shell
 
 # use built-in zsh completion
 # holy crap, zsh just completed "rm mardoc/shop/wes<tab>" into "rm mardoc-save/shop/wes.md"
-# and then I hit return. Blew away an important file. It is not ok to change what has already been completed!
+# and then I hit return. Blew away an important file. It is never ok to change what has already been completed!
 # hope this fixes it...
 setopt noautomenu
 setopt nomenucomplete
