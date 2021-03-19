@@ -244,16 +244,6 @@ alias rs='rm -rf tmp/cache log/development.log && bin/rails server'
 
 
 #
-#     Rust
-#
-
-if [ -f ~/.cargo/bin/rustc ]; then
-  export PATH="$HOME/.cargo/bin:$PATH"
-  export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-fi
-
-
-#
 #     Android
 #
 
@@ -292,6 +282,7 @@ alias gc=gcloud
 #     Etc
 #
 
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 export PGDATA='/usr/local/var/postgres'
 
 

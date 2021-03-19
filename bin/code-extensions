@@ -1,10 +1,19 @@
 #!/bin/bash
 
-# This script is meant to keep VS Code's extensions in your dotfiles repo
-# * To start using it, run `code-extensions snapshot`
-# * To show the differences between the suggested extensions and the ones on your machine: `code-extensions show`
-# * To bring your extensions up-to-date, run `code-extensions sync`
-# * To set your current list of extensions as official, `code-extensions snapshot`
+show_help() {
+cat << 'EOF'
+This script keeps your VSCode extensions up-to-date with your dotfiles.
+
+* To start using this script, run: `code-extensions snapshot` and commit
+  `~/.vscode/extensions.list` to your dotfiles.
+* To show the differences between your dotfiles and the extensions currently
+  installed, run: `code-extensions show`
+* To install and uninstall extensions to match extensions.list, run
+  `code-extensions sync`
+* To set your currently installed extensions as official, run
+  `code-extensions snapshot`
+EOF
+}
 
 # Hope this script doesn't have a future: https://code.visualstudio.com/updates/v1_43#_settings-sync
 
@@ -14,7 +23,7 @@ extensions() {
 }
 
 diff_list() {
-  diff -u ~/.vscode/extensions.list <(extensions)
+  diff -u <(extensions) ~/.vscode/extensions.list
 }
 
 repeat-all() {
@@ -56,8 +65,16 @@ case "$1" in
     fi
     ;;
 
+  'help')
+    show_help
+    ;;
+
   'show' | '')
-    diff_list
+    cat << 'EOF'
+   '+' means `code-extensions sync` will add this extension
+   '-' means `code-extensions sync` will remove it.'
+EOF
+    diff_list | tail +3
     ;;
 
   *)

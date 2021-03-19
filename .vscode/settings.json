@@ -1,5 +1,4 @@
 {
-    "git.path": "/usr/local/bin/git",
     "files.autoSave": "onFocusChange",
     "editor.renderWhitespace": "selection",
     "gitlens.currentLine.enabled": false,
@@ -19,5 +18,8 @@
     "editor.acceptSuggestionOnEnter": "off",
     "debug.showBreakpointsInOverviewRuler": true,
     "editor.minimap.size": "fit",
-    "diffEditor.renderSideBySide": false
+    "diffEditor.renderSideBySide": false,
+    "git.autofetch": true,
+    "jupyter.interactiveWindowMode": "perFile",
+    "git.path": "/usr/local/bin/git"
 }
