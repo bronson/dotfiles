@@ -8,7 +8,7 @@ export PATH="/usr/local/sbin:$PATH"
 
 # aliases I like
 alias sl=ls
-dus() { du -hs "$@" | sort -rh; }
+dus() { if [ $# -eq 0 ]; then du -hs *; else du -hs "$@"; fi | sort -rh }
 
 # I'm in zsh but the git completions are way worse than my old bash!
 alias gb='git branch'
