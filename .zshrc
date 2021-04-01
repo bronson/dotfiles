@@ -32,6 +32,9 @@ alias gs='git status -sb'
 function '?' { x="$(echo "$@" | bc -l)"; echo "$x" }
 alias '?'='noglob ?'  # so expressions like `? 1*2` aren't expanded by the shell
 
+# otherwise you can't use # on the command line to build up a big command
+setopt interactivecomments
+
 # use built-in zsh completion
 # holy crap, zsh just completed "rm mardoc/shop/wes<tab>" into "rm mardoc-save/shop/wes.md"
 # and then I hit return. Blew away an important file. It is never ok to change what has already been completed!
@@ -63,7 +66,8 @@ plugin() {
   url="$1" 
   repo="$(basename $url)"
   if [ ! -d "$HOME/.$repo" ]; then
-    echo "Missing zsh plugin. Plese run: git clone $url ~/.$repo"
+    echo "# Missing $repo. Plese run:"
+    echo "  git clone $url ~/.$repo"
   else
     source "$HOME/.$repo/$repo.zsh"
   fi
