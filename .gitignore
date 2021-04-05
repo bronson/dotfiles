@@ -33,6 +33,7 @@
 /.imsettings.log
 /.lesshst
 /.netrc
+/.nix-profile
 /.rnd
 /.serverauth.*
 /.sublime
