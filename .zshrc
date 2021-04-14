@@ -6,6 +6,9 @@ alias .f="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
 # for homebrew
 export PATH="/usr/local/sbin:$PATH"
 
+# for rust/cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # aliases I like
 alias sl=ls
 dus() { if [ $# -eq 0 ]; then du -hs *; else du -hs "$@"; fi | sort -rh }
