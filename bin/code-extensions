@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# UPDATE: now that VS Code has extension sync, this is probably unnecessary.
+# I do wish Extension Sync made it easy to see the extensions it's syncing
+# now, and what changes you made over time...  Maybe I'll continue using
+# this, maybe not.
+
 show_help() {
 cat << 'EOF'
 This script keeps your VSCode extensions up-to-date with your dotfiles.
