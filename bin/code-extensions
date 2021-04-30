@@ -75,11 +75,16 @@ case "$1" in
     ;;
 
   'show' | '')
-    cat << 'EOF'
-   '+' means `code-extensions sync` will add this extension
-   '-' means `code-extensions sync` will remove it.'
+    list="$(diff_list | tail +3)"
+    if [ -n "$list" ]; then
+      cat <<EOF
+   '+' means \`code-extensions sync\` will add this extension
+   '-' means \`code-extensions sync\` will remove it.'
+$list
 EOF
-    diff_list | tail +3
+    else
+      echo '  no changes'
+    fi
     ;;
 
   *)
