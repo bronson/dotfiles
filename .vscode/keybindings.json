@@ -13,6 +13,19 @@
     { "key": "cmd+c",           "command": "editor.action.clipboardCopyAction", "when": "editorTextFocus" },
 
     // control-n to jump to the next multi-file search result, ctrl-shift-n to jump to prev
-    { "key": "ctrl+n",          "command": "search.action.focusNextSearchResult", "when": "hasSearchResult || inSearchEditor" },
+    { "key": "ctrl+n",          "command": "search.action.focusNextSearchResult",     "when": "hasSearchResult || inSearchEditor" },
     { "key": "ctrl+shift+n",    "command": "search.action.focusPreviousSearchResult", "when": "hasSearchResult || inSearchEditor" },
+
+    // Focus the editor group ("go back to input mode")
+    {
+        "key": "shift+cmd+i",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+
+    // focus the terminal ("console")
+    // This overrides the default keybinding, which opens an external terminal. (??)
+    {
+        "key": "shift+cmd+c",
+        "command": "workbench.action.terminal.focus"
+    }
 ]
