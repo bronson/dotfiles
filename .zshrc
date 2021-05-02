@@ -91,3 +91,7 @@ bindkey '^[[B' history-substring-search-down
 unset -f plugin
 
 [ -f ~/.secret-aliases ] && . ~/.secret-aliases
+
+if hash fnm 2>/dev/null; then
+  eval "$(fnm env)"
+fi
