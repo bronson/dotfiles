@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec code --user-data-dir="$HOME/Nextcloud/.foam-user-data" --extensions-dir="$HOME/Nextcloud/.foam-extensions" "$HOME/Nextcloud/foam"
