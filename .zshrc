@@ -24,15 +24,14 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 alias gdw='git diff --word-diff'
 alias gd.='git diff --word-diff --word-diff-regex=.'
+alias gin='git incoming' # whatup? show upstream changes ready to be merged
 alias gl='git log'
 alias glg='git log --graph --oneline'
 alias glol='git log --oneline --abbrev-commit --graph --decorate'
 alias glp='git log -p'
 alias gls='git log --stat --graph'
+alias gout='git outgoing'
 alias gs='git status -sb'
-# git whatup (after a fetch, what's upstream waiting to be merged?)
-alias gwu='git log ..$(git rev-parse --abbrev-ref --symbolic-full-name @{u})'
-alias gwud='git diff ..$(git rev-parse --abbrev-ref --symbolic-full-name @{u})'
 
 # calculator:
 #   `$ ? 3+13*3` will print 42. Stores the result in $x.
