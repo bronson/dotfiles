@@ -1,6 +1,6 @@
 # To debug weird interactions, run zsh -df and then source files one-by-one.
 
-# .f stands for dotfiles.  .f diff, .f log, .f pull, etc.
+# .f, "dot files".  To manage your dotfiles: .f diff, .f pull, .f cia, etc.
 alias .f="git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git"
 
 # for homebrew
@@ -9,8 +9,9 @@ export PATH="/usr/local/sbin:$PATH"
 # for rust/cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# aliases I like
 alias sl=ls
+
+# du, sorted, with human numbers
 dus() { if [ $# -eq 0 ]; then du -hs *; else du -hs "$@"; fi | sort -rh }
 
 # I'm in zsh but the git completions are way worse than my old bash!
@@ -29,6 +30,9 @@ alias glol='git log --oneline --abbrev-commit --graph --decorate'
 alias glp='git log -p'
 alias gls='git log --stat --graph'
 alias gs='git status -sb'
+# git whatup (after a fetch, what's upstream waiting to be merged?)
+alias gwu='git log ..$(git rev-parse --abbrev-ref --symbolic-full-name @{u})'
+alias gwud='git diff ..$(git rev-parse --abbrev-ref --symbolic-full-name @{u})'
 
 # calculator:
 #   `$ ? 3+13*3` will print 42. Stores the result in $x.
