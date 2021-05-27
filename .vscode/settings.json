@@ -30,6 +30,7 @@
     "workbench.colorTheme": "Oceanic Plus",
     "editor.accessibilitySupport": "off",
     "markdownlint.config": {
-        "MD004": false
+        "MD004": false,
+        "MD034": false
     }
 }
