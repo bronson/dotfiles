@@ -27,5 +27,9 @@
             "filenamePattern": "*.ipynb"
         }
     ],
-    "workbench.colorTheme": "Oceanic Plus"
+    "workbench.colorTheme": "Oceanic Plus",
+    "editor.accessibilitySupport": "off",
+    "markdownlint.config": {
+        "MD004": false
+    }
 }
