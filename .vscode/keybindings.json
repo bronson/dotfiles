@@ -1,7 +1,12 @@
 // Place your key bindings in this file to override the defaults
 [
+    // open the Source Control activity. this is for consistency -- all activities use cmd-shift
+    // except for Source Control, which uses ctrl-shift by default. This stomps on Find-Previous
+    // which is a shame ... but I pretty much always use vim's search instead.
+    // TODO: what about cmd-shift-U or something unrelated?
     { "key": "cmd+shift+g",     "command": "workbench.view.scm" },
 
+    // I like hitting ctrl-p even on Macs. This way both cmd-p and ctrl-p do the same thing.
     { "key": "ctrl+p",          "command": "workbench.action.quickOpen" },
     { "key": "shift+ctrl+p",    "command": "workbench.action.showCommands" },
 
@@ -18,5 +23,8 @@
 
     // Focus the editor group ("i: go back to input mode, c: console")
     { "key": "shift+cmd+i",     "command": "workbench.action.focusActiveEditorGroup" },
-    { "key": "shift+cmd+c",     "command": "workbench.action.terminal.focus" }
+    { "key": "shift+cmd+c",     "command": "workbench.action.terminal.focus" },
+
+    // easier to not have to release the cmd key between typing k and v
+    { "key": "cmd+k cmd+v",     "command": "markdown.showPreviewToSide", "when": "!notebookEditorFocused && editorLangId == 'markdown'" }
 ]
