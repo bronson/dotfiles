@@ -20,6 +20,7 @@ ms-python.vscode-pylance
 ms-toolsai.jupyter
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
+ms-vscode.hexeditor
 rebornix.ruby
 redhat.vscode-yaml
 serayuzgur.crates
