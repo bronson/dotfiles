@@ -10,6 +10,7 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 alias sl=ls
+alias kc=kubectl
 
 # du, sorted, with human numbers
 dus() { if [ $# -eq 0 ]; then du -hs *; else du -hs "$@"; fi | sort -rh }
