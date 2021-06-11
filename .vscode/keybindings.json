@@ -26,5 +26,9 @@
     { "key": "shift+cmd+c",     "command": "workbench.action.terminal.focus" },
 
     // easier to not have to release the cmd key between typing k and v
-    { "key": "cmd+k cmd+v",     "command": "markdown.showPreviewToSide", "when": "!notebookEditorFocused && editorLangId == 'markdown'" }
+    { "key": "cmd+k cmd+v",     "command": "markdown.showPreviewToSide", "when": "!notebookEditorFocused && editorLangId == 'markdown'" },
+
+    // Make cmd-[ go back in markdown preview, just like the browser
+    // unfortunately, markdown preview doesn't actually go back to the previous page, it goes all the way back to the page being edited.
+    { "key": "cmd+[",           "command": "workbench.action.navigateBack", "when": "markdownPreviewFocus" }
 ]
