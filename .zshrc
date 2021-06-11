@@ -30,7 +30,7 @@ alias gl='git log'
 alias glg='git log --graph --oneline'
 alias glol='git log --oneline --abbrev-commit --graph --decorate'
 alias glp='git log -p'
-alias gls='git log --stat --graph'
+alias gls='git log --stat'
 alias gout='git outgoing'
 alias gs='git status -sb'
 
