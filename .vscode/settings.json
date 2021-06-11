@@ -21,12 +21,9 @@
     "git.autofetch": true,
     "jupyter.interactiveWindowMode": "perFile",
     "git.path": "/usr/local/bin/git",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
     "workbench.colorTheme": "Oceanic Plus",
     "editor.accessibilitySupport": "off",
     "markdownlint.config": {
