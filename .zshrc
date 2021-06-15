@@ -17,6 +17,7 @@ dus() { if [ $# -eq 0 ]; then du -hs *; else du -hs "$@"; fi | sort -rh }
 
 # I'm in zsh but the git completions are way worse than my old bash!
 alias gb='git branch'
+alias gba='git branch --all'
 alias gbr='git branch --remote'
 alias gci='git commit -v --untracked-files=no'
 alias gcia='git commit -v -a --untracked-files=no'
