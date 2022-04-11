@@ -1,5 +1,5 @@
-AlanWalk.markdown-toc
 Atishay-Jain.All-Autocomplete
+ban.spellright
 bbenoist.Nix
 bierner.markdown-emoji
 bierner.markdown-mermaid
@@ -7,9 +7,9 @@ bierner.markdown-preview-github-styles
 bpruitt-goddard.mermaid-markdown-syntax-highlighting
 bungcip.better-toml
 DavidAnson.vscode-markdownlint
-dendron.dendron-paste-image
 dracula-theme.theme-dracula
 eamodio.gitlens
+foam.foam-vscode
 GitHub.vscode-pull-request-github
 marcoms.oceanic-plus
 matklad.rust-analyzer
@@ -17,10 +17,10 @@ mdickin.markdown-shortcuts
 ms-kubernetes-tools.vscode-kubernetes-tools
 ms-python.python
 ms-python.vscode-pylance
-ms-toolsai.jupyter
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
 ms-vscode.hexeditor
+mushan.vscode-paste-image
 rebornix.ruby
 redhat.vscode-yaml
 serayuzgur.crates
